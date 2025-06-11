@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKI Expertisecentrum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
+  <!-- Navigatiebalk -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="../logo.png" alt="MKI Logo" class="w-10 h-10">
+        <span class="text-xl font-semibold">MKI Expertisecentrum</span>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <div class="relative group">
+          <button class="text-gray-700 hover:text-blue-600">Informatie</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 py-2 w-40 z-10">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Blogs</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Nieuwsbrieven</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="text-gray-700 hover:text-blue-600">Diensten</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 py-2 w-52 z-10">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor opdrachtgevers</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor opdrachtnemers</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor leveranciers</a>
+          </div>
+        </div>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Discussie</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero sectie -->
+  <section class="bg-blue-50 py-20 text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">
+        Het MKI platform voor alles rondom MKI: van beleid tot praktijk.
+      </h1>
+      <p class="text-lg text-gray-700 mb-8">
+        Kies jouw rol en ontdek de informatie en ondersteuning die bij jou past.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          Voor opdrachtgevers
+        </a>
+        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          Voor opdrachtnemers
+        </a>
+        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          Voor leveranciers
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
