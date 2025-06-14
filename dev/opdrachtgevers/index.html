@@ -3,50 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voor opdrachtgevers – MKI Expertisecentrum</title>
+  <title>Voor Opdrachtgevers - MKI Expertisecentrum</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f5f2ec;
+    }
+  </style>
 </head>
-<body class="bg-[#f5f2ec] text-gray-800">
+<body class="text-[#374151]">
 
-  <!-- Navigatiebalk -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center space-x-4">
-        <a href="../index.html">
-          <img src="../../logo.png" alt="MKI Logo" class="w-10 h-10">
-        </a>
+  <!-- Navigatie (dezelfde als op de homepage) -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <a href="/dev/index.html"><img src="../logo.png" alt="MKI Logo" class="w-10 h-10"></a>
         <span class="text-xl font-semibold">MKI Expertisecentrum</span>
       </div>
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/dev/index.html" class="hover:text-blue-600">Home</a>
         <div class="relative group">
-          <button class="text-gray-700 hover:text-blue-600">Informatie</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 py-2 w-40 z-10">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Blogs</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Nieuwsbrieven</a>
+          <button class="hover:text-blue-600">Informatie</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-40">
+            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Blogs</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
           </div>
         </div>
         <div class="relative group">
-          <button class="text-gray-700 hover:text-blue-600">Diensten</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 py-2 w-52 z-10">
-            <a href="../opdrachtgevers/index.html" class="block px-4 py-2 text-sm text-gray-800 bg-gray-100 font-semibold">Voor opdrachtgevers</a>
-            <a href="../opdrachtnemers/index.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor opdrachtnemers</a>
-            <a href="../leveranciers/index.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor leveranciers</a>
+          <button class="hover:text-blue-600">Diensten</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-52">
+            <a href="/dev/opdrachtgevers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
+            <a href="/dev/opdrachtnemers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
+            <a href="/dev/leveranciers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor leveranciers</a>
           </div>
         </div>
-        <a href="#" class="text-gray-700 hover:text-blue-600">Discussie</a>
-        <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <a href="#" class="hover:text-blue-600">Discussie</a>
+        <a href="#" class="hover:text-blue-600">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Pagina content -->
-  <main class="py-16 px-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold mb-6">Voor opdrachtgevers</h1>
-    <p class="text-lg text-gray-700 mb-4">
-      Op deze pagina vind je alle informatie, tools en ondersteuning voor opdrachtgevers die aan de slag willen met MKI.
-    </p>
-    <!-- Hier kun je secties toevoegen, zoals cards, links, documenten, tools -->
-  </main>
+  <!-- Intro / Hero -->
+  <section class="text-center py-16 px-6 bg-white shadow-sm">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#1f2937]">MKI toepassen als opdrachtgever</h1>
+    <p class="text-lg mb-6">Als opdrachtgever heb je een sleutelrol in het verduurzamen van de GWW-sector. Op deze pagina vind je alles over de toepassing van MKI in beleid, aanbesteding en projecten.</p>
+    <a href="#start" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Direct aan de slag</a>
+  </section>
+
+  <!-- Wat is MKI -->
+  <section class="max-w-4xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-semibold mb-4">Wat is MKI (voor opdrachtgevers)?</h2>
+    <p class="mb-4">De MKI is een rekenmethode die de milieubelasting van een bouwwerk of product samenvat in één getal in euro’s. Dat maakt duurzaamheid objectief meetbaar én vergelijkbaar. Je kunt het inzetten als eis, gunningscriterium of monitoringstool.</p>
+    <a href="#" class="text-blue-600 hover:underline">Lees meer over MKI &gt;</a>
+  </section>
+
+  <!-- Waarom toepassen -->
+  <section class="bg-white py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4">Waarom MKI toepassen?</h2>
+      <ul class="list-disc list-inside space-y-2 mb-6">
+        <li>Inzicht in milieu-impact van je projecten</li>
+        <li>Objectieve sturing op duurzaamheid</li>
+        <li>Concrete invulling van duurzaamheidsbeleid</li>
+        <li>Voorbereiding op wetgeving (verplicht vanaf 2027)</li>
+        <li>Gelijke kansen en transparantie in aanbestedingen</li>
+      </ul>
+      <p class="italic text-sm">Drempels zoals complexiteit of kosten? Op deze pagina helpen we je op weg.</p>
+    </div>
+  </section>
+
+  <!-- Stappenplan -->
+  <section id="start" class="py-12 px-6 bg-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-6">Hoe pas je MKI toe in je organisatie en projecten?</h2>
+      <ol class="list-decimal list-inside space-y-4">
+        <li><strong>Begrijp de systematiek:</strong> Wat is een LCA, hoe wordt de MKI-score opgebouwd?</li>
+        <li><strong>Bepaal je rol:</strong> Ga je sturen op MKI via minimumeisen of gunning?</li>
+        <li><strong>Integreer MKI in beleid en contracten:</strong> Denk aan RAW, UAV-gc of EMVI-criteria.</li>
+        <li><strong>Communiceer duidelijk naar de markt:</strong> Gebruik formats en heldere eisen.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Tools & Downloads -->
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-6">Praktische hulpmiddelen voor opdrachtgevers</h2>
+      <ul class="space-y-4">
+        <li><a href="#" class="text-blue-600 hover:underline">📄 Template: MKI-eisen in aanbestedingen</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">📄 Voorbeeldtekst: MKI in contract (RAW/UAV-gc)</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">📄 Stappenplan: MKI per projectfase</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">📄 Protocol berekenen & aantonen MKI (RWS)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-6">Veelgestelde vragen</h2>
+      <ul class="space-y-4">
+        <li><strong>Is MKI verplicht?</strong> Vanaf 2027 komt er wetgeving waarin MKI een rol krijgt.</li>
+        <li><strong>Wat kost het?</strong> De toepassing varieert per project, maar er zijn ook besparingen te halen.</li>
+        <li><strong>Heb ik een LCA-expert nodig?</strong> Niet per se – met templates en tools kom je al ver.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-12 px-6 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-4">Hulp nodig of wil je sparren?</h2>
+      <p class="mb-6">Neem contact op als je vragen hebt of ondersteuning zoekt bij MKI in jouw organisatie.</p>
+      <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Neem contact op</a>
+    </div>
+  </section>
 
 </body>
 </html>
