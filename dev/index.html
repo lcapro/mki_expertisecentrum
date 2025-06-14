@@ -5,57 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MKI Expertisecentrum</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f5f2ec;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-[#374151]">
 
-  <!-- Navigatiebalk -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div>
-        <img src="logo.png" alt="MKI Logo" class="h-12 w-auto">
+  <!-- Navigatie -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <a href="/dev/index.html"><img src="../logo.png" alt="MKI Logo" class="w-10 h-10"></a>
+        <span class="text-xl font-semibold">MKI Expertisecentrum</span>
       </div>
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/dev/index.html" class="hover:text-blue-600">Home</a>
         <div class="relative group">
-          <button class="text-gray-700 hover:text-blue-600">Informatie</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 py-2 w-40 z-10">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Blogs</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Nieuwsbrieven</a>
+          <button class="hover:text-blue-600">Informatie</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-40">
+            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Blogs</a>
+            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
           </div>
         </div>
         <div class="relative group">
-          <button class="text-gray-700 hover:text-blue-600">Diensten</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 py-2 w-52 z-10">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor opdrachtgevers</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor opdrachtnemers</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">Voor leveranciers</a>
+          <button class="hover:text-blue-600">Diensten</button>
+          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-52">
+            <a href="/dev/opdrachtgevers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
+            <a href="/dev/opdrachtnemers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
+            <a href="/dev/leveranciers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor leveranciers</a>
           </div>
         </div>
-        <a href="#" class="text-gray-700 hover:text-blue-600">Discussie</a>
-        <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <a href="#" class="hover:text-blue-600">Discussie</a>
+        <a href="#" class="hover:text-blue-600">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero sectie -->
-  <section class="bg-blue-50 py-20 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">
-        Het MKI platform voor alles rondom MKI: van beleid tot praktijk.
-      </h1>
-      <p class="text-lg text-gray-700 mb-8">
-        Kies jouw rol en ontdek de informatie en ondersteuning die bij jou past.
-      </p>
-      <div class="flex flex-col md:flex-row justify-center gap-6">
-        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-          Voor opdrachtgevers
-        </a>
-        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-          Voor opdrachtnemers
-        </a>
-        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-          Voor leveranciers
-        </a>
-      </div>
+  <!-- Hero / Intro -->
+  <section class="text-center py-20 px-6 bg-white shadow-sm">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#1f2937]">Het MKI platform voor alles rondom MKI: van beleid tot praktijk.</h1>
+    <p class="text-lg mb-8">Kies jouw rol en ontdek de informatie en ondersteuning die bij jou past.</p>
+    <div class="flex flex-col md:flex-row justify-center gap-6">
+      <a href="/dev/opdrachtgevers/index.html" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Voor opdrachtgevers</a>
+      <a href="/dev/opdrachtnemers/index.html" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Voor opdrachtnemers</a>
+      <a href="/dev/leveranciers/index.html" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Voor leveranciers</a>
     </div>
   </section>
 
