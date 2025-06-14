@@ -3,119 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voor Opdrachtgevers - MKI Expertisecentrum</title>
+  <title>MKI Expertisecentrum – Voor Opdrachtgevers</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #f5f2ec;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B7D6D',
+            accent: '#E1F4F0',
+            dark: '#1F2937'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
     }
-  </style>
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="text-[#374151]">
+<body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
-  <!-- Navigatie (dezelfde als op de homepage) -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <a href="/dev/index.html"><img src="../logo.png" alt="MKI Logo" class="w-10 h-10"></a>
-        <span class="text-xl font-semibold">MKI Expertisecentrum</span>
+  <!-- Hero Section -->
+  <section class="bg-white border-b border-gray-200 py-16 px-4 md:px-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-primary">MKI toepassen als opdrachtgever</h1>
+      <p class="text-lg text-gray-600 mb-6">Als opdrachtgever speel je een sleutelrol in de verduurzaming van de GWW-sector. De MilieuKostenIndicator (MKI) helpt je om milieu-impact meetbaar te maken en duurzame keuzes te stimuleren. Deze pagina biedt alles wat je nodig hebt: van basiskennis tot praktische toepassing in beleid, aanbestedingen en projecten.</p>
+      <a href="#aan-de-slag" class="inline-block bg-primary text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-emerald-800 transition">Direct aan de slag</a>
+    </div>
+  </section>
+
+  <!-- Voordelen blokken -->
+  <section class="py-14 px-6 bg-accent">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Meetbaar verduurzamen</h3>
+        <p class="text-sm text-gray-700">De MKI maakt milieu-impact kwantificeerbaar en vergelijkbaar. Zo kun je onderbouwd sturen op duurzaamheid binnen je projecten.</p>
       </div>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="/dev/index.html" class="hover:text-blue-600">Home</a>
-        <div class="relative group">
-          <button class="hover:text-blue-600">Informatie</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-40">
-            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Blogs</a>
-            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
-          </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Beleidsmatig en praktisch toepasbaar</h3>
+        <p class="text-sm text-gray-700">Gebruik MKI als minimumeis, als gunningcriterium of als monitoringinstrument – afgestemd op jouw organisatiedoelen.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Vooruitlopend op wetgeving</h3>
+        <p class="text-sm text-gray-700">Vanaf 2027 wordt MKI op veel plekken verplicht. Door nu al ervaring op te doen, ben je goed voorbereid en behoud je regie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoe pas je MKI toe -->
+  <section id="aan-de-slag" class="py-16 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Hoe pas je MKI toe?</h2>
+      <div class="space-y-6">
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">1. Begrijp de systematiek</h3>
+          <p class="text-gray-700 text-sm">MKI is gebaseerd op levenscyclusanalyse (LCA). Begrijp hoe de score wordt opgebouwd, welke gegevens nodig zijn en hoe de Nationale Milieudatabase werkt.</p>
         </div>
-        <div class="relative group">
-          <button class="hover:text-blue-600">Diensten</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-52">
-            <a href="/dev/opdrachtgevers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
-            <a href="/dev/opdrachtnemers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
-            <a href="/dev/leveranciers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor leveranciers</a>
-          </div>
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">2. Bepaal je ambitie en rol</h3>
+          <p class="text-gray-700 text-sm">Kies of je MKI inzet als informatief kader, minimumeis of gunningscriterium (bijvoorbeeld via EMVI). Elk niveau biedt andere sturingsmogelijkheden.</p>
         </div>
-        <a href="#" class="hover:text-blue-600">Discussie</a>
-        <a href="#" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Intro / Hero -->
-  <section class="text-center py-16 px-6 bg-white shadow-sm">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#1f2937]">MKI toepassen als opdrachtgever</h1>
-    <p class="text-lg mb-6">Als opdrachtgever heb je een sleutelrol in het verduurzamen van de GWW-sector. Op deze pagina vind je alles over de toepassing van MKI in beleid, aanbesteding en projecten.</p>
-    <a href="#start" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Direct aan de slag</a>
-  </section>
-
-  <!-- Wat is MKI -->
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">Wat is MKI (voor opdrachtgevers)?</h2>
-    <p class="mb-4">De MKI is een rekenmethode die de milieubelasting van een bouwwerk of product samenvat in één getal in euro’s. Dat maakt duurzaamheid objectief meetbaar én vergelijkbaar. Je kunt het inzetten als eis, gunningscriterium of monitoringstool.</p>
-    <a href="#" class="text-blue-600 hover:underline">Lees meer over MKI &gt;</a>
-  </section>
-
-  <!-- Waarom toepassen -->
-  <section class="bg-white py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-4">Waarom MKI toepassen?</h2>
-      <ul class="list-disc list-inside space-y-2 mb-6">
-        <li>Inzicht in milieu-impact van je projecten</li>
-        <li>Objectieve sturing op duurzaamheid</li>
-        <li>Concrete invulling van duurzaamheidsbeleid</li>
-        <li>Voorbereiding op wetgeving (verplicht vanaf 2027)</li>
-        <li>Gelijke kansen en transparantie in aanbestedingen</li>
-      </ul>
-      <p class="italic text-sm">Drempels zoals complexiteit of kosten? Op deze pagina helpen we je op weg.</p>
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">3. Verwerk MKI in beleid en contracten</h3>
+          <p class="text-gray-700 text-sm">Integreer MKI in je aanbestedingsdocumenten: van duurzaamheidsbeleid tot RAW-bestekken of UAV-gc contractvormen. Gebruik heldere eisen en formats.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">4. Maak het praktisch en herhaalbaar</h3>
+          <p class="text-gray-700 text-sm">Gebruik standaardtemplates en formats zodat projectteams eenvoudig met MKI aan de slag kunnen, en herhaal successen in toekomstige projecten.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Stappenplan -->
-  <section id="start" class="py-12 px-6 bg-gray-100">
+  <!-- Downloads -->
+  <section class="py-14 px-6 bg-accent">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Hoe pas je MKI toe in je organisatie en projecten?</h2>
-      <ol class="list-decimal list-inside space-y-4">
-        <li><strong>Begrijp de systematiek:</strong> Wat is een LCA, hoe wordt de MKI-score opgebouwd?</li>
-        <li><strong>Bepaal je rol:</strong> Ga je sturen op MKI via minimumeisen of gunning?</li>
-        <li><strong>Integreer MKI in beleid en contracten:</strong> Denk aan RAW, UAV-gc of EMVI-criteria.</li>
-        <li><strong>Communiceer duidelijk naar de markt:</strong> Gebruik formats en heldere eisen.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Tools & Downloads -->
-  <section class="py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Praktische hulpmiddelen voor opdrachtgevers</h2>
-      <ul class="space-y-4">
-        <li><a href="#" class="text-blue-600 hover:underline">📄 Template: MKI-eisen in aanbestedingen</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">📄 Voorbeeldtekst: MKI in contract (RAW/UAV-gc)</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">📄 Stappenplan: MKI per projectfase</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">📄 Protocol berekenen & aantonen MKI (RWS)</a></li>
+      <h2 class="text-2xl font-bold mb-6">Praktische hulpmiddelen</h2>
+      <ul class="space-y-4 text-sm">
+        <li><a href="#" class="text-primary hover:underline">📄 Template MKI-eisen in aanbestedingen</a></li>
+        <li><a href="#" class="text-primary hover:underline">📄 Voorbeeldtekst MKI in RAW/UAV-gc contracten</a></li>
+        <li><a href="#" class="text-primary hover:underline">📄 Stappenplan MKI per projectfase (initiatief tot uitvoering)</a></li>
+        <li><a href="#" class="text-primary hover:underline">📄 Protocol berekenen en aantonen MKI – Rijkswaterstaat</a></li>
       </ul>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="bg-white py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Veelgestelde vragen</h2>
-      <ul class="space-y-4">
-        <li><strong>Is MKI verplicht?</strong> Vanaf 2027 komt er wetgeving waarin MKI een rol krijgt.</li>
-        <li><strong>Wat kost het?</strong> De toepassing varieert per project, maar er zijn ook besparingen te halen.</li>
-        <li><strong>Heb ik een LCA-expert nodig?</strong> Niet per se – met templates en tools kom je al ver.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="py-12 px-6 bg-gray-100">
+  <!-- Contact CTA -->
+  <section class="py-16 px-6 bg-white">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-semibold mb-4">Hulp nodig of wil je sparren?</h2>
-      <p class="mb-6">Neem contact op als je vragen hebt of ondersteuning zoekt bij MKI in jouw organisatie.</p>
-      <a href="mailto:lca.pro.it@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Neem contact op</a>
+      <h2 class="text-2xl font-bold mb-4">Hulp nodig?</h2>
+      <p class="text-gray-700 mb-6 text-sm">Kom je er niet uit of wil je sparren over MKI in jouw organisatie? We denken graag met je mee en bieden ondersteuning op maat.</p>
+      <a href="#" class="bg-primary text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-emerald-800 transition">Neem contact op</a>
     </div>
   </section>
 
