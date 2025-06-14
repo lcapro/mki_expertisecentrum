@@ -5,19 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MKI Expertisecentrum</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #f5f2ec;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B7D6D',
+            accent: '#E1F4F0',
+            dark: '#1F2937'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
     }
-  </style>
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="text-[#374151]">
+<body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
-  <!-- Navigatie -->
+  <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-3">
-        <a href="/dev/index.html"><img src="../logo.png" alt="MKI Logo" class="w-10 h-10"></a>
+        <a href="/dev/index.html"><img src="./logo.png" alt="MKI Logo" class="w-10 h-10"></a>
         <span class="text-xl font-semibold">MKI Expertisecentrum</span>
       </div>
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
@@ -45,12 +57,41 @@
 
   <!-- Hero / Intro -->
   <section class="text-center py-20 px-6 bg-white shadow-sm">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#1f2937]">Het MKI platform voor alles rondom MKI: van beleid tot praktijk.</h1>
-    <p class="text-lg mb-8">Kies jouw rol en ontdek de informatie en ondersteuning die bij jou past.</p>
-    <div class="flex flex-col md:flex-row justify-center gap-6">
-      <a href="/dev/opdrachtgevers/index.html" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Voor opdrachtgevers</a>
-      <a href="/dev/opdrachtnemers/index.html" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Voor opdrachtnemers</a>
-      <a href="/dev/leveranciers/index.html" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Voor leveranciers</a>
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Alles over MKI in de GWW-sector</h1>
+      <p class="text-lg text-gray-600 mb-8">Ben je opdrachtgever, opdrachtnemer of leverancier? Hier vind je kennis, voorbeelden en tools om met de MilieuKostenIndicator (MKI) aan de slag te gaan – van beleid tot projectniveau.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="/dev/opdrachtgevers/index.html" class="bg-primary text-white px-6 py-3 rounded-full shadow hover:bg-emerald-800 transition">Voor opdrachtgevers</a>
+        <a href="/dev/opdrachtnemers/index.html" class="bg-primary text-white px-6 py-3 rounded-full shadow hover:bg-emerald-800 transition">Voor opdrachtnemers</a>
+        <a href="/dev/leveranciers/index.html" class="bg-primary text-white px-6 py-3 rounded-full shadow hover:bg-emerald-800 transition">Voor leveranciers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Uitleg blokken -->
+  <section class="py-14 px-6 bg-accent">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Wat is MKI?</h3>
+        <p class="text-sm text-gray-700">De MilieuKostenIndicator (MKI) maakt de milieu-impact van bouwwerken en producten meetbaar in euro’s. Een belangrijke stap naar objectieve verduurzaming.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Voor wie is dit platform?</h3>
+        <p class="text-sm text-gray-700">Voor alle partijen in de GWW-sector: van overheden en aannemers tot toeleveranciers die meer grip willen op duurzaamheid.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Wat vind je hier?</h3>
+        <p class="text-sm text-gray-700">Uitleg, stappenplannen, formats, tools, voorbeelden en actuele ontwikkelingen rondom MKI in praktijk en beleid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oproep tot verdieping -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-4">Nieuw met MKI?</h2>
+      <p class="text-gray-700 mb-6 text-sm">Begin met de basis. Lees hoe MKI werkt, hoe het toegepast wordt in projecten en waarom dit steeds belangrijker wordt richting 2027.</p>
+      <a href="#" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Lees meer over MKI</a>
     </div>
   </section>
 
