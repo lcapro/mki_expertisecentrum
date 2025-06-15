@@ -2,7 +2,9 @@
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     <!-- Logo -->
     <div class="flex items-center space-x-3">
-      <a href="/dev"><img src="/dev/logo_rechthoek.png" alt="MKI Logo" class="w-40 h-15"></a>
+      <a href="/dev">
+        <img src="/dev/logo_rechthoek.png" alt="MKI Logo" class="w-40 h-15">
+      </a>
     </div>
 
     <!-- Desktop navigatie -->
@@ -10,9 +12,9 @@
       <a href="/dev" class="hover:text-blue-600">Home</a>
 
       <!-- Informatie dropdown -->
-      <div class="relative group">
-        <div class="hover:text-blue-600 cursor-pointer">Informatie</div>
-        <div class="absolute left-0 mt-2 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 z-50">
+      <div class="relative">
+        <button class="hover:text-blue-600 cursor-pointer" data-dropdown-id="info-dropdown">Informatie</button>
+        <div data-dropdown-content="info-dropdown" class="absolute left-0 mt-2 hidden flex-col bg-white shadow-md rounded-md w-48 z-50">
           <a href="/dev/wat-is-mki.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Wat is MKI?</a>
           <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Blogs</a>
           <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
@@ -20,9 +22,9 @@
       </div>
 
       <!-- Diensten dropdown -->
-      <div class="relative group">
-        <div class="hover:text-blue-600 cursor-pointer">Diensten</div>
-        <div class="absolute left-0 mt-2 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-52 z-50">
+      <div class="relative">
+        <button class="hover:text-blue-600 cursor-pointer" data-dropdown-id="diensten-dropdown">Diensten</button>
+        <div data-dropdown-content="diensten-dropdown" class="absolute left-0 mt-2 hidden flex-col bg-white shadow-md rounded-md w-52 z-50">
           <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
           <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
           <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor leveranciers</a>
@@ -49,8 +51,8 @@
 
     <!-- Informatie mobiel -->
     <div>
-      <button data-dropdown-toggle="info-dropdown" class="w-full text-left hover:text-blue-600">Informatie</button>
-      <div id="info-dropdown" class="hidden ml-4 mt-1 space-y-1">
+      <button data-dropdown-toggle="info-dropdown-mob" class="w-full text-left hover:text-blue-600">Informatie</button>
+      <div id="info-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
         <a href="/dev/wat-is-mki.html" class="block px-2 py-1 hover:bg-[#e0e7ff]">Wat is MKI?</a>
         <a href="#" class="block px-2 py-1 hover:bg-[#e0e7ff]">Blogs</a>
         <a href="#" class="block px-2 py-1 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
@@ -59,8 +61,8 @@
 
     <!-- Diensten mobiel -->
     <div>
-      <button data-dropdown-toggle="diensten-dropdown" class="w-full text-left hover:text-blue-600">Diensten</button>
-      <div id="diensten-dropdown" class="hidden ml-4 mt-1 space-y-1">
+      <button data-dropdown-toggle="diensten-dropdown-mob" class="w-full text-left hover:text-blue-600">Diensten</button>
+      <div id="diensten-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
         <a href="/dev/opdrachtgevers" class="block px-2 py-1 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
         <a href="/dev/opdrachtnemers" class="block px-2 py-1 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
         <a href="/dev/leveranciers" class="block px-2 py-1 hover:bg-[#e0e7ff]">Voor leveranciers</a>
