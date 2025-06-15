@@ -25,24 +25,8 @@
 </head>
 <body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
-  <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <a href="/dev/index.html"><img src="../logo.png" alt="MKI Logo" class="w-10 h-10"></a>
-        <span class="text-xl font-semibold">MKI Expertisecentrum</span>
-      </div>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="/dev/index.html" class="hover:text-blue-600">Home</a>
-        <a href="#" class="hover:text-blue-600">Blogs</a>
-        <a href="#" class="hover:text-blue-600">Nieuwsbrief</a>
-        <a href="/dev/opdrachtgevers/index.html" class="hover:text-blue-600">Opdrachtgevers</a>
-        <a href="/dev/opdrachtnemers/index.html" class="hover:text-blue-600">Opdrachtnemers</a>
-        <a href="/dev/leveranciers/index.html" class="hover:text-blue-600">Leveranciers</a>
-        <a href="#" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Header via include -->
+  <div id="main-header"></div>
 
   <!-- Hero -->
   <section class="text-center py-20 px-6 bg-white shadow-sm">
@@ -82,6 +66,15 @@
       </div>
     </div>
   </section>
+
+  <!-- Scripts -->
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>
