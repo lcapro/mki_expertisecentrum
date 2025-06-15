@@ -22,11 +22,21 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Gedragsscript voor sticky header -->
+  <script src="/dev/js/header-behavior.js" defer></script>
 </head>
 <body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
   <!-- Header -->
   <div id="main-header"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
 
   <!-- Hero Section -->
   <section class="bg-white border-b border-gray-200 py-16 px-4 md:px-10">
@@ -87,41 +97,4 @@
       <ul class="space-y-4 text-sm">
         <li><a href="#" class="text-primary hover:underline">🛠️ LCA tool voor asfalt – lcapro.nl</a></li>
         <li><a href="#" class="text-primary hover:underline">📘 Uitleg MKI & LCA-methodiek</a></li>
-        <li><a href="#" class="text-primary hover:underline">📄 Checklist: voorbereiding MKI-aanbesteding</a></li>
-        <li><a href="#" class="text-primary hover:underline">📄 Voorbeeldproject met MKI-aanpak</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-4">Sparren of hulp nodig?</h2>
-      <p class="text-gray-700 mb-6 text-sm">Heb je vragen over MKI-toepassing in je organisatie of lopende aanbestedingen? Wij denken graag met je mee.</p>
-      <div id="contact-button"></div>
-    </div>
-  </section>
-
-  <!-- Script loader -->
-  <script>
-    // Laad header en gedragsscript
-    fetch("/dev/includes/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("main-header").innerHTML = data;
-
-        const script = document.createElement("script");
-        script.src = "/dev/js/header-behavior.js";
-        document.body.appendChild(script);
-      });
-
-    // Laad contact-knop
-    fetch("/dev/includes/contact-button.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("contact-button").innerHTML = data;
-      });
-  </script>
-
-</body>
-</html>
+        <li><a href="#" class="text-primary hover:underline">📄 Checklist: vo
