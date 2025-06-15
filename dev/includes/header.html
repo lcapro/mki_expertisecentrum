@@ -22,13 +22,33 @@
           dropdown.classList.toggle('hidden');
         });
       });
+
+      // ✅ Scrollgedrag voor header tonen/verbergen
+      let lastScroll = window.scrollY;
+      const header = document.getElementById('smart-header');
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScroll && currentScroll > 50) {
+          // Naar beneden scrollen – verberg header
+          header.classList.remove('top-0');
+          header.classList.add('-top-full');
+        } else {
+          // Naar boven scrollen – toon header
+          header.classList.remove('-top-full');
+          header.classList.add('top-0');
+        }
+
+        lastScroll = currentScroll;
+      });
     });
   </script>
 </head>
 <body class="bg-gray-50">
 
-  <!-- ✅ Sticky, altijd zichtbare header -->
-  <header class="bg-white shadow-md sticky top-0 z-[999]">
+  <!-- ✅ Sticky & slim scrollgedrag -->
+  <header id="smart-header" class="bg-white shadow-md sticky top-0 z-[999] transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
