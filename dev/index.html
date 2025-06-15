@@ -26,35 +26,15 @@
 <body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
   <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <a href="/dev/index.html"><img src="./logo.png" alt="MKI Logo" class="w-10 h-10"></a>
-        <span class="text-xl font-semibold">MKI Expertisecentrum</span>
-      </div>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="/dev/index.html" class="hover:text-blue-600">Home</a>
-        <div class="relative group">
-          <button class="hover:text-blue-600">Informatie</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-48">
-            <a href="/dev/wat-is-mki.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Wat is MKI?</a>
-            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Blogs</a>
-            <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
-          </div>
-        </div>
-        <div class="relative group">
-          <button class="hover:text-blue-600">Diensten</button>
-          <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md mt-2 w-52">
-            <a href="/dev/opdrachtgevers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
-            <a href="/dev/opdrachtnemers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
-            <a href="/dev/leveranciers/index.html" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor leveranciers</a>
-          </div>
-        </div>
-        <a href="#" class="hover:text-blue-600">Discussie</a>
-        <a href="#" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-  </header>
+<div id="main-header"></div>
+
+<script>
+  fetch("/includes/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("main-header").innerHTML = data;
+    });
+</script>
 
   <!-- Hero / Intro -->
   <section class="text-center py-20 px-6 bg-white shadow-sm">
