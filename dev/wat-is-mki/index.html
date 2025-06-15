@@ -30,6 +30,9 @@
 
   <!-- Header -->
   <div id="main-header"></div>
+  
+  <!-- Spacer om overlap te voorkomen -->
+  <div class="h-[72px] md:h-[80px]"></div>
   <script>
     fetch("/dev/includes/header.html")
       .then(response => response.text())
