@@ -22,30 +22,19 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Gedragsscript -->
+  <script src="/dev/js/header-behavior.js" defer></script>
 </head>
 <body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
   <!-- Header -->
   <div id="main-header"></div>
-
-  <!-- Scripts -->
   <script>
-    // Laad de header en daarna het gedragsscript
     fetch("/dev/includes/header.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("main-header").innerHTML = data;
-
-        const script = document.createElement("script");
-        script.src = "/dev/js/header-behavior.js";
-        document.body.appendChild(script);
-      });
-
-    // Contactbutton include
-    fetch("/dev/includes/contact-button.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("contact-button").innerHTML = data;
       });
   </script>
 
