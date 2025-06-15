@@ -28,27 +28,6 @@
   <!-- Header -->
   <div id="main-header"></div>
 
-  <!-- Scripts -->
-  <script>
-    // Laad header en gedragsscript
-    fetch("/dev/includes/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("main-header").innerHTML = data;
-
-        const script = document.createElement("script");
-        script.src = "/dev/js/header-behavior.js";
-        document.body.appendChild(script);
-      });
-
-    // Laad contactknop
-    fetch("/dev/includes/contact-button.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("contact-button").innerHTML = data;
-      });
-  </script>
-
   <!-- Hero Section -->
   <section class="bg-white border-b border-gray-200 py-16 px-4 md:px-10">
     <div class="max-w-5xl mx-auto text-center">
@@ -122,6 +101,27 @@
       <div id="contact-button"></div>
     </div>
   </section>
+
+  <!-- Script loader -->
+  <script>
+    // Laad header en gedragsscript
+    fetch("/dev/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+
+        const script = document.createElement("script");
+        script.src = "/dev/js/header-behavior.js";
+        document.body.appendChild(script);
+      });
+
+    // Laad contact-knop
+    fetch("/dev/includes/contact-button.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("contact-button").innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>
