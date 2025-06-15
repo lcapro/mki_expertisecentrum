@@ -29,7 +29,7 @@
 <div id="main-header"></div>
 
 <script>
-  fetch("/includes/header.html")
+  fetch("/dev/includes/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("main-header").innerHTML = data;
