@@ -25,18 +25,20 @@
 </head>
 <body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
 
-  <!-- Header -->
+  <!-- Header wordt geladen via fetch -->
   <div id="main-header"></div>
   <script>
     fetch("/dev/includes/header.html")
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => {
         document.getElementById("main-header").innerHTML = data;
+
+        // Laad gedragsscript pas nadat header is toegevoegd
+        const script = document.createElement("script");
+        script.src = "/dev/js/header-behavior.js";
+        document.body.appendChild(script);
       });
   </script>
-  
-  <!-- Gedrag na inladen header -->
-  <script src="/dev/js/header-behavior.js" defer></script>
 
   <!-- Hero -->
   <section class="text-center py-20 px-6 bg-white shadow-sm">
@@ -76,15 +78,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Scripts -->
-  <script>
-    fetch("/dev/includes/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("main-header").innerHTML = data;
-      });
-  </script>
 
 </body>
 </html>
