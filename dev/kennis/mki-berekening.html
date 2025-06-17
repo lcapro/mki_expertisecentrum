@@ -11,19 +11,18 @@
     }
     .sticky-nav {
       position: sticky;
-      top: 100px; /* voorkomt overlap met header */
+      top: 1rem;
     }
     .toc-link {
       transition: all 0.2s ease-in-out;
     }
     .toc-link:hover {
-      color: #0B7D6D;
+      color: #2563eb;
       font-weight: 600;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
+<body class="bg-gray-50 text-gray-800">
   <!-- Header -->
   <div id="main-header"></div>
   <div class="h-[72px] md:h-[80px]"></div>
@@ -35,12 +34,10 @@
       });
   </script>
 
-  <!-- Pagina wrapper -->
-  <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
-
-    <!-- Sticky inhoudsopgave -->
+  <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Sticky Table of Contents -->
     <aside class="hidden md:block md:col-span-1">
-      <nav class="sticky-nav bg-white border border-gray-200 rounded-lg shadow p-4">
+      <nav class="sticky-nav bg-white rounded-lg shadow p-4">
         <h2 class="text-lg font-semibold mb-4">Inhoudsopgave</h2>
         <ul class="space-y-2 text-sm">
           <li><a class="toc-link" href="#inleiding">1. Inleiding</a></li>
@@ -56,10 +53,10 @@
     </aside>
 
     <!-- Main content -->
-    <main class="md:col-span-3 space-y-16">
+    <main class="md:col-span-3 space-y-12 prose max-w-none">
 
       <!-- Titelblok met metadata -->
-      <section class="md:col-span-3 bg-white p-6 md:p-10 rounded-lg shadow mb-6 mt-[88px]">
+      <section class="bg-white p-6 md:p-10 rounded-lg shadow mb-4">
         <!-- Breadcrumbs -->
         <nav class="text-sm text-gray-500 mb-4">
           <ol class="list-reset flex space-x-2">
@@ -70,13 +67,13 @@
             <li class="text-gray-700">Verdiepende uitleg MKI</li>
           </ol>
         </nav>
-      
+
         <!-- Titel + metadata -->
         <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
           <div>
             <h1 class="text-4xl font-bold text-neutral-900 mb-2">Verdiepende uitleg over de MKI-berekening</h1>
             <p class="text-sm text-gray-600">
-              Door <strong>MKI expertisecentrum</strong> · Laatst bijgewerkt op <time datetime="2025-06-14">14 juni 2025</time>
+              Door <strong>LCApro</strong> · Laatst bijgewerkt op <time datetime="2025-06-14">14 juni 2025</time>
             </p>
           </div>
         </div>
