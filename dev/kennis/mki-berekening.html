@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MKI Berekeningsmethodiek</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0B7D6D',
-            accent: '#E1F4F0',
-            dark: '#1F2937'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif']
-          }
-        }
-      }
+  <title>Verdiepende uitleg over de MKI-berekening</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      scroll-behavior: smooth;
     }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="/dev/js/header-behavior.js" defer></script>
+    .sticky-nav {
+      position: sticky;
+      top: 1rem;
+    }
+    .toc-link {
+      transition: all 0.2s ease-in-out;
+    }
+    .toc-link:hover {
+      color: #2563eb;
+      font-weight: 600;
+    }
+  </style>
 </head>
-<body class="bg-[#f5f5f2] font-sans text-[#1F2937]">
-
   <!-- Header -->
   <div id="main-header"></div>
   <div class="h-[72px] md:h-[80px]"></div>
@@ -36,574 +32,92 @@
         document.getElementById("main-header").innerHTML = data;
       });
   </script>
-
-  <!-- Intro sectie -->
-  <section class="bg-white py-16 px-6 shadow-sm">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl font-bold mb-4 text-primary">MKI: Berekening van milieukosten uitgelegd</h1>
-      <p class="text-gray-600 text-sm">Laatste update: juni 2025 &middot; Door MKI Expertisecentrum</p>
-    </div>
-  </section>
-
-  <nav id="toc">
-  <strong>Inhoudsopgave</strong>
-  <ul>
-    <li><a href="#inleiding">1. Inleiding</a></li>
-    <li><a href="#basis">2. Internationale en nationale basis</a></li>
-    <li><a href="#rekenstappen">3. Overzicht rekenstappen</a></li>
-    <li><a href="#databronnen">4. Databronnen en kwaliteit</a></li>
-    <li><a href="#impact">5. Impactcategorieën & schaduwprijzen</a></li>
-    <li><a href="#software">6. Software en tools</a></li>
-    <li><a href="#fouten">7. Praktische aandachtspunten</a></li>
-    <li><a href="#verdieping">8. Vervolgstappen en verdieping</a></li>
-  </ul>
-</nav>
   
-<!-- Artikel body -->
-<section class="py-14 px-6 bg-[#f5f5f2]">
-  <div class="max-w-3xl mx-auto space-y-12 text-sm text-gray-800 leading-relaxed">
-
-<section id="inleiding">
-  <h2>1. Inleiding – Doel van dit artikel</h2>
-  <p>De Milieukostenindicator (MKI) is een indicator die milieubelasting kwantificeert in euro’s. Achter dit eenduidige getal schuilt echter een complexe, gestandaardiseerde rekenmethodiek. Dit artikel beschrijft hoe die berekening tot stand komt.</p>
-  <p>We behandelen de wetenschappelijke en normatieve basis van de MKI-score, de nationale vertaling via de Bepalingsmethode, de rol van databronnen zoals de Nationale Milieudatabase (NMD), de omzetting van milieueffecten naar maatschappelijke kosten, en de software die daarbij gebruikt wordt.</p>
-  <p>Deze verdieping is bedoeld voor professionals die zich bezighouden met MKI-berekeningen, toetsing, beleidsontwikkeling of duurzaam inkopen, en die grip willen krijgen op de onderliggende methodiek.</p>
-</section>
-
-<section id="hoofdstuk-2" class="prose max-w-none">
-  <h2>2. Internationale en nationale basis</h2>
-  <p>
-    De rekenmethodiek van de MKI is opgebouwd uit meerdere lagen van normen en richtlijnen, variërend van internationale ISO-standaarden tot Nederlandse uitvoeringsregels. Deze gelaagdheid zorgt voor consistentie, transparantie en vergelijkbaarheid van MKI-scores binnen projecten en aanbestedingen.
-  </p>
-
-  <h3 id="2-1-iso-14040-14044">2.1 ISO 14040 en 14044 – De basisprincipes van LCA</h3>
-  <p>
-    De fundamentele rekenkundige basis van de MKI is de levenscyclusanalyse (LCA). De internationale normen ISO 14040 en ISO 14044 beschrijven de opbouw, uitvoering en documentatie van een LCA. Ze structureren het proces in vier fasen:
-  </p>
-  <ol>
-    <li>Doel- en scopebepaling</li>
-    <li>Levenscyclusinventarisatie (LCI)</li>
-    <li>Levenscyclusimpactanalyse (LCIA)</li>
-    <li>Interpretatie van resultaten</li>
-  </ol>
-  <p>
-    Een MKI-score is feitelijk een gemonetariseerde uitkomst van de LCIA-stap, aangevuld met beleidsmatig vastgestelde schaduwprijzen.
-  </p>
-
-  <h3 id="2-2-en-15804">2.2 EN 15804 – Europese norm voor bouwproducten</h3>
-  <p>
-    Binnen Europa geldt EN 15804 als geharmoniseerde norm voor het opstellen van milieuprofielen van bouwproducten. Deze norm is leidend bij het opstellen van Environmental Product Declarations (EPD’s) voor de bouw.
-  </p>
-  <p>
-    De MKI-rekenmethodiek in Nederland sluit hierop aan, met extra nationale invulling.
-  </p>
-  <p>
-    Vanaf versie EN 15804+A2 wordt gewerkt met 19 impactcategorieën in plaats van 11. In Nederland is de invoering van deze herziene systematiek in voorbereiding en wordt verwacht vanaf 2026 verplicht te worden voor MKI-berekeningen.
-  </p>
-  <p>
-    Meer over deze wijziging lees je binnenkort in het artikel: <em>Wat verandert er met EN 15804+A2 in Nederland?</em> [link volgt]
-  </p>
-
-  <h3 id="2-3-bepalingsmethode">2.3 Nederlandse bepalingsmethode (versie 3.0 en hoger)</h3>
-  <p>
-    De officiële richtlijn voor MKI-berekeningen in Nederland is de Bepalingsmethode Milieuprestatie Bouwwerken, zoals beheerd door de Stichting Nationale Milieudatabase (NMD).
-  </p>
-  <p>Deze methode concretiseert de internationale en Europese normen voor de Nederlandse context en bevat onder meer:</p>
-  <ul>
-    <li>De elf verplichte impactcategorieën (volgens EN 15804+A1)</li>
-    <li>Gebruik van productdata via de NMD (categorie 1–3)</li>
-    <li>Schaduwprijzentabel voor monetarisering</li>
-    <li>Richtlijnen voor rapportage en kwaliteitsborging</li>
-  </ul>
-  <p>
-    De bepalingsmethode geldt zowel voor toepassing in de woningbouw (MPG) als in GWW-projecten (MKI), met per context andere functionele eenheden en gebruikstoepassingen.
-  </p>
-
-  <h3 id="2-4-mki-vs-mpg">2.4 Relatie tussen MKI en MPG</h3>
-  <p>
-    De Milieuprestatie Gebouwen (MPG) en de MKI gebruiken dezelfde rekenmethodiek, maar verschillen in toepassing en interpretatie:
-  </p>
-  <ul>
-    <li><strong>MPG:</strong> verplicht bij omgevingsvergunning voor nieuwbouw van woningen en kantoren. Score uitgedrukt in € / m² / jaar.</li>
-    <li><strong>MKI:</strong> vrijwillig, maar steeds vaker voorgeschreven in aanbestedingen voor GWW-projecten. Score in € per eenheid (bijv. per ton, m³, m¹ of totaalontwerp).</li>
-  </ul>
-  <p>
-    De onderliggende data, normen en software kunnen in beide gevallen hetzelfde zijn, maar de eisen aan afbakening en toetsing verschillen.
-  </p>
-</section>
-
-<section id="hoofdstuk-3" class="prose max-w-none">
-  <h2>3. Overzicht van de rekenstappen in een MKI-berekening</h2>
-  <p>
-    Een MKI-score komt tot stand via een gestructureerd rekenproces op basis van een levenscyclusanalyse (LCA). De berekening volgt vaste stappen en regels die zijn vastgelegd in de Bepalingsmethode Milieuprestatie Bouwwerken. Onderstaand overzicht beschrijft de belangrijkste stappen in het proces en de onderlinge samenhang.
-  </p>
-
-  <h3 id="3-1-functionele-eenheid">3.1 Bepalen van de functionele eenheid</h3>
-  <p>
-    De functionele eenheid is het vertrekpunt van elke MKI-berekening. Deze eenheid beschrijft precies wat er wordt beoordeeld, in welke hoeveelheden, over welke tijdsduur, en met welk prestatieniveau. Voorbeelden:
-  </p>
-  <ul>
-    <li>1 strekkende meter damwandconstructie gedurende 75 jaar</li>
-    <li>1 m² wegverharding inclusief fundering voor 40 jaar</li>
-    <li>1 betonnen duiker met diameter 2 m over een levensduur van 60 jaar</li>
-  </ul>
-  <p>
-    Een heldere definitie van de functionele eenheid is essentieel voor transparantie, herhaalbaarheid en vergelijkbaarheid van alternatieven.
-  </p>
-
-  <h3 id="3-2-systeemgrenzen">3.2 Afbakenen van systeemgrenzen</h3>
-  <p>
-    De systeemgrenzen bepalen welke levenscyclusfasen worden meegenomen in de berekening. Volgens de bepalingsmethode worden minimaal de volgende modules meegenomen:
-  </p>
-  <ul>
-    <li>Productie (A1–A3): grondstoffen, transport naar fabriek, productie</li>
-    <li>Transport naar bouwplaats (A4)</li>
-    <li>Bouwfase (A5)</li>
-    <li>Gebruik (B): onderhoud, reparatie, vervanging (indien relevant)</li>
-    <li>Einde levensduur (C1–C4): sloop, transport, verwerking</li>
-    <li>Potentiële hergebruik of recycling (D): optioneel, als data beschikbaar zijn</li>
-  </ul>
-  <p>Een correcte afbakening voorkomt onvergelijkbare resultaten en interpretatiefouten.</p>
-
-  <h3 id="3-3-lci">3.3 Levenscyclusinventarisatie (LCI)</h3>
-  <p>
-    In deze stap worden alle relevante materiaalketens en processen geïnventariseerd die bij het product of ontwerp horen. Denk aan:
-  </p>
-  <ul>
-    <li>Hoeveelheden en soorten grondstoffen</li>
-    <li>Transportafstanden en -middelen</li>
-    <li>Energieverbruik per processtap</li>
-    <li>Emissies en afvalstromen</li>
-  </ul>
-  <p>
-    De gebruikte gegevens zijn afkomstig uit productkaarten in de Nationale Milieudatabase (zie ook sectie 4), eventueel aangevuld met projectspecifieke data.
-  </p>
-
-  <h3 id="3-4-lcia">3.4 Impactanalyse (LCIA)</h3>
-  <p>
-    De geïnventariseerde data worden omgerekend naar milieu-impact in elf impactcategorieën, zoals:
-  </p>
-  <ul>
-    <li>Klimaatverandering (CO₂-equivalenten)</li>
-    <li>Verzuring (SO₂-equivalenten)</li>
-    <li>Smogvorming</li>
-    <li>Ecotoxiciteit</li>
-    <li>Uitputting van fossiele en abiotische grondstoffen</li>
-  </ul>
-  <p>
-    Deze impactcategorieën worden berekend per functionele eenheid en per levenscyclusfase. De totale milieubelasting is de som over alle fasen.
-  </p>
-
-  <h3 id="3-5-schaduwprijzen">3.5 Monetarisering via schaduwprijzen</h3>
-  <p>
-    Elke impactcategorie wordt omgezet naar een geldwaarde met behulp van beleidsmatig vastgestelde milieuschaduwprijzen. Deze schaduwprijzen drukken uit wat het zou kosten om het betreffende milieueffect maatschappelijk te compenseren of te voorkomen.
-  </p>
-  <p>
-    De formule is als volgt:
-  </p>
-  <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>MKI = ∑ (Impactcategorie × Schaduwprijs)</code></pre>
-  <p>
-    De uitkomst is een enkel getal in euro’s per functionele eenheid. Dit maakt het mogelijk om milieubelasting van varianten of materialen onderling te vergelijken op objectieve, economische basis.
-  </p>
-
-  <h3 id="3-6-rapportage">3.6 Rapportage en toetsing</h3>
-  <p>
-    De resultaten van de MKI-berekening worden gerapporteerd in een gestandaardiseerd format, waarbij inzichtelijk wordt gemaakt:
-  </p>
-  <ul>
-    <li>Welke databronnen zijn gebruikt (inclusief NMD-categorieën)</li>
-    <li>Welke aannames zijn gedaan (levensduur, onderhoud)</li>
-    <li>Wat de exacte definitie is van de functionele eenheid</li>
-    <li>Welk softwarepakket is gebruikt en of dit geverifieerd is</li>
-  </ul>
-  <p>
-    Deze rapportage is essentieel voor beoordeling door opdrachtgevers of toetsende instanties.
-  </p>
-</section>
-
-<section id="hoofdstuk-4" class="prose max-w-none">
-  <h2>4. Databronnen en kwaliteitsniveaus in MKI-berekeningen</h2>
-  <p>
-    Een betrouwbare MKI-berekening valt of staat met de kwaliteit van de onderliggende data. Daarom gelden in Nederland strikte regels voor het gebruik van productgegevens en milieuprofielen. Deze zijn vastgelegd in de Nationale Milieudatabase (NMD) en worden gecategoriseerd op basis van hun herkomst en betrouwbaarheid.
-  </p>
-
-  <h3 id="4-1-nmd">4.1 Nationale Milieudatabase (NMD)</h3>
-  <p>
-    De NMD vormt het centrale dataplatform voor MKI-berekeningen binnen de bouw- en infrasector. Deze database wordt beheerd door de Stichting Nationale Milieudatabase en bevat gevalideerde milieuprofielen van bouwproducten en bouwprocessen. De inhoud is afgestemd op de Nederlandse bepalingsmethode en volgt de Europese norm EN 15804.
-  </p>
-  <p>
-    De NMD kent drie typen gegevens, verdeeld in categorieën 1, 2 en 3. Deze indeling is essentieel bij de beoordeling van MKI-berekeningen, zeker bij toepassing in aanbestedingen of beleidskaders.
-  </p>
-
-  <h3 id="4-2-categorie-1">4.2 Categorie 1 – Productspecifieke data</h3>
-  <ul>
-    <li>Bron: individuele fabrikanten of leveranciers</li>
-    <li>Validatie: door een erkende LCA-deskundige en geverifieerd volgens de regels van de NMD</li>
-    <li>Betrouwbaarheid: hoog</li>
-    <li>Gebruik: aanbevolen voor projecten waarin nauwkeurigheid en verantwoording belangrijk zijn (bijvoorbeeld EMVI-aanbestedingen)</li>
-  </ul>
-  <p>
-    Categorie 1-data zijn het meest specifiek en bieden de mogelijkheid om duurzaam presterende producten aantoonbaar te belonen in gunningsprocedures.
-  </p>
-
-  <h3 id="4-3-categorie-2">4.3 Categorie 2 – Branchegemiddelden</h3>
-  <ul>
-    <li>Bron: brancheorganisaties of collectieven van producenten</li>
-    <li>Validatie: LCA-rapport, peer review en controle op consistentie</li>
-    <li>Betrouwbaarheid: gemiddeld</li>
-    <li>Gebruik: toegestaan als categorie 1-data niet beschikbaar zijn</li>
-  </ul>
-  <p>
-    Categorie 2 wordt vaak gebruikt als representatief uitgangspunt in ontwerpfases of voor materialen zonder projectspecifieke gegevens.
-  </p>
-
-  <h3 id="4-4-categorie-3">4.4 Categorie 3 – Generieke data (default)</h3>
-  <ul>
-    <li>Bron: literatuur, buitenlandse databases of inschattingen</li>
-    <li>Validatie: beperkt of afwezig</li>
-    <li>Betrouwbaarheid: laag</li>
-    <li>Gebruik: uitsluitend als tijdelijke placeholder of voor oriëntatie</li>
-  </ul>
-  <p>
-    Het gebruik van categorie 3-data wordt afgeraden voor toetsende MKI-berekeningen. In aanbestedingen wordt het gebruik vaak expliciet uitgesloten of ontmoedigd.
-  </p>
-
-  <h3 id="4-5-betrouwbaarheid">4.5 Gevolgen voor betrouwbaarheid en vergelijking</h3>
-  <p>
-    De gekozen databronnen hebben direct invloed op de betrouwbaarheid, transparantie en herleidbaarheid van de MKI-score. Projecten waarbij gebruik wordt gemaakt van uitsluitend categorie 1-data worden als beter onderbouwd beschouwd.
-  </p>
-  <p>
-    Daarom geldt bij veel opdrachtgevers:
-  </p>
-  <ul>
-    <li>Minimumeis: gebruik van categorie 1 en/of 2</li>
-    <li>Gunningsvoordeel: indien aantoonbaar duurzame keuzes met categorie 1 zijn onderbouwd</li>
-  </ul>
-  <p>
-    Controle op categoriegebruik maakt onderdeel uit van de beoordeling van MKI-berekeningen binnen EMVI-criteria.
-  </p>
-
-  <h3 id="4-6-herleidbaarheid">4.6 Samenhang met software en herleidbaarheid</h3>
-  <p>
-    Softwarepakketten die worden gebruikt voor MKI-berekeningen, zoals DuboCalc, maken gebruik van gevalideerde data uit de Nationale Milieudatabase. Sommige rekenprogramma’s maken deze database direct toegankelijk, andere verwerken de gegevens als onderdeel van vooraf gedefinieerde rekensjablonen.
-  </p>
-  <p>
-    Voor een controleerbare MKI-berekening geldt altijd:
-  </p>
-  <ul>
-    <li>Vermeld de exacte productkaart en versienummer</li>
-    <li>Benoem de categorie (1, 2 of 3) van de gebruikte data</li>
-    <li>Leg aannames of projectspecifieke invoer transparant vast</li>
-  </ul>
-  <p>
-    Herleidbaarheid en transparantie zijn essentieel, met name bij toetsing in het kader van aanbestedingen of subsidievoorwaarden.
-  </p>
-</section>
-
-<section id="hoofdstuk-5" class="prose max-w-none">
-  <h2>5. Impactcategorieën en schaduwprijzen</h2>
-  <p>
-    De kracht van de MKI-score zit in de mogelijkheid om een breed scala aan milieueffecten samen te brengen in één getal: een monetaire waarde in euro’s. Deze omzetting gebeurt op basis van beleidsmatig vastgestelde impactcategorieën en bijbehorende milieuschaduwprijzen.
-    Het resultaat is een objectief, beleidsmatig gewogen milieucijfer dat geschikt is voor vergelijking, sturing en beoordeling binnen projecten en aanbestedingen.
-  </p>
-
-  <h3 id="5-1-impactcategorieen">5.1 De elf verplichte impactcategorieën (EN 15804+A1)</h3>
-  <p>
-    Binnen de Nederlandse bepalingsmethode moeten MKI-berekeningen gebaseerd zijn op elf voorgeschreven impactcategorieën. Deze zijn afgeleid van de Europese norm EN 15804 (versie A1) en vormen het uitgangspunt voor alle MKI-berekeningen op basis van de huidige methodiek.
-  </p>
-  <ul>
-    <li>Klimaatverandering (fossiel)</li>
-    <li>Klimaatverandering (landgebruik & verandering)</li>
-    <li>Klimaatverandering (totaal)</li>
-    <li>Aantasting van de ozonlaag</li>
-    <li>Verzuring van bodem en water</li>
-    <li>Vermesting (eutrofiëring, zoet en marien)</li>
-    <li>Vorming van fotochemische oxidanten (smog)</li>
-    <li>Uitputting van abiotische grondstoffen (mineraal)</li>
-    <li>Gebruik van fossiele hulpbronnen</li>
-    <li>Toxiciteit voor mens en ecosysteem</li>
-    <li>Waterverbruik</li>
-  </ul>
-  <p>
-    Hoewel CO₂-uitstoot (klimaatverandering) een belangrijke component is, wordt bij de MKI-score dus altijd naar het gehele milieueffect gekeken.
-  </p>
-
-  <h3 id="5-2-schaduwprijzen">5.2 Monetarisering via schaduwprijzen</h3>
-  <p>
-    De milieueffecten uit de levenscyclusanalyse worden omgerekend naar euro’s met behulp van vaste schaduwprijzen, zoals vastgelegd in de Bepalingsmethode Milieuprestatie Bouwwerken.
-    Deze prijzen geven aan wat het maatschappelijk zou kosten om de milieuschade per eenheid uitstoot of verbruik te compenseren.
-  </p>
-  <p><strong>Schaduwprijzen per impactcategorie (Bepalingsmethode v3.0 en hoger):</strong></p>
-  <div class="overflow-x-auto">
-    <table class="table-auto border-collapse border border-gray-300 text-sm">
-      <thead>
-        <tr class="bg-gray-100">
-          <th class="border px-4 py-2 text-left">Milieu-impactcategorie</th>
-          <th class="border px-4 py-2 text-left">Equivalent eenheid</th>
-          <th class="border px-4 py-2 text-left">Weegfactor (€ / kg eq)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="border px-4 py-2">Uitputting abiotische grondstoffen (excl. fossiel)</td><td class="border px-4 py-2">Sb eq</td><td class="border px-4 py-2">€ 0,16</td></tr>
-        <tr><td class="border px-4 py-2">Uitputting fossiele energiedragers</td><td class="border px-4 py-2">Sb eq¹¹</td><td class="border px-4 py-2">€ 0,16</td></tr>
-        <tr><td class="border px-4 py-2">Klimaatverandering (100 jaar)</td><td class="border px-4 py-2">CO₂ eq</td><td class="border px-4 py-2">€ 0,05</td></tr>
-        <tr><td class="border px-4 py-2">Aantasting ozonlaag</td><td class="border px-4 py-2">CFK-11 eq</td><td class="border px-4 py-2">€ 30</td></tr>
-        <tr><td class="border px-4 py-2">Fotochemische oxidantvorming</td><td class="border px-4 py-2">C₂H₄ eq</td><td class="border px-4 py-2">€ 2</td></tr>
-        <tr><td class="border px-4 py-2">Verzuring</td><td class="border px-4 py-2">SO₂ eq</td><td class="border px-4 py-2">€ 4</td></tr>
-        <tr><td class="border px-4 py-2">Vermesting</td><td class="border px-4 py-2">PO₄ eq</td><td class="border px-4 py-2">€ 9</td></tr>
-        <tr><td class="border px-4 py-2">Humane toxiciteit</td><td class="border px-4 py-2">1,4-DCB eq</td><td class="border px-4 py-2">€ 0,09</td></tr>
-        <tr><td class="border px-4 py-2">Zoetwater aquatische ecotoxiciteit</td><td class="border px-4 py-2">1,4-DCB eq</td><td class="border px-4 py-2">€ 0,03</td></tr>
-        <tr><td class="border px-4 py-2">Mariene aquatische ecotoxiciteit</td><td class="border px-4 py-2">1,4-DCB eq</td><td class="border px-4 py-2">€ 0,0001</td></tr>
-        <tr><td class="border px-4 py-2">Terrestrische ecotoxiciteit</td><td class="border px-4 py-2">1,4-DCB eq</td><td class="border px-4 py-2">€ 0,06</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="text-sm mt-2">
-    Bron: Bepalingsmethode Milieuprestatie Bouwwerken (v3.0 en hoger) – Tabel 12, Stichting Nationale Milieudatabase
-  </p>
-
-  <h3 id="5-3-normalisatie">5.3 Gewichtsfactoren en normalisatie</h3>
-  <p>
-    Om de verschillende milieueffecten op een eenduidige manier te integreren tot één MKI-score, worden ze:
-  </p>
-  <ol>
-    <li>Genormaliseerd naar hun equivalent-eenheid</li>
-    <li>Gewogen met de schaduwprijs per categorie</li>
-    <li>Gesommeerd tot een totaalbedrag in euro’s per functionele eenheid</li>
-  </ol>
-  <p>
-    Deze werkwijze maakt het mogelijk om producten, materialen of ontwerpvarianten objectief te vergelijken op milieuprestatie.
-  </p>
-
-  <h3 id="5-4-a2">5.4 Overgang naar 19 impactcategorieën (EN 15804+A2)</h3>
-  <p>
-    De huidige MKI-methodiek is gebaseerd op de elf categorieën uit EN 15804+A1. Op Europees niveau is deze norm inmiddels herzien naar EN 15804+A2, met in totaal negentien impactcategorieën. De invoering van deze uitgebreidere set in Nederland wordt voorbereid en zal naar verwachting vanaf 2026 verplicht worden voor MKI-berekeningen.
-  </p>
-  <p>
-    Deze wijziging brengt onder andere met zich mee:
-  </p>
-  <ul>
-    <li>Nieuwe schaduwprijzentabel voor 19 i
-
-<section id="hoofdstuk-6" class="prose max-w-none">
-  <h2>6. Software en tools voor MKI-berekeningen</h2>
-  <p>
-    Hoewel de rekenprincipes achter de MKI-score gestandaardiseerd zijn, is gespecialiseerde software noodzakelijk om de berekening correct en efficiënt uit te voeren. 
-    Deze software helpt bij het modelleren van de levenscyclus, het selecteren van data uit de Nationale Milieudatabase (NMD) en het berekenen van de MKI-score volgens de Nederlandse bepalingsmethode.
-  </p>
-  <p>
-    In deze sectie bespreken we de meest gebruikte tools en hun toepassing in de praktijk.
-  </p>
-
-  <h3 id="6-1-dubocalc">6.1 DuboCalc – de standaard in de GWW-sector</h3>
-  <p>
-    DuboCalc is de meest gebruikte rekenapplicatie voor MKI-berekeningen in grond-, weg- en waterbouwprojecten. Het programma is ontwikkeld in opdracht van Rijkswaterstaat en sluit volledig aan op de bepalingsmethode Milieuprestatie Bouwwerken.
-  </p>
-  <p><strong>Belangrijke kenmerken van DuboCalc:</strong></p>
-  <ul>
-    <li>Directe koppeling met de NMD (inclusief categorie 1, 2 en 3 kaarten)</li>
-    <li>Moduleopbouw volgens EN 15804 (A1–A5, B, C, D)</li>
-    <li>Exportfunctie voor rapportages en indieningsformats</li>
-    <li>Geschikt voor gebruik in aanbestedingsprocedures (EMVI)</li>
-  </ul>
-  <p>
-    DuboCalc wordt vaak voorgeschreven bij Rijkswaterstaat- en provinciale projecten, en is toegespitst op civiele bouwwerken zoals wegen, bruggen, sluizen en kademuren.
-  </p>
-
-  <h3 id="6-2-alternatief">6.2 Alternatieve software en rekenplatforms</h3>
-  <p>
-    Naast DuboCalc zijn er andere tools beschikbaar die MKI-berekeningen kunnen ondersteunen, mits zij:
-  </p>
-  <ul>
-    <li>Werken op basis van de geldende bepalingsmethode</li>
-    <li>Gevalideerde koppelingen hebben met de NMD</li>
-    <li>Transparant rapporteren over data, categorieën en aannames</li>
-  </ul>
-  <p><strong>Voorbeelden van aanvullende toepassingen:</strong></p>
-  <ul>
-    <li>GPR Materiaal – gericht op milieuprestaties in de utiliteitsbouw</li>
-    <li>Simapro / openLCA – generieke LCA-software (veel gebruikt bij EPD-opstelling)</li>
-    <li>Tool van LCApro – gericht op het vereenvoudigd opstellen van LCA’s voor asfaltprojecten op basis van bestaande EPD’s</li>
-  </ul>
-  <p>
-    Een uitgebreider artikel over deze tool volgt binnenkort op <em>LCApro.nl</em>.
-  </p>
-  <p class="text-sm italic">
-    Let op: het is van belang dat de software expliciet rekent volgens de Nederlandse methodiek en voldoet aan de kwaliteitsrichtlijnen van de NMD.
-  </p>
-
-  <h3 id="6-3-aanbestedingen">6.3 Eisen aan softwaregebruik in aanbestedingen</h3>
-  <p>
-    Bij aanbestedingen waarin MKI wordt ingezet als gunningscriterium of minimumeis, stellen opdrachtgevers vaak aanvullende eisen aan de rekenwijze en het gebruikte softwarepakket.
-    Veelvoorkomende voorwaarden zijn:
-  </p>
-  <ul>
-    <li>Gebruik van een softwarepakket dat toegang heeft tot de actuele NMD</li>
-    <li>Duidelijke onderbouwing van gebruikte productkaarten en categorieën</li>
-    <li>Rapportage in een gestandaardiseerd format (bijvoorbeeld XML-export of PDF-rapportage uit DuboCalc)</li>
-  </ul>
-  <p>
-    Opdrachtgevers kunnen daarnaast controleren of de MKI-berekening herleidbaar, navolgbaar en controleerbaar is — en dus voldoet aan de bepalingsmethode.
-  </p>
-
-  <h3 id="6-4-visualisatie">6.4 Visualisatie, dashboards en monitoring</h3>
-  <p>
-    Sommige tools (of zelfgebouwde dashboards) maken het mogelijk om MKI-scores niet alleen te berekenen, maar ook te monitoren of visueel te presenteren. Denk aan:
-  </p>
-  <ul>
-    <li>Variantvergelijkingen in ontwerpstudies</li>
-    <li>MKI-ontwikkeling over tijd</li>
-    <li>Inzichten per levenscyclusfase of projectonderdeel</li>
-  </ul>
-  <p>
-    Voor dit type analyses is vaak maatwerk nodig, waarbij MKI-data uit DuboCalc of andere tools wordt gekoppeld aan projectomgevingen of BI-platforms.
-  </p>
-</section>
-
-<section id="hoofdstuk-7" class="prose max-w-none">
-  <h2>7. Praktische aandachtspunten en veelvoorkomende fouten</h2>
-  <p>
-    Een correcte MKI-berekening vereist meer dan alleen het doorlopen van technische rekenstappen. In de praktijk ontstaan regelmatig fouten of onvolkomenheden die de betrouwbaarheid en bruikbaarheid van de uitkomst ondermijnen. Zeker bij toepassing in aanbestedingen of beleidsbesluiten is het belangrijk om alert te zijn op een aantal aandachtspunten.
-    Deze sectie benoemt de meest voorkomende valkuilen, plus aanbevelingen om ze te voorkomen.
-  </p>
-
-  <h3 id="7-1-functionele-eenheid">7.1 Onduidelijke of inconsistente functionele eenheid</h3>
-  <p>
-    Een veelvoorkomende fout is het niet eenduidig definiëren van de functionele eenheid. Voor een betrouwbare MKI-vergelijking moet exact duidelijk zijn:
-  </p>
-  <ul>
-    <li>Wat wordt beoordeeld (bijvoorbeeld 1 m² wegverharding)</li>
-    <li>Voor welke periode (levensduur in jaren)</li>
-    <li>Onder welke gebruiksomstandigheden (intensiteit, onderhoudsscenario)</li>
-  </ul>
-  <p>
-    Zonder heldere functionele eenheid zijn MKI-scores tussen varianten of projecten niet zinvol te vergelijken.
-  </p>
-
-  <h3 id="7-2-datacategorieen">7.2 Onjuist gebruik van datacategorieën</h3>
-  <p>
-    Het verschil tussen categorie 1, 2 en 3 data wordt niet altijd goed toegepast of verantwoord. Veelgemaakte fouten:
-  </p>
-  <ul>
-    <li>Gebruik van categorie 3 waar categorie 1 beschikbaar is</li>
-    <li>Onjuiste aanname dat alle kaarten uit de NMD gelijkwaardig zijn</li>
-    <li>Verzuimen om toegepaste categorieën in de rapportage te benoemen</li>
-  </ul>
-  <p class="text-sm italic">
-    Let op: in veel aanbestedingen geldt een minimumeis voor datacategorie (bijv. uitsluitend categorie 1 en 2 toegestaan). Gebruik van categorie 3 zonder toelichting kan leiden tot afkeuring van een inschrijving.
-  </p>
-
-  <h3 id="7-3-verouderde-data">7.3 Verouderde of niet-herleidbare data</h3>
-  <p>
-    Het komt regelmatig voor dat productkaarten uit de NMD worden gebruikt waarvan de versie of geldigheid niet duidelijk is. Hierdoor ontstaat twijfel over de actualiteit van de MKI-score. Beste praktijk:
-  </p>
-  <ul>
-    <li>Vermeld altijd productkaartnummer én versiedatum</li>
-    <li>Controleer of de kaart nog geldig is via de NMD</li>
-    <li>Vermijd handmatige invoer of aanpassingen zonder transparante onderbouwing</li>
-  </ul>
-
-  <h3 id="7-4-systeemgrenzen">7.4 Fouten in de systeemgrenzen of modules</h3>
-  <p>
-    Zonder duidelijke afbakening van systeemgrenzen ontstaan fouten in de dekking van de berekening. Veelvoorkomende problemen:
-  </p>
-  <ul>
-    <li>Weglaten van modules A4–A5 (transport en aanleg)</li>
-    <li>Onvolledige invulling van onderhouds- of sloopscenario’s (B/C)</li>
-    <li>Onterecht meenemen van module D (potentiële hergebruik) zonder EPD-specificatie</li>
-  </ul>
-  <p>
-    De bepalingsmethode schrijft expliciet voor welke modules minimaal moeten worden meegenomen. Afwijken vereist onderbouwing.
-  </p>
-
-  <h3 id="7-5-rapportage">7.5 Onvoldoende rapportage of onderbouwing</h3>
-  <p>
-    Een MKI-score zonder context is niet toetsbaar. Toch ontbreekt in veel gevallen:
-  </p>
-  <ul>
-    <li>Een heldere beschrijving van het rekenmodel</li>
-    <li>Specificatie van gebruikte software en rekenversie</li>
-    <li>Verantwoording van aannames (zoals levensduur, onderhoudsfrequentie)</li>
-  </ul>
-  <p>
-    Zorg altijd voor een volledige rapportage conform de bepalingsmethode, zeker bij toetsbare toepassingen (aanbestedingen, beleidskaders, certificering).
-  </p>
-
-  <h3 id="7-6-interpretatie">7.6 Verkeerde interpretatie van de MKI-score</h3>
-  <p>
-    Een MKI-score is een hulpmiddel om milieu-impact economisch te duiden en onderling te vergelijken. Foutieve interpretaties zijn onder meer:
-  </p>
-  <ul>
-    <li>Aannemen dat een lage MKI-score automatisch circulair of biobased is</li>
-    <li>Vergelijken van MKI-scores met verschillende functionele eenheden of systeemgrenzen</li>
-    <li>Verwarren van MKI met MPG (Milieuprestatie Gebouwen)</li>
-  </ul>
-  <p>
-    Correct gebruik van de MKI vereist kennis van de context, een zuivere vergelijking en inzicht in de herkomst van de score.
-  </p>
-</section>
-
-<section id="hoofdstuk-8" class="prose max-w-none">
-  <h2>8. Vervolgstappen en verdieping</h2>
-  <p>
-    Een MKI-score is een krachtig instrument om milieuprestaties te objectiveren en onderling te vergelijken. Tegelijkertijd vraagt het correct opstellen en toepassen van een MKI-berekening om kennis van de bepalingsmethode, correcte data, transparante rapportage en passende software.
-  </p>
-  <p>
-    Wil je verder de diepte in of direct zelf aan de slag? Bekijk dan de volgende verdiepende artikelen en hulpmiddelen:
-  </p>
-  <ul>
-    <li>Stappenplan: hoe voer je een MKI-berekening uit?</li>
-    <li>Welke software en tools zijn er beschikbaar?</li>
-    <li>Wat verandert er met EN 15804+A2 en de 19 impactcategorieën?</li>
-    <li>Voorbeelden uit de praktijk: MKI in aanbestedingen en ontwerp</li>
-    <li>MKI versus MPG: verschillen en toepassingen</li>
-  </ul>
-  <p>
-    Wil je een eenvoudige manier om LCA’s op te stellen voor asfaltprojecten op basis van bestaande EPD’s? Houd dan <a href="https://www.lcapro.nl" target="_blank" rel="noopener">LCApro.nl</a> in de gaten voor een praktische tool.
-  </p>
-</section>
-
-
-      <!-- Sectie met inhoudelijke structuur -->
-      <div>
-        <h2 class="text-xl font-semibold mb-3">1. Internationale en nationale basis</h2>
-        <p>De rekenmethode van MKI is gebaseerd op internationale normen (zoals ISO 14040/44), Europese bouwstandaarden (EN 15804) en de Nederlandse bepalingsmethode via de Nationale Milieudatabase (NMD).</p>
-        <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-          <li><strong>ISO 14040 & 14044:</strong> basisprincipes van LCA</li>
-          <li><strong>EN 15804:</strong> milieuproductverklaringen (EPD’s) in de bouw</li>
-          <li><strong>Bepalingsmethode NL:</strong> richtlijnen voor MKI-toepassing</li>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Sticky Table of Contents -->
+    <aside class="hidden md:block md:col-span-1">
+      <nav class="sticky-nav bg-white rounded-lg shadow p-4">
+        <h2 class="text-lg font-semibold mb-4">Inhoudsopgave</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a class="toc-link" href="#inleiding">1. Inleiding</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-2">2. Internationale en nationale basis</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-3">3. Rekenstappen MKI</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-4">4. Databronnen & kwaliteit</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-5">5. Impactcategorieën</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-6">6. Software & tools</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-7">7. Praktische aandachtspunten</a></li>
+          <li><a class="toc-link" href="#hoofdstuk-8">8. Vervolgstappen</a></li>
         </ul>
-      </div>
+      </nav>
+    </aside>
 
-      <!-- Een blok met alternatieve opmaak -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
-        <h2 class="text-xl font-semibold mb-3 text-primary">Wat is een functionele eenheid?</h2>
-        <p>Elke MKI-berekening start met een functionele eenheid. Dit is de exacte omschrijving van wat je berekent – zoals 1 m² wegdek voor 40 jaar. Zonder heldere scope is vergelijking onmogelijk.</p>
-        <p class="mt-2 text-gray-600 italic">Voorbeelden:</p>
-        <ul class="list-disc list-inside text-gray-700 ml-4">
-          <li>1 strekkende meter damwand voor 75 jaar</li>
-          <li>1 betonnen duiker van 2 m doorsnede voor 60 jaar</li>
-        </ul>
-      </div>
+    <!-- Main content -->
+    <main class="md:col-span-3 space-y-12 prose max-w-none">
 
-      <!-- Paragraaf met link -->
-      <div>
-        <h2 class="text-xl font-semibold mb-3">Meer verdieping</h2>
-        <p>
-          Benieuwd naar de toekomst van MKI-berekeningen? Lees ook het artikel over <a href="/kennis/en-15804-a2-veranderingen.html" class="text-primary underline">EN 15804+A2 en de 19 impactcategorieën</a>.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA / Terug -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-sm text-gray-600 mb-4">Meer verdiepende artikelen over MKI en toepassing in de praktijk vind je in ons kennisoverzicht.</p>
-      <a href="/kennis" class="text-white bg-primary px-6 py-3 rounded-full font-semibold hover:bg-emerald-800 transition">Terug naar kennisbank</a>
-    </div>
-  </section>
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sticky navigation -->
+        <aside class="lg:col-span-1 sticky top-24 self-start">
+          <nav class="space-y-2 text-sm">
+            <a href="#inleiding" class="block text-blue-600 hover:underline">1. Inleiding</a>
+            <a href="#internationaal" class="block text-blue-600 hover:underline">2. Internationale en nationale basis</a>
+            <a href="#rekenstappen" class="block text-blue-600 hover:underline">3. Rekenstappen</a>
+            <a href="#databronnen" class="block text-blue-600 hover:underline">4. Databronnen</a>
+            <a href="#impactcategorieen" class="block text-blue-600 hover:underline">5. Impactcategorieën</a>
+            <a href="#software" class="block text-blue-600 hover:underline">6. Software & tools</a>
+            <a href="#aandachtspunten" class="block text-blue-600 hover:underline">7. Aandachtspunten</a>
+            <a href="#verdieping" class="block text-blue-600 hover:underline">8. Vervolgstappen</a>
+          </nav>
+        </aside>
+    
+        <!-- Article content -->
+        <article class="lg:col-span-3 space-y-12 text-gray-800">
+          <section id="inleiding">
+            <h2 class="text-2xl font-semibold mb-4">1. Inleiding – Doel van dit artikel</h2>
+            <p>De Milieukostenindicator (MKI) is een indicator die milieubelasting kwantificeert in euro’s. Achter dit eenduidige getal schuilt echter een complexe, gestandaardiseerde rekenmethodiek. Dit artikel beschrijft hoe die berekening tot stand komt.</p>
+            <p>We behandelen de wetenschappelijke en normatieve basis van de MKI-score, de nationale vertaling via de Bepalingsmethode, de rol van databronnen zoals de Nationale Milieudatabase (NMD), de omzetting van milieueffecten naar maatschappelijke kosten, en de software die daarbij gebruikt wordt.</p>
+            <p>Deze verdieping is bedoeld voor professionals die zich bezighouden met MKI-berekeningen, toetsing, beleidsontwikkeling of duurzaam inkopen, en die grip willen krijgen op de onderliggende methodiek.</p>
+          </section>
+          <section id="hoofdstuk-2" class="py-8 px-4 md:px-8 lg:px-16 bg-white">
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-neutral-800 mb-4">2. Internationale en nationale basis</h2>
+            <p class="mb-4">De rekenmethodiek van de MKI is opgebouwd uit meerdere lagen van normen en richtlijnen, variërend van internationale ISO-standaarden tot Nederlandse uitvoeringsregels. Deze gelaagdheid zorgt voor consistentie, transparantie en vergelijkbaarheid van MKI-scores binnen projecten en aanbestedingen.</p>
+        
+            <h3 class="text-2xl font-semibold text-neutral-700 mt-6 mb-2">2.1 ISO 14040 en 14044 – De basisprincipes van LCA</h3>
+            <p class="mb-4">De fundamentele rekenkundige basis van de MKI is de levenscyclusanalyse (LCA). De internationale normen ISO 14040 en ISO 14044 beschrijven de opbouw, uitvoering en documentatie van een LCA. Ze structureren het proces in vier fasen:</p>
+            <ul class="list-disc list-inside mb-4">
+              <li>Doel- en scopebepaling</li>
+              <li>Levenscyclusinventarisatie (LCI)</li>
+              <li>Levenscyclusimpactanalyse (LCIA)</li>
+              <li>Interpretatie van resultaten</li>
+            </ul>
+            <p class="mb-4">Een MKI-score is feitelijk een gemonetariseerde uitkomst van de LCIA-stap, aangevuld met beleidsmatig vastgestelde schaduwprijzen.</p>
+        
+            <h3 class="text-2xl font-semibold text-neutral-700 mt-6 mb-2">2.2 EN 15804 – Europese norm voor bouwproducten</h3>
+            <p class="mb-4">Binnen Europa geldt EN 15804 als geharmoniseerde norm voor het opstellen van milieuprofielen van bouwproducten. Deze norm is leidend bij het opstellen van Environmental Product Declarations (EPD’s) voor de bouw. De MKI-rekenmethodiek in Nederland sluit hierop aan, met extra nationale invulling.</p>
+            <p class="mb-4">Vanaf versie EN 15804+A2 wordt gewerkt met 19 impactcategorieën in plaats van 11. In Nederland is de invoering van deze herziene systematiek in voorbereiding en wordt verwacht vanaf 2026 verplicht te worden voor MKI-berekeningen.</p>
+            <p class="mb-4 italic">Meer over deze wijziging lees je binnenkort in het artikel: Wat verandert er met EN 15804+A2 in Nederland?</p>
+        
+            <h3 class="text-2xl font-semibold text-neutral-700 mt-6 mb-2">2.3 Nederlandse bepalingsmethode (versie 3.0 en hoger)</h3>
+            <p class="mb-4">De officiële richtlijn voor MKI-berekeningen in Nederland is de Bepalingsmethode Milieuprestatie Bouwwerken, zoals beheerd door de Stichting Nationale Milieudatabase (NMD). Deze methode concretiseert de internationale en Europese normen voor de Nederlandse context en bevat onder meer:</p>
+            <ul class="list-disc list-inside mb-4">
+              <li>De elf verplichte impactcategorieën (volgens EN 15804+A1)</li>
+              <li>Gebruik van productdata via de NMD (categorie 1–3)</li>
+              <li>Schaduwprijzentabel voor monetarisering</li>
+              <li>Richtlijnen voor rapportage en kwaliteitsborging</li>
+            </ul>
+            <p class="mb-4">De bepalingsmethode geldt zowel voor toepassing in de woningbouw (MPG) als in GWW-projecten (MKI), met per context andere functionele eenheden en gebruikstoepassingen.</p>
+        
+            <h3 class="text-2xl font-semibold text-neutral-700 mt-6 mb-2">2.4 Relatie tussen MKI en MPG</h3>
+            <p class="mb-4">De Milieuprestatie Gebouwen (MPG) en de MKI gebruiken dezelfde rekenmethodiek, maar verschillen in toepassing en interpretatie:</p>
+            <ul class="list-disc list-inside mb-4">
+              <li>MPG: verplicht bij omgevingsvergunning voor nieuwbouw van woningen en kantoren. Score uitgedrukt in € / m² / jaar.</li>
+              <li>MKI: vrijwillig, maar steeds vaker voorgeschreven in aanbestedingen voor GWW-projecten. Score in € per eenheid (bijv. per ton, m³, m¹ of totaalontwerp).</li>
+            </ul>
+            <p class="mb-4">De onderliggende data, normen en software kunnen in beide gevallen hetzelfde zijn, maar de eisen aan afbakening en toetsing verschillen.</p>
+          </div>
+        </section>
 
 </body>
 </html>
