@@ -566,5 +566,14 @@
 
     </main>
   </div>
+
+    <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
 </body>
 </html>
