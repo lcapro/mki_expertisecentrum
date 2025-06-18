@@ -26,6 +26,8 @@
 
   <!-- Header -->
   <div id="main-header"></div>
+  
+  <!-- Spacer om overlap te voorkomen -->
   <div class="h-[72px] md:h-[80px]"></div>
   <script>
     fetch("/dev/includes/header.html")
@@ -34,6 +36,10 @@
         document.getElementById("main-header").innerHTML = data;
       });
   </script>
+  
+  <!-- Gedrag na inladen header -->
+  <script src="/dev/js/header-behavior.js" defer></script>
+
 
   <!-- Pagina-inhoud -->
   <div class="max-w-7xl mx-auto px-4 pt-28 pb-12 grid grid-cols-1 md:grid-cols-4 gap-8">
