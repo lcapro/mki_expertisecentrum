@@ -101,3 +101,13 @@
         <li><a href="#" class="text-primary hover:underline">🛠️ LCA tool voor asfalt – lcapro.nl</a></li>
         <li><a href="#" class="text-primary hover:underline">📘 Uitleg MKI & LCA-methodiek</a></li>
         <li><a href="#" class="text-primary hover:underline">📄 Checklist: vo
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
