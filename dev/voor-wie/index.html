@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKI Expertisecentrum – Voor wie is dit platform?</title>
+  <meta name="description" content="Voor welke doelgroepen is MKI relevant? Deze pagina laat zien hoe opdrachtgevers, opdrachtnemers en leveranciers MKI kunnen inzetten voor duurzamere GWW-projecten." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/voor-wie" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Voor wie is dit platform? – MKI Expertisecentrum" />
+  <meta property="og:description" content="Van opdrachtgevers tot leveranciers: ontdek hoe verschillende partijen MKI kunnen inzetten in de GWW-sector." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/voor-wie" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Voor wie is dit platform? – MKI Expertisecentrum" />
+  <meta name="twitter:description" content="Uitleg en verwijzingen per doelgroep over hoe MKI praktisch kan worden toegepast in ontwerp, aanbesteding en uitvoering." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B7D6D',
+            accent: '#E1F4F0',
+            dark: '#1F2937'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <script src="/dev/js/header-behavior.js" defer></script>
+</head>
+<body class="bg-accent font-sans text-dark">
+
+  <!-- Header -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <section class="bg-white border-b border-gray-200 py-16 px-4 md:px-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-primary">Voor wie is dit platform?</h1>
+      <p class="text-lg text-gray-600 mb-6">Het MKI Expertisecentrum is er voor alle partijen die duurzaamheid in GWW-projecten serieus nemen — van beleidsmakers tot uitvoerders. Ontdek wat MKI voor jou kan betekenen.</p>
+    </div>
+  </section>
+
+  <!-- Doelgroepen -->
+  <section class="py-16 px-6 bg-accent">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+
+      <a href="/dev/opdrachtgevers" class="bg-white p-6 rounded-xl shadow hover:shadow-md transition block">
+        <img src="/dev/images/icon-opdrachtgevers.png" alt="Opdrachtgevers" class="mx-auto w-14 h-14 mb-4" />
+        <h3 class="text-xl font-semibold text-primary mb-2">Opdrachtgevers</h3>
+        <p class="text-sm text-gray-700">Waterschappen, provincies, gemeenten en rijk: stel eisen, vergelijk varianten en toets MKI-scores.</p>
+      </a>
+
+      <a href="/dev/opdrachtnemers" class="bg-white p-6 rounded-xl shadow hover:shadow-md transition block">
+        <img src="/dev/images/icon-aannemers.png" alt="Opdrachtnemers" class="mx-auto w-14 h-14 mb-4" />
+        <h3 class="text-xl font-semibold text-primary mb-2">Opdrachtnemers</h3>
+        <p class="text-sm text-gray-700">Voor civiele aannemers: scoor op EMVI, onderbouw je ontwerp en verwerk MKI in uitvoering.</p>
+      </a>
+
+      <a href="/dev/leveranciers" class="bg-white p-6 rounded-xl shadow hover:shadow-md transition block">
+        <img src="/dev/images/icon-leveranciers.png" alt="Leveranciers" class="mx-auto w-14 h-14 mb-4" />
+        <h3 class="text-xl font-semibold text-primary mb-2">Leveranciers</h3>
+        <p class="text-sm text-gray-700">Voor producenten van materialen en componenten: maak je milieuprestatie aantoonbaar en aantrekkelijk.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Adviseurs / beleid -->
+  <section class="py-12 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-4 text-primary">Ook relevant voor beleidsmakers en adviseurs</h2>
+      <p class="text-gray-700 text-sm mb-4">
+        MKI speelt een steeds grotere rol in beleid, subsidies, normstelling en duurzaamheidskaders. Ook adviesbureaus gebruiken MKI als basis voor LCA’s, aanbestedingsadvies of monitoring. Binnenkort volgt hier meer informatie specifiek voor deze doelgroep.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 bg-accent">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-xl font-bold mb-3">Nieuw met MKI?</h2>
+      <p class="text-sm text-gray-700 mb-6">Start met de basis en ontdek hoe MKI werkt in jouw rol of project.</p>
+      <a href="/dev/wat-is-mki" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Wat is MKI?</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
 
