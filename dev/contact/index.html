@@ -4,6 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – MKI Expertisecentrum</title>
+  <meta name="description" content="Neem contact op met het MKI Expertisecentrum voor ondersteuning bij MKI in ontwerp, aanbesteding of beleid binnen de GWW-sector." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/contact" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact – MKI Expertisecentrum" />
+  <meta property="og:description" content="Stel je vraag of plan een kennismaking met het MKI Expertisecentrum voor hulp bij duurzame projecten en aanbestedingen." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/contact" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact – MKI Expertisecentrum" />
+  <meta name="twitter:description" content="Hulp nodig bij MKI in ontwerp, aanbesteding of beleid? Neem contact op met het MKI Expertisecentrum." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -21,9 +43,20 @@
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="/dev/js/header-behavior.js" defer></script>
 </head>
-<body class="bg-[#f5f5f2] font-sans text-dark">
+<body class="bg-accent font-sans text-dark">
+
+  <!-- Header -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
 
   <!-- Hero -->
   <section class="bg-white py-20 px-6 shadow-sm">
