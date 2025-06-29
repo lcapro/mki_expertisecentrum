@@ -106,7 +106,16 @@
         <input type="hidden" name="_replyto" id="_replyto" value="">
 </form>
     </div>
+ 
   </section>
-
+    <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
 </body>
 </html>
