@@ -15,8 +15,8 @@
 
       <!-- Kennis dropdown - FIXED -->
       <div class="relative group">
-        <button class="hover:text-[#11785E] underline-offset-2 hover:underline">Kennisartikelen</button>
-        <div class="absolute left-0 mt-2 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-64 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+        <a href="/dev/kennis" class="hover:text-[#11785E] underline-offset-2 hover:underline inline-block">Kennisartikelen</a>
+        <div class="absolute left-0 mt-2 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-64 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
           <a href="/dev/en15804-a2-mki.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">EN15804 A2 & MKI</a>
           <a href="/dev/mki-als-integrale-score.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI als integrale score</a>
           <a href="/dev/mki-berekening.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI-berekening</a>
@@ -25,15 +25,15 @@
         </div>
       </div>
 
-      <!-- Overige ongewijzigd -->
-      <div class="relative">
-        <button class="hover:text-[#11785E] underline-offset-2 hover:underline" data-dropdown-id="diensten-dropdown">Diensten</button>
-        <div data-dropdown-content="diensten-dropdown" class="absolute left-0 mt-2 hidden flex-col bg-white shadow-md rounded-md w-52 z-50">
-          <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtgevers</a>
-          <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtnemers</a>
-          <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor leveranciers</a>
-        </div>
+    <!-- Diensten -->
+    <div class="relative group">
+      <a href="/dev/diensten" class="hover:text-[#11785E] underline-offset-2 hover:underline inline-block">Diensten</a>
+      <div class="absolute left-0 mt-2 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-52 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+        <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtgevers</a>
+        <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtnemers</a>
+        <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor leveranciers</a>
       </div>
+    </div>
 
       <a href="#" class="hover:text-[#11785E] underline-offset-2 hover:underline">Discussie</a>
       <a href="/dev/over-ons" class="hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
