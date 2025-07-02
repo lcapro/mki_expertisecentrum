@@ -115,14 +115,27 @@
   <script>
     const searchInput = document.getElementById('searchInput');
     const articles = document.querySelectorAll('section article');
-
+    const noResults = document.getElementById('noResults');
+  
     searchInput.addEventListener('input', () => {
       const query = searchInput.value.toLowerCase();
-
+      let matches = 0;
+  
       articles.forEach(article => {
         const content = article.innerText.toLowerCase();
-        article.style.display = content.includes(query) ? '' : 'none';
+        const match = content.includes(query);
+  
+        // fade in/out effect
+        article.style.transition = 'opacity 0.3s ease';
+        article.style.opacity = match ? '1' : '0';
+        setTimeout(() => {
+          article.style.display = match ? '' : 'none';
+        }, 300);
+  
+        if (match) matches++;
       });
+  
+      noResults.classList.toggle('hidden', matches > 0);
     });
   </script>
 
