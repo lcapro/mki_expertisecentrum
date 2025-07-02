@@ -6,27 +6,25 @@
 
   <title>Over ons – MKI Expertisecentrum</title>
   <meta name="description" content="Wie wij zijn, waarom we MKI begrijpelijk willen maken en hoe we opdrachtgevers, opdrachtnemers en leveranciers helpen bij duurzaam inkopen en ontwerpen." />
-  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/over" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/dev/images/favicon.ico" type="image/x-icon" />
-
-  <!-- Open Graph (voor LinkedIn, Facebook) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Over ons – MKI Expertisecentrum" />
   <meta property="og:description" content="Maak kennis met het team achter MKI Expertisecentrum en ontdek onze missie om MKI praktisch en toepasbaar te maken in de GWW." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/over" />
   <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-preview.png" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Over ons – MKI Expertisecentrum" />
   <meta name="twitter:description" content="Wij helpen je om MKI werkbaar te maken in projecten, aanbestedingen en beleid. Ontmoet het team en onze aanpak." />
   <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-preview.png" />
 
-  <!-- Fonts & Tailwind config -->
+  <link rel="icon" href="/dev/images/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -34,22 +32,26 @@
         extend: {
           colors: {
             primary: '#0B7D6D',
-            accent: '#E1F4F0',
-            dark: '#1F2937'
+            hovergreen: '#11785E',
+            lightgreen: '#E1F4F0',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
           }
         }
       }
     }
   </script>
-
-  <!-- JS gedrag header -->
   <script src="/dev/js/header-behavior.js" defer></script>
 </head>
 
-<body class="bg-accent font-sans text-dark">
+<body class="bg-whitegray font-sans text-dark">
 
   <!-- Header -->
   <div id="main-header"></div>
@@ -62,60 +64,54 @@
       });
   </script>
 
-
   <!-- Hero -->
   <section class="text-center py-20 px-6 bg-white shadow-sm">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-content mx-auto">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Wat is MKI?</h1>
-      <p class="text-lg text-gray-600 mb-6">
+      <p class="text-lg text-dark mb-6 max-w-2xl mx-auto">
         De MilieuKostenIndicator (MKI) is een instrument om duurzaamheid van bouwprojecten en materialen objectief en vergelijkbaar te maken. Hier lees je wat het is, hoe het werkt en wat je eraan hebt.
       </p>
     </div>
   </section>
 
-  <!-- Uitleg MKI - afwisselend wit en accent -->
-  <section class="py-14 px-6 bg-accent">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+  <!-- MKI uitleg blokken -->
+  <section class="py-20 px-6 bg-lightgreen">
+    <div class="max-w-content mx-auto grid md:grid-cols-2 gap-8">
 
-      <!-- Block 1 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Wat is de MKI?</h2>
-        <p class="text-sm text-gray-700">
+        <p class="text-base text-dark">
           De Milieukostenindicator (MKI) drukt de milieubelasting van een product, ontwerp of project uit in één getal, weergegeven in euro’s. Dit getal vertegenwoordigt de kosten die theoretisch nodig zijn om milieuschade te herstellen. De MKI is gebaseerd op een levenscyclusanalyse (LCA) en wordt breed toegepast binnen de GWW-sector.
         </p>
       </div>
 
-      <!-- Block 2 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Waarom is MKI relevant voor de GWW-sector?</h2>
-        <p class="text-sm text-gray-700">
+        <p class="text-base text-dark">
           De MKI biedt opdrachtgevers en opdrachtnemers een objectieve methode om duurzaamheid te betrekken bij ontwerpkeuzes, aanbestedingen en uitvoering. Denk aan het vergelijken van materiaalopties, het onderbouwen van variantenstudies of het opnemen van MKI als EMVI-criterium. 
           <a href="/dev/kennis/mki-in-projectfases.html" class="text-primary underline">Lees hoe MKI past in verschillende projectfases</a>.
         </p>
       </div>
 
-      <!-- Block 3 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Hoe wordt een MKI-score berekend?</h2>
-        <p class="text-sm text-gray-700">
+        <p class="text-base text-dark">
           Een MKI-score is gebaseerd op een levenscyclusanalyse (LCA) van een product of bouwwerk. Hierbij worden alle relevante fasen – van grondstofwinning tot productie, transport, gebruik en einde levensduur – meegenomen. 
           <a href="/dev/kennis/mki-berekening.html" class="text-primary underline">Lees meer over de rekenmethodiek</a>.
         </p>
       </div>
 
-      <!-- Block 4 -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Wat maakt MKI waardevol?</h2>
-        <p class="text-sm text-gray-700">
+        <p class="text-base text-dark">
           De MKI biedt een integrale benadering van duurzaamheid. Circulariteit, biobased materiaalgebruik, CO₂-reductie en andere thema’s worden samengebracht in één score. 
           <a href="/dev/kennis/mki-als-integrale-score.html" class="text-primary underline">Bekijk hoe MKI zich verhoudt tot CO₂ en circulariteit</a>.
         </p>
       </div>
 
-      <!-- Block 5 -->
-      <div class="bg-white p-6 rounded-xl shadow-md md:col-span-2">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen md:col-span-2">
         <h2 class="text-xl font-semibold mb-3 text-primary">Toepassing in de praktijk</h2>
-        <p class="text-sm text-gray-700">
+        <p class="text-base text-dark">
           In de praktijk wordt MKI toegepast bij aanbestedingen (als gunningscriterium of minimumeis), tijdens de ontwerpfase voor variantvergelijking, en in monitoring van milieuprestaties. Zowel overheden, aannemers als leveranciers gebruiken MKI om keuzes te onderbouwen en impact aantoonbaar te verlagen. 
           <a href="/dev/kennis/tools-en-voorbeelden.html" class="text-primary underline">Bekijk praktische tools en voorbeelden</a>.
         </p>
@@ -125,18 +121,18 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-4">En nu aan de slag?</h2>
-      <p class="text-gray-700 mb-6 text-sm">Kies jouw rol en bekijk hoe je MKI toepast in jouw organisatie of project.</p>
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">En nu aan de slag?</h2>
+      <p class="text-base text-dark mb-8">Kies jouw rol en bekijk hoe je MKI toepast in jouw organisatie of project.</p>
       <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a href="/dev/opdrachtgevers/index.html" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Voor opdrachtgevers</a>
-        <a href="/dev/opdrachtnemers/index.html" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Voor opdrachtnemers</a>
-        <a href="/dev/leveranciers/index.html" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Voor leveranciers</a>
+        <a href="/dev/opdrachtgevers/index.html" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Voor opdrachtgevers</a>
+        <a href="/dev/opdrachtnemers/index.html" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Voor opdrachtnemers</a>
+        <a href="/dev/leveranciers/index.html" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Voor leveranciers</a>
       </div>
     </div>
   </section>
- 
+
   <!-- Footer -->
   <div id="main-footer"></div>
   <script>
