@@ -9,11 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --diep-groen: #0B7D6D;
+      --bladgroen: #11785E;
+      --lichtgroen: #E4F4E2;
+      --warm-geel: #FFD166;
+      --donkergrijs: #1F2937;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #ffffff;
-      color: #1F2937;
+      color: var(--donkergrijs);
     }
 
     header {
@@ -49,15 +57,16 @@
 
     nav a, nav button {
       text-decoration: none;
-      color: #1F2937;
+      color: var(--donkergrijs);
       background: none;
       border: none;
       cursor: pointer;
       padding: 8px;
+      font-family: 'Inter', sans-serif;
     }
 
     nav a:hover, nav button:hover {
-      color: #11785E;
+      color: var(--bladgroen);
     }
 
     .dropdown-content {
@@ -75,11 +84,12 @@
     .dropdown-content a {
       padding: 12px 16px;
       display: block;
-      color: #1F2937;
+      color: var(--donkergrijs);
+      text-decoration: none;
     }
 
     .dropdown-content a:hover {
-      background-color: #E4F4E2;
+      background-color: var(--lichtgroen);
     }
 
     .mobile-menu-button {
@@ -124,6 +134,9 @@
 </head>
 <body>
 
+<!-- Nodig voor observer in header-behavior.js -->
+<div id="main-header"></div>
+
 <header id="smart-header">
   <div class="container">
     <a href="/dev">
@@ -133,7 +146,8 @@
     <nav>
       <a href="/dev">Home</a>
 
-      <div class="dropdown" style="position: relative;">
+      <!-- Desktop dropdown: Kennisartikelen -->
+      <div style="position: relative;">
         <button data-dropdown-id="info-dropdown">Kennisartikelen</button>
         <div data-dropdown-content="info-dropdown" class="dropdown-content hidden">
           <a href="/dev/kennis">Kennisartikelen</a>
@@ -142,7 +156,8 @@
         </div>
       </div>
 
-      <div class="dropdown" style="position: relative;">
+      <!-- Desktop dropdown: Diensten -->
+      <div style="position: relative;">
         <button data-dropdown-id="diensten-dropdown">Diensten</button>
         <div data-dropdown-content="diensten-dropdown" class="dropdown-content hidden">
           <a href="/dev/opdrachtgevers">Voor opdrachtgevers</a>
@@ -159,7 +174,7 @@
     <button class="mobile-menu-button" id="mobile-menu-button">☰</button>
   </div>
 
-  <!-- Mobiel menu -->
+  <!-- Mobiele navigatie -->
   <div id="mobile-menu" class="mobile-menu hidden">
     <a href="/dev">Home</a>
 
@@ -183,11 +198,8 @@
   </div>
 </header>
 
-<!-- Laad jouw bestaande script -->
+<!-- Jouw bestaande script -->
 <script src="/mki_expertisecentrum/dev/js/header-behavior.js"></script>
-
-<!-- Element dat de observer gebruikt -->
-<div id="main-header"></div>
 
 </body>
 </html>
