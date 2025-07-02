@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/contact" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact – MKI Expertisecentrum" />
   <meta property="og:description" content="Stel je vraag of plan een kennismaking met het MKI Expertisecentrum voor hulp bij duurzame projecten en aanbestedingen." />
@@ -21,10 +21,9 @@
   <meta name="twitter:description" content="Hulp nodig bij MKI in ontwerp, aanbesteding of beleid? Neem contact op met het MKI Expertisecentrum." />
   <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  <!-- Fonts & CSS -->
+  <!-- Fonts & Tailwind -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -33,11 +32,17 @@
         extend: {
           colors: {
             primary: '#0B7D6D',
-            accent: '#E1F4F0',
-            dark: '#1F2937'
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
           }
         }
       }
@@ -45,7 +50,7 @@
   </script>
   <script src="/dev/js/header-behavior.js" defer></script>
 </head>
-<body class="bg-accent font-sans text-dark">
+<body class="bg-whitegray font-sans text-dark">
 
   <!-- Header -->
   <div id="main-header"></div>
@@ -60,35 +65,35 @@
 
   <!-- Hero -->
   <section class="bg-white py-20 px-6 shadow-sm">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-4xl font-bold text-primary mb-4">Neem contact op</h1>
-      <p class="text-lg text-gray-700">Heb je vragen over MKI, wil je sparren over een project of zoek je ondersteuning? We helpen je graag verder.</p>
+    <div class="max-w-content mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Neem contact op</h1>
+      <p class="text-lg text-dark max-w-2xl mx-auto">Heb je vragen over MKI, wil je sparren over een project of zoek je ondersteuning? We helpen je graag verder.</p>
     </div>
   </section>
 
   <!-- Formulier -->
-  <section class="py-16 px-6 bg-accent">
-    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow">
+  <section class="py-20 px-6 bg-lightgreen">
+    <div class="max-w-2xl mx-auto bg-white p-10 rounded-lg shadow border border-hovergreen">
       <form action="https://formspree.io/f/xzzgynze" method="POST" class="space-y-6">
         <div>
-          <label for="naam" class="block text-sm font-medium text-gray-700 mb-1">Naam</label>
-          <input type="text" name="naam" id="naam" class="w-full border border-gray-300 rounded-lg p-3 text-sm" required>
+          <label for="naam" class="block text-sm font-medium text-dark mb-1">Naam</label>
+          <input type="text" name="naam" id="naam" class="w-full border border-gray-300 rounded-lg p-3 text-base" required>
         </div>
         <div>
-          <label for="organisatie" class="block text-sm font-medium text-gray-700 mb-1">Organisatie</label>
-          <input type="organisatie" name="organisatie" id="organisatie" class="w-full border border-gray-300 rounded-lg p-3 text-sm" required>
+          <label for="organisatie" class="block text-sm font-medium text-dark mb-1">Organisatie</label>
+          <input type="text" name="organisatie" id="organisatie" class="w-full border border-gray-300 rounded-lg p-3 text-base" required>
         </div>
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mailadres</label>
-          <input type="email" name="email" id="email" class="w-full border border-gray-300 rounded-lg p-3 text-sm" required>
+          <label for="email" class="block text-sm font-medium text-dark mb-1">E-mailadres</label>
+          <input type="email" name="email" id="email" class="w-full border border-gray-300 rounded-lg p-3 text-base" required>
         </div>
         <div>
-          <label for="telefoon" class="block text-sm font-medium text-gray-700 mb-1">Telefoonnummer</label>
-          <input type="tel" name="telefoon" id="telefoon" class="w-full border border-gray-300 rounded-lg p-3 text-sm">
+          <label for="telefoon" class="block text-sm font-medium text-dark mb-1">Telefoonnummer</label>
+          <input type="tel" name="telefoon" id="telefoon" class="w-full border border-gray-300 rounded-lg p-3 text-base">
         </div>
         <div>
-          <label for="rol" class="block text-sm font-medium text-gray-700 mb-1">Ik ben een...</label>
-          <select name="rol" id="rol" class="w-full border border-gray-300 rounded-lg p-3 text-sm">
+          <label for="rol" class="block text-sm font-medium text-dark mb-1">Ik ben een...</label>
+          <select name="rol" id="rol" class="w-full border border-gray-300 rounded-lg p-3 text-base">
             <option value="">Maak een keuze</option>
             <option value="opdrachtgever">Opdrachtgever</option>
             <option value="opdrachtnemer">Opdrachtnemer</option>
@@ -97,18 +102,18 @@
           </select>
         </div>
         <div>
-          <label for="bericht" class="block text-sm font-medium text-gray-700 mb-1">Bericht</label>
-          <textarea name="bericht" id="bericht" rows="5" class="w-full border border-gray-300 rounded-lg p-3 text-sm" required></textarea>
+          <label for="bericht" class="block text-sm font-medium text-dark mb-1">Bericht</label>
+          <textarea name="bericht" id="bericht" rows="5" class="w-full border border-gray-300 rounded-lg p-3 text-base" required></textarea>
         </div>
-        <div>
-          <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Verstuur bericht</button>
+        <div class="pt-4">
+          <button type="submit" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Verstuur bericht</button>
         </div>
         <input type="hidden" name="_replyto" id="_replyto" value="">
-</form>
+      </form>
     </div>
- 
   </section>
-    <!-- Footer -->
+
+  <!-- Footer -->
   <div id="main-footer"></div>
   <script>
     fetch("/dev/includes/footer.html")
