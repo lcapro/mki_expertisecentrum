@@ -34,26 +34,29 @@
         extend: {
           colors: {
             primary: '#0B7D6D',
-            accent: '#E1F4F0',
-            dark: '#1F2937'
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
           }
         }
       }
     }
   </script>
 
-  <!-- Gedragsscript -->
   <script src="/dev/js/header-behavior.js" defer></script>
 </head>
-<body class="bg-accent font-sans text-dark">
+<body class="bg-whitegray font-sans text-dark">
 
   <!-- Header -->
   <div id="main-header"></div>
-  
-  <!-- Spacer om overlap te voorkomen -->
   <div class="h-[72px] md:h-[80px]"></div>
   <script>
     fetch("/dev/includes/header.html")
@@ -65,48 +68,49 @@
 
   <!-- Hero -->
   <section class="bg-white py-20 px-6 shadow-sm">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-4xl font-bold text-primary mb-4">Maak jouw product aantrekkelijker voor duurzame projecten</h1>
-      <p class="text-lg text-gray-700 max-w-xl mx-auto">Met een gevalideerde LCA en MKI-score laat je zien dat jouw product klaar is voor de toekomst. Transparant, aantoonbaar en geschikt voor elk project waar duurzaamheid telt.</p>
+    <div class="max-w-content mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Maak jouw product aantrekkelijker voor duurzame projecten</h1>
+      <p class="text-lg text-dark max-w-2xl mx-auto">Met een gevalideerde LCA en MKI-score laat je zien dat jouw product klaar is voor de toekomst. Transparant, aantoonbaar en geschikt voor elk project waar duurzaamheid telt.</p>
     </div>
   </section>
 
   <!-- Highlight blokken -->
-  <section class="py-16 px-6 bg-accent">
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+  <section class="py-16 px-6 bg-lightgreen">
+    <div class="max-w-content mx-auto grid md:grid-cols-2 gap-8">
 
-      <div class="bg-white p-6 rounded shadow">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold text-primary mb-2">Wat opdrachtgevers vragen</h2>
-        <p class="text-sm text-gray-700">EMVI-criteria, MKI-minimumeisen en CO₂-doelstellingen zijn de nieuwe standaard. Zonder betrouwbare data ben je snel uitgesloten.</p>
+        <p class="text-base text-dark">EMVI-criteria, MKI-minimumeisen en CO₂-doelstellingen zijn de nieuwe standaard. Zonder betrouwbare data ben je snel uitgesloten.</p>
       </div>
 
-      <div class="bg-white p-6 rounded shadow">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold text-primary mb-2">Wat een LCA je oplevert</h2>
-        <ul class="list-disc list-inside text-sm text-gray-700">
+        <ul class="list-disc list-inside text-base text-dark space-y-2">
           <li>Toegang tot duurzame aanbestedingen</li>
           <li>Productkaarten voor gebruik in DuboCalc</li>
           <li>Versterkt je positionering als duurzame leverancier</li>
         </ul>
       </div>
 
-      <div class="bg-white p-6 rounded shadow">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold text-primary mb-2">NMD-opname: wel of niet?</h2>
-        <p class="text-sm text-gray-700">Opname in de Nationale Milieudatabase is niet verplicht, maar verhoogt wel je betrouwbaarheid en vindbaarheid bij ontwerpers en aannemers.</p>
+        <p class="text-base text-dark">Opname in de Nationale Milieudatabase is niet verplicht, maar verhoogt wel je betrouwbaarheid en vindbaarheid bij ontwerpers en aannemers.</p>
       </div>
 
-      <div class="bg-white p-6 rounded shadow">
+      <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold text-primary mb-2">Snel geregeld</h2>
-        <p class="text-sm text-gray-700">Wij helpen je bij het opstellen van een volledige, toetsbare LCA volgens de Nederlandse bepalingsmethode. Efficiënt, helder en direct toepasbaar.</p>
+        <p class="text-base text-dark">Wij helpen je bij het opstellen van een volledige, toetsbare LCA volgens de Nederlandse bepalingsmethode. Efficiënt, helder en direct toepasbaar.</p>
       </div>
+
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-4">Klaar om je product toekomstbestendig te maken?</h2>
-      <p class="text-gray-700 text-sm mb-6">Neem contact met ons op voor een vrijblijvend gesprek over de mogelijkheden van een LCA en MKI-berekening voor jouw product.</p>
-      <a href="/contact" class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-emerald-800 transition">Neem contact op</a>
+  <section class="py-20 px-6 bg-white border-t border-gray-200">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Klaar om je product toekomstbestendig te maken?</h2>
+      <p class="text-base text-dark mb-8">Neem contact met ons op voor een vrijblijvend gesprek over de mogelijkheden van een LCA en MKI-berekening voor jouw product.</p>
+      <a href="/contact" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Neem contact op</a>
     </div>
   </section>
 
@@ -121,4 +125,3 @@
   </script>
 </body>
 </html>
-
