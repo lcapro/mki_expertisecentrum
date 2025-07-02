@@ -1,205 +1,71 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MKI Expertisecentrum</title>
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --diep-groen: #0B7D6D;
-      --bladgroen: #11785E;
-      --lichtgroen: #E4F4E2;
-      --warm-geel: #FFD166;
-      --donkergrijs: #1F2937;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: var(--donkergrijs);
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index: 999;
-      transition: top 0.3s ease;
-    }
-
-    header.-top-full {
-      top: -100%;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav {
-      display: flex;
-      gap: 24px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    nav a, nav button {
-      text-decoration: none;
-      color: var(--donkergrijs);
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    nav a:hover, nav button:hover {
-      color: var(--bladgroen);
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      border-radius: 6px;
-      margin-top: 6px;
-      min-width: 200px;
-      z-index: 1000;
-      flex-direction: column;
-    }
-
-    .dropdown-content a {
-      padding: 12px 16px;
-      display: block;
-      color: var(--donkergrijs);
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background-color: var(--lichtgroen);
-    }
-
-    .mobile-menu-button {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-    }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      padding: 16px;
-      gap: 8px;
-    }
-
-    .mobile-submenu {
-      margin-left: 16px;
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .mobile-menu-button {
-        display: block;
-      }
-
-      .mobile-menu.show {
-        display: flex;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<!-- Nodig voor observer in header-behavior.js -->
-<div id="main-header"></div>
-
-<header id="smart-header">
-  <div class="container">
+<header id="smart-header" class="bg-white shadow-md fixed top-0 w-full z-[999] transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
     <a href="/dev">
-      <img src="/dev/logo_rechthoek.png" alt="MKI Logo" style="width: 160px;">
+      <img src="/dev/logo_rechthoek.png" alt="MKI Logo" class="w-40 h-auto">
     </a>
 
-    <nav>
-      <a href="/dev">Home</a>
+    <!-- Desktop navigatie -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <a href="/dev" class="hover:text-blue-600">Home</a>
 
-      <!-- Desktop dropdown: Kennisartikelen -->
-      <div style="position: relative;">
-        <button data-dropdown-id="info-dropdown">Kennisartikelen</button>
-        <div data-dropdown-content="info-dropdown" class="dropdown-content hidden">
-          <a href="/dev/kennis">Kennisartikelen</a>
-          <a href="#">Blogs</a>
-          <a href="#">Nieuwsbrieven</a>
+      <!-- Informatie dropdown -->
+      <div class="relative">
+        <button class="hover:text-blue-600" data-dropdown-id="info-dropdown">Kennisartikelen</button>
+        <div data-dropdown-content="info-dropdown" class="absolute left-0 mt-2 hidden flex-col bg-white shadow-md rounded-md w-48 z-50">
+          <a href="/dev/kennis" class="block px-4 py-2 hover:bg-[#e0e7ff]">Kennisartikelen</a>
+          <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Blogs</a>
+          <a href="#" class="block px-4 py-2 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
         </div>
       </div>
 
-      <!-- Desktop dropdown: Diensten -->
-      <div style="position: relative;">
-        <button data-dropdown-id="diensten-dropdown">Diensten</button>
-        <div data-dropdown-content="diensten-dropdown" class="dropdown-content hidden">
-          <a href="/dev/opdrachtgevers">Voor opdrachtgevers</a>
-          <a href="/dev/opdrachtnemers">Voor opdrachtnemers</a>
-          <a href="/dev/leveranciers">Voor leveranciers</a>
+      <!-- Diensten dropdown -->
+      <div class="relative">
+        <button class="hover:text-blue-600" data-dropdown-id="diensten-dropdown">Diensten</button>
+        <div data-dropdown-content="diensten-dropdown" class="absolute left-0 mt-2 hidden flex-col bg-white shadow-md rounded-md w-52 z-50">
+          <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
+          <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
+          <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#e0e7ff]">Voor leveranciers</a>
         </div>
       </div>
 
-      <a href="#">Discussie</a>
-      <a href="/dev/over-ons">Over ons</a>
-      <a href="/dev/contact">Contact</a>
+      <a href="#" class="hover:text-blue-600">Discussie</a>
+      <a href="/dev/over-ons" class="hover:text-blue-600">Over ons</a>
+      <a href="/dev/contact" class="hover:text-blue-600">Contact</a>
     </nav>
 
-    <button class="mobile-menu-button" id="mobile-menu-button">☰</button>
+    <!-- Mobiel menu button -->
+    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
   </div>
 
-  <!-- Mobiele navigatie -->
-  <div id="mobile-menu" class="mobile-menu hidden">
-    <a href="/dev">Home</a>
-
-    <button data-dropdown-toggle="info-dropdown-mob">Informatie ▾</button>
-    <div id="info-dropdown-mob" class="mobile-submenu hidden">
-      <a href="/dev/wat-is-mki.html">Wat is MKI?</a>
-      <a href="#">Blogs</a>
-      <a href="#">Nieuwsbrieven</a>
+  <!-- Mobiel menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium">
+    <a href="/dev" class="block hover:text-blue-600">Home</a>
+    <div>
+      <button data-dropdown-toggle="info-dropdown-mob" class="w-full text-left hover:text-blue-600">Informatie</button>
+      <div id="info-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
+        <a href="/dev/wat-is-mki.html" class="block px-2 py-1 hover:bg-[#e0e7ff]">Wat is MKI?</a>
+        <a href="#" class="block px-2 py-1 hover:bg-[#e0e7ff]">Blogs</a>
+        <a href="#" class="block px-2 py-1 hover:bg-[#e0e7ff]">Nieuwsbrieven</a>
+      </div>
     </div>
-
-    <button data-dropdown-toggle="diensten-dropdown-mob">Diensten ▾</button>
-    <div id="diensten-dropdown-mob" class="mobile-submenu hidden">
-      <a href="/dev/opdrachtgevers">Voor opdrachtgevers</a>
-      <a href="/dev/opdrachtnemers">Voor opdrachtnemers</a>
-      <a href="/dev/leveranciers">Voor leveranciers</a>
+    <div>
+      <button data-dropdown-toggle="diensten-dropdown-mob" class="w-full text-left hover:text-blue-600">Diensten</button>
+      <div id="diensten-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
+        <a href="/dev/opdrachtgevers" class="block px-2 py-1 hover:bg-[#e0e7ff]">Voor opdrachtgevers</a>
+        <a href="/dev/opdrachtnemers" class="block px-2 py-1 hover:bg-[#e0e7ff]">Voor opdrachtnemers</a>
+        <a href="/dev/leveranciers" class="block px-2 py-1 hover:bg-[#e0e7ff]">Voor leveranciers</a>
+      </div>
     </div>
-
-    <a href="#">Discussie</a>
-    <a href="/dev/over-ons">Over ons</a>
-    <a href="/dev/contact">Contact</a>
+    <a href="#" class="block hover:text-blue-600">Discussie</a>
+    <a href="/dev/over-ons" class="block hover:text-blue-600">Over ons</a>
+    <a href="/dev/contact" class="block hover:text-blue-600">Contact</a>
   </div>
 </header>
-
-<!-- Jouw bestaande script -->
-<script src="/mki_expertisecentrum/dev/js/header-behavior.js"></script>
-
-</body>
-</html>
