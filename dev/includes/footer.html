@@ -1,137 +1,57 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>MKI voor Opdrachtnemers in de GWW – MKI Expertisecentrum</title>
-  <meta name="description" content="MKI voor civiele aannemers: leer hoe je MKI toepast in aanbestedingen, ontwerp en uitvoering. Inclusief tools, praktijkvoorbeelden en procesondersteuning." />
-  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/opdrachtnemers" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="MKI voor Opdrachtnemers – MKI Expertisecentrum" />
-  <meta property="og:description" content="Voor civiele aannemers die MKI willen inzetten bij aanbestedingen, ontwerp en uitvoering. Praktisch, onderbouwd en toepasbaar." />
-  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/opdrachtnemers" />
-  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-opdrachtnemers.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MKI voor Opdrachtnemers – MKI Expertisecentrum" />
-  <meta name="twitter:description" content="Zo gebruik je MKI als aannemer: van inschrijving tot uitvoering. Praktische ondersteuning vanuit de GWW-sector." />
-  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-opdrachtnemers.png" />
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "MKI voor Opdrachtnemers",
-    "description": "Informatie en ondersteuning voor civiele aannemers in de GWW die MKI willen toepassen in aanbestedingen, ontwerp en uitvoering.",
-    "url": "https://www.mkiexpertisecentrum.nl/dev/opdrachtnemers"
-  }
-  </script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-  <!-- Fonts & Tailwind -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0B7D6D',
-            hovergreen: '#11785E',
-            lightgreen: '#E4F4E2',
-            yellow: '#FFD166',
-            dark: '#1F2937',
-            whitegray: '#FAFAF9'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif']
-          },
-          maxWidth: {
-            content: '1200px'
-          }
-        }
-      }
-    }
-  </script>
-
-  <script src="/dev/js/header-behavior.js" defer></script>
-</head>
-<body class="bg-whitegray font-sans text-dark">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SNE51N8K74');
-  </script>
-
-  <!-- Header -->
-  <!-- ... bestaande header blijft ongewijzigd ... -->
-
-  <!-- Footer -->
-  <footer class="bg-[#FAFAF9] mt-16 border-t border-[#E4F4E2] font-inter" itemscope itemtype="https://schema.org/Organization">
-    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-[#1F2937]">
-      <!-- Logo + Uitleg -->
-      <div>
-        <div class="flex items-center space-x-3 mb-4">
-          <img src="/dev/logo_rechthoek.png" alt="Logo MKI Expertisecentrum – platform voor MKI in de GWW-sector" class="w-40 h-auto" itemprop="logo">
-        </div>
-        <p>
-          <span itemprop="name">MKI Expertisecentrum</span> is het kennisplatform voor opdrachtgevers, opdrachtnemers en leveranciers die werken met MKI en LCA in de GWW-sector.
-        </p>
+<footer class="bg-[#FAFAF9] mt-16 border-t border-[#E4F4E2] font-inter" itemscope itemtype="https://schema.org/Organization">
+  <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-[#1F2937]">
+    
+    <!-- Logo + Omschrijving -->
+    <div>
+      <div class="flex items-center space-x-3 mb-4">
+        <img src="/dev/logo_rechthoek.png" alt="Logo MKI Expertisecentrum – platform voor MKI in de GWW-sector" class="w-40 h-auto" itemprop="logo">
       </div>
-
-      <!-- Navigatie -->
-      <div>
-        <h3 class="font-semibold text-[#0B7D6D] mb-2">Navigatie</h3>
-        <ul class="space-y-2">
-          <li><a href="/dev" class="hover:text-[#11785E]">Home – MKI Expertisecentrum</a></li>
-          <li><a href="/dev/opdrachtgevers" class="hover:text-[#11785E]">MKI voor opdrachtgevers</a></li>
-          <li><a href="/dev/opdrachtnemers" class="hover:text-[#11785E]">MKI voor opdrachtnemers</a></li>
-          <li><a href="/dev/leveranciers" class="hover:text-[#11785E]">MKI voor leveranciers</a></li>
-          <li><a href="#" class="hover:text-[#11785E]">Discussieplatform (binnenkort)</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
-        <h3 class="font-semibold text-[#0B7D6D] mb-2">Contact</h3>
-        <p class="mb-1">
-          <a href="mailto:info@mkiexpertisecentrum.nl" target="_blank" class="hover:text-[#11785E]" itemprop="email">
-            info@mkiexpertisecentrum.nl
-          </a>
-        </p>
-        <meta itemprop="contactType" content="Customer Support">
-        <meta itemprop="availableLanguage" content="Dutch">
-
-        <div class="mt-4 flex space-x-4">
-          <a href="https://linkedin.com/mkiexpertisecentrum" target="_blank" aria-label="LinkedIn" rel="noopener">
-            <svg class="w-5 h-5 text-[#1F2937] hover:text-[#11785E]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M4.98 3.5a2.5 2.5 0 112.5 2.5 2.5 2.5 0 01-2.5-2.5zM3 8h4v12H3zM9 8h3.6v1.71h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75V20h-4v-5.25c0-1.25 0-2.85-1.75-2.85S13 13.35 13 14.75V20H9z"/>
-            </svg>
-          </a>
-          <a href="mailto:info@mkiexpertisecentrum.nl" target="_blank" aria-label="E-mail" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1F2937] hover:text-[#11785E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
-        </div>
-      </div>
+      <p>
+        <span itemprop="name">MKI Expertisecentrum</span> is het kennisplatform voor opdrachtgevers, opdrachtnemers en leveranciers die werken met MKI en LCA in de GWW-sector.
+      </p>
     </div>
 
-    <div class="text-center text-xs text-[#1F2937] py-4 border-t border-[#E4F4E2]">
-      &copy; 2025 <span itemprop="name">MKI Expertisecentrum</span>. Alle rechten voorbehouden.
+    <!-- Navigatie -->
+    <div>
+      <h3 class="font-semibold text-[#0B7D6D] mb-2">Navigatie</h3>
+      <ul class="space-y-2">
+        <li><a href="/dev" class="hover:text-[#11785E]">Home – MKI Expertisecentrum</a></li>
+        <li><a href="/dev/opdrachtgevers" class="hover:text-[#11785E]">MKI voor opdrachtgevers</a></li>
+        <li><a href="/dev/opdrachtnemers" class="hover:text-[#11785E]">MKI voor opdrachtnemers</a></li>
+        <li><a href="/dev/leveranciers" class="hover:text-[#11785E]">MKI voor leveranciers</a></li>
+        <li><a href="#" class="hover:text-[#11785E]">Discussieplatform (binnenkort)</a></li>
+      </ul>
     </div>
-  </footer>
-</body>
-</html>
+
+    <!-- Contact -->
+    <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+      <h3 class="font-semibold text-[#0B7D6D] mb-2">Contact</h3>
+      <p class="mb-1">
+        <a href="mailto:info@mkiexpertisecentrum.nl" target="_blank" class="hover:text-[#11785E]" itemprop="email">
+          info@mkiexpertisecentrum.nl
+        </a>
+      </p>
+      <meta itemprop="contactType" content="Customer Support">
+      <meta itemprop="availableLanguage" content="Dutch">
+
+      <div class="mt-4 flex space-x-4">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/mkiexpertisecentrum" target="_blank" aria-label="LinkedIn" rel="noopener">
+          <svg class="w-5 h-5 text-[#1F2937] hover:text-[#11785E]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4.98 3.5a2.5 2.5 0 112.5 2.5 2.5 2.5 0 01-2.5-2.5zM3 8h4v12H3zM9 8h3.6v1.71h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75V20h-4v-5.25c0-1.25 0-2.85-1.75-2.85S13 13.35 13 14.75V20H9z"/>
+          </svg>
+        </a>
+        <!-- E-mail -->
+        <a href="mailto:info@mkiexpertisecentrum.nl" target="_blank" aria-label="E-mail" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1F2937] hover:text-[#11785E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center text-xs text-[#1F2937] py-4 border-t border-[#E4F4E2]">
+    &copy; 2025 <span itemprop="name">MKI Expertisecentrum</span>. Alle rechten voorbehouden.
+  </div>
+</footer>
