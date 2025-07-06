@@ -1,64 +1,61 @@
-<!-- Google Fonts in <head> -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<header id="smart-header" class="bg-white shadow-md fixed top-0 w-full z-[999] transition-all duration-300 font-[Inter]">
+<header id="smart-header" class="bg-white shadow-md fixed top-0 w-full z-[999] transition-all duration-300 font-[Inter]" role="banner">
   <div class="max-w-[1200px] mx-auto px-4 py-3 flex justify-between items-center">
 
     <!-- Logo -->
-    <a href="/dev">
-      <img src="/dev/logo_rechthoek.png" alt="MKI Logo" class="w-32 h-auto">
+    <a href="/dev" aria-label="Ga naar de homepage van MKI Expertisecentrum">
+      <img src="/dev/logo_rechthoek.png" alt="MKI Expertisecentrum – Logo" class="w-32 h-auto">
     </a>
 
     <!-- Desktop navigatie -->
-    <nav class="hidden md:flex space-x-6 text-sm font-normal text-[#1F2937] items-center">
-      <a href="/dev" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Home</a>
+    <nav class="hidden md:flex space-x-6 text-sm font-normal text-[#1F2937] items-center" role="navigation" aria-label="Hoofdnavigatie">
+      <a href="/dev" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Home – MKI Expertisecentrum</a>
 
       <!-- Kennisartikelen dropdown -->
-      <div class="relative group">
-        <a href="/dev/kennis" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Kennisartikelen</a>
+      <div class="relative group" aria-haspopup="true">
+        <a href="/dev/kennis" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Kennis over MKI & LCA</a>
         <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-64 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
           <a href="/dev/kennis/en15804-a2-mki.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">EN15804 A2 & MKI</a>
           <a href="/dev/kennis/mki-als-integrale-score.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI als integrale score</a>
-          <a href="/dev/kennis/mki-berekening.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI-berekening</a>
+          <a href="/dev/kennis/mki-berekening.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI-berekening uitleg</a>
           <a href="/dev/kennis/mki-in-projectfases.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI in projectfases</a>
-          <a href="/dev/kennis/tools-en-voorbeelden.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">Tools en voorbeelden</a>
+          <a href="/dev/kennis/tools-en-voorbeelden.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">Tools & praktijkvoorbeelden</a>
         </div>
       </div>
 
       <!-- Diensten dropdown -->
-      <div class="relative group">
-        <a href="/dev/diensten" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Diensten</a>
+      <div class="relative group" aria-haspopup="true">
+        <a href="/dev/diensten" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Diensten MKI Expertisecentrum</a>
         <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-52 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
-          <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtgevers</a>
-          <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtnemers</a>
-          <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor leveranciers</a>
+          <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtgevers (GWW)</a>
+          <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtnemers (aannemers)</a>
+          <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor leveranciers (producten)</a>
         </div>
       </div>
 
-      <a href="#" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Discussie</a>
-      <a href="/dev/over-ons" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
-      <a href="/dev/contact" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
+      <a href="#" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Discussieplatform (binnenkort)</a>
+      <a href="/dev/over-ons" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Over MKI Expertisecentrum</a>
+      <a href="/dev/contact" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Contact & support</a>
     </nav>
 
     <!-- Mobiel menu button -->
-    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+    <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Open mobiel menu">
       <svg class="w-6 h-6 text-[#1F2937]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
 
-  <!-- Mobiel menu (nog ongewijzigd) -->
-  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-normal text-[#1F2937]">
-    <a href="/dev" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Home</a>
+  <!-- Mobiel menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-normal text-[#1F2937]" aria-label="Mobiele navigatie">
+    <a href="/dev" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Home – MKI Expertisecentrum</a>
     <div>
-      <button data-dropdown-toggle="info-dropdown-mob" class="w-full text-left hover:text-[#11785E] underline-offset-2 hover:underline">Kennisartikelen</button>
+      <button data-dropdown-toggle="info-dropdown-mob" class="w-full text-left hover:text-[#11785E] underline-offset-2 hover:underline">Kennis over MKI & LCA</button>
       <div id="info-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
         <a href="/dev/en15804-a2-mki.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">EN15804 A2 & MKI</a>
         <a href="/dev/mki-als-integrale-score.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">MKI als integrale score</a>
         <a href="/dev/mki-berekening.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">MKI-berekening</a>
         <a href="/dev/mki-in-projectfases.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">MKI in projectfases</a>
-        <a href="/dev/tools-en-voorbeelden.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">Tools en voorbeelden</a>
+        <a href="/dev/tools-en-voorbeelden.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">Tools & voorbeelden</a>
       </div>
     </div>
     <div>
@@ -69,7 +66,7 @@
         <a href="/dev/leveranciers" class="block px-2 py-1 hover:bg-[#E4F4E2]">Voor leveranciers</a>
       </div>
     </div>
-    <a href="#" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Discussie</a>
+    <a href="#" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Discussieplatform</a>
     <a href="/dev/over-ons" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
     <a href="/dev/contact" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
   </div>
