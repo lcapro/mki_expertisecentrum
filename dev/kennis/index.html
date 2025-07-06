@@ -8,6 +8,8 @@
   <meta name="description" content="Verdiep je in MKI, LCA en duurzame projectsturing. Ontdek praktische kennisartikelen over methodiek, beleid en tools." />
   <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/kennisbank" />
   <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="MKI, LCA, milieuprestatie, duurzaamheid, GWW, CO2, schaduwprijzen, bouwproject, tools, kennisbank, infrastructuur, MPG, EN 15804, aanbesteding">
+  <meta name="author" content="MKI Expertisecentrum">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -24,6 +26,17 @@
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Kennisbank",
+    "description": "Verdiepende artikelen over MKI, LCA, milieuprestatie en duurzaamheid in GWW-projecten.",
+    "url": "https://www.mkiexpertisecentrum.nl/dev/kennisbank"
+  }
+  </script>
 
   <!-- Fonts & Tailwind -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -55,11 +68,9 @@
     body {
       scroll-behavior: smooth;
     }
-
     .toc-link {
       @apply text-dark font-medium transition duration-200;
     }
-
     .toc-link:hover {
       @apply text-hovergreen font-semibold;
     }
