@@ -1,73 +1,202 @@
-<header id="smart-header" class="bg-white shadow-md fixed top-0 w-full z-[999] transition-all duration-300 font-[Inter]" role="banner">
-  <div class="max-w-[1200px] mx-auto px-4 py-3 flex justify-between items-center">
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Logo -->
-    <a href="/dev" aria-label="Ga naar de homepage van MKI Expertisecentrum">
-      <img src="/dev/logo_rechthoek.png" alt="MKI Expertisecentrum – Logo" class="w-32 h-auto">
-    </a>
+  <title>MKI voor Opdrachtnemers in de GWW – MKI Expertisecentrum</title>
+  <meta name="description" content="MKI voor civiele aannemers: leer hoe je MKI toepast in aanbestedingen, ontwerp en uitvoering. Inclusief tools, praktijkvoorbeelden en procesondersteuning." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/opdrachtnemers" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- Desktop navigatie -->
-    <nav class="hidden md:flex space-x-6 text-sm font-normal text-[#1F2937] items-center" role="navigation" aria-label="Hoofdnavigatie">
-      <a href="/dev" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Home – MKI Expertisecentrum</a>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MKI voor Opdrachtnemers – MKI Expertisecentrum" />
+  <meta property="og:description" content="Voor civiele aannemers die MKI willen inzetten bij aanbestedingen, ontwerp en uitvoering. Praktisch, onderbouwd en toepasbaar." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/opdrachtnemers" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-opdrachtnemers.png" />
 
-      <!-- Kennisartikelen dropdown -->
-      <div class="relative group" aria-haspopup="true">
-        <a href="/dev/kennis" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Kennis over MKI & LCA</a>
-        <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-64 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
-          <a href="/dev/kennis/en15804-a2-mki.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">EN15804 A2 & MKI</a>
-          <a href="/dev/kennis/mki-als-integrale-score.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI als integrale score</a>
-          <a href="/dev/kennis/mki-berekening.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI-berekening uitleg</a>
-          <a href="/dev/kennis/mki-in-projectfases.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI in projectfases</a>
-          <a href="/dev/kennis/tools-en-voorbeelden.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">Tools & praktijkvoorbeelden</a>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MKI voor Opdrachtnemers – MKI Expertisecentrum" />
+  <meta name="twitter:description" content="Zo gebruik je MKI als aannemer: van inschrijving tot uitvoering. Praktische ondersteuning vanuit de GWW-sector." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-opdrachtnemers.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "MKI voor Opdrachtnemers",
+    "description": "Informatie en ondersteuning voor civiele aannemers in de GWW die MKI willen toepassen in aanbestedingen, ontwerp en uitvoering.",
+    "url": "https://www.mkiexpertisecentrum.nl/dev/opdrachtnemers"
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B7D6D',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="/dev/js/header-behavior.js" defer></script>
+</head>
+<body class="bg-whitegray font-sans text-dark">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE51N8K74');
+  </script>
+
+  <!-- Header -->
+  <header id="smart-header" class="bg-white shadow-md fixed top-0 w-full z-[999] transition-all duration-300 font-[Inter]" role="banner">
+    <div class="max-w-[1200px] mx-auto px-4 py-3 flex justify-between items-center">
+
+      <!-- Logo -->
+      <a href="/dev" aria-label="Ga naar de homepage van MKI Expertisecentrum">
+        <img src="/dev/logo_rechthoek.png" alt="MKI Expertisecentrum – Logo" class="w-32 h-auto">
+      </a>
+
+      <!-- Desktop navigatie -->
+      <nav class="hidden md:flex space-x-6 text-sm font-normal text-[#1F2937] items-center" role="navigation" aria-label="Hoofdnavigatie">
+        <a href="/dev" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Home</a>
+
+        <div class="relative group">
+          <a href="/dev/kennis" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Kennisartikelen</a>
+          <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-64 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <a href="/dev/kennis/en15804-a2-mki.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">EN15804 A2 & MKI</a>
+            <a href="/dev/kennis/mki-als-integrale-score.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI als integrale score</a>
+            <a href="/dev/kennis/mki-berekening.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI-berekening</a>
+            <a href="/dev/kennis/mki-in-projectfases.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">MKI in projectfases</a>
+            <a href="/dev/kennis/tools-en-voorbeelden.html" class="block px-4 py-2 hover:bg-[#E4F4E2]">Tools en voorbeelden</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Diensten dropdown -->
-      <div class="relative group" aria-haspopup="true">
-        <a href="/dev/diensten" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Diensten MKI Expertisecentrum</a>
-        <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-52 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
-          <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtgevers (GWW)</a>
-          <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtnemers (aannemers)</a>
-          <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor leveranciers (producten)</a>
+        <div class="relative group">
+          <a href="/dev/diensten" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Diensten</a>
+          <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-52 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+            <a href="/dev/opdrachtgevers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtgevers</a>
+            <a href="/dev/opdrachtnemers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor opdrachtnemers</a>
+            <a href="/dev/leveranciers" class="block px-4 py-2 hover:bg-[#E4F4E2]">Voor leveranciers</a>
+          </div>
         </div>
+
+        <a href="#" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Discussie</a>
+        <a href="/dev/over-ons" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
+        <a href="/dev/contact" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
+      </nav>
+
+      <!-- Mobiel menu button -->
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Open mobiel menu">
+        <svg class="w-6 h-6 text-[#1F2937]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="h-[72px] md:h-[80px]"></div>
+
+  <!-- Rest van de pagina (zoals eerder) -->
+  <!-- Hero Section -->
+  <section class="bg-white py-20 px-6 shadow-sm">
+    <div class="max-w-content mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Grip op MKI in jouw project? Zo pak je het aan.</h1>
+      <p class="text-lg text-dark max-w-2xl mx-auto mb-6">Of je nu werkt aan ontwerp, inschrijving of uitvoering – MKI is steeds vaker onderdeel van je projectverantwoordelijkheid. Hier lees je wat je moet weten, doen en gebruiken om het goed aan te pakken.</p>
+      <a href="#aan-de-slag" class="inline-block bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Aan de slag</a>
+    </div>
+  </section>
+
+  <!-- Voordelen -->
+  <section class="py-16 px-6 bg-lightgreen">
+    <div class="max-w-content mx-auto grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg text-center shadow-sm border border-hovergreen">
+        <h3 class="text-xl font-semibold text-primary mb-2">Inspelen op uitvragen</h3>
+        <p class="text-base text-dark">Gebruik MKI om sterker in te schrijven bij aanbestedingen met duurzaamheidseisen.</p>
       </div>
-
-      <a href="#" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Discussieplatform (binnenkort)</a>
-      <a href="/dev/over-ons" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Over MKI Expertisecentrum</a>
-      <a href="/dev/contact" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Contact & support</a>
-    </nav>
-
-    <!-- Mobiel menu button -->
-    <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Open mobiel menu">
-      <svg class="w-6 h-6 text-[#1F2937]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobiel menu -->
-  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-normal text-[#1F2937]" aria-label="Mobiele navigatie">
-    <a href="/dev" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Home – MKI Expertisecentrum</a>
-    <div>
-      <button data-dropdown-toggle="info-dropdown-mob" class="w-full text-left hover:text-[#11785E] underline-offset-2 hover:underline">Kennis over MKI & LCA</button>
-      <div id="info-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
-        <a href="/dev/en15804-a2-mki.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">EN15804 A2 & MKI</a>
-        <a href="/dev/mki-als-integrale-score.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">MKI als integrale score</a>
-        <a href="/dev/mki-berekening.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">MKI-berekening</a>
-        <a href="/dev/mki-in-projectfases.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">MKI in projectfases</a>
-        <a href="/dev/tools-en-voorbeelden.html" class="block px-2 py-1 hover:bg-[#E4F4E2]">Tools & voorbeelden</a>
+      <div class="bg-white p-6 rounded-lg text-center shadow-sm border border-hovergreen">
+        <h3 class="text-xl font-semibold text-primary mb-2">Efficiënt en herhaalbaar</h3>
+        <p class="text-base text-dark">Integreer MKI-kennis in je processen en voorkom ad-hoc werk bij elke tender.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg text-center shadow-sm border border-hovergreen">
+        <h3 class="text-xl font-semibold text-primary mb-2">Bouwen aan je profiel</h3>
+        <p class="text-base text-dark">Laat zien dat je duurzaamheid begrijpt en onderbouwd kunt realiseren.</p>
       </div>
     </div>
-    <div>
-      <button data-dropdown-toggle="diensten-dropdown-mob" class="w-full text-left hover:text-[#11785E] underline-offset-2 hover:underline">Diensten</button>
-      <div id="diensten-dropdown-mob" class="hidden ml-4 mt-1 space-y-1">
-        <a href="/dev/opdrachtgevers" class="block px-2 py-1 hover:bg-[#E4F4E2]">Voor opdrachtgevers</a>
-        <a href="/dev/opdrachtnemers" class="block px-2 py-1 hover:bg-[#E4F4E2]">Voor opdrachtnemers</a>
-        <a href="/dev/leveranciers" class="block px-2 py-1 hover:bg-[#E4F4E2]">Voor leveranciers</a>
+  </section>
+
+  <!-- Valkuilen & Succes -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-content mx-auto space-y-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary">Veelgemaakte valkuilen & waar je met ons wél komt</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-lightgreen p-6 rounded-lg border border-hovergreen">
+          <h3 class="text-xl font-semibold text-primary mb-4">Zonder hulp zie je vaak dit:</h3>
+          <ul class="text-base text-dark space-y-3">
+            <li><strong>Te laat starten:</strong> MKI pas oppakken als het al te laat is in de aanbesteding.</li>
+            <li><strong>Onjuiste data:</strong> Werken met verouderde of niet-gecontroleerde productkaarten.</li>
+            <li><strong>Onvolledige berekening:</strong> Geen herleidbare of toetsbare MKI-score opleveren.</li>
+            <li><strong>Geen proces:</strong> Onduidelijke taakverdeling in het team rondom het MKI-vraagstuk.</li>
+          </ul>
+        </div>
+
+        <div class="bg-primary text-white p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Met onze ondersteuning behaal je dit:</h3>
+          <ul class="text-base space-y-3">
+            <li><strong>Heldere voorbereiding:</strong> We zorgen dat je klaar bent voor elke MKI-uitvraag.</li>
+            <li><strong>Gevalideerde MKI’s:</strong> Snel en zonder omwegen een betrouwbare score aanleveren.</li>
+            <li><strong>Praktische aanpak:</strong> Slimme tooling en ondersteuning die past bij jouw organisatie.</li>
+            <li><strong>Inzicht in contractrisico's:</strong> Via contractanalyse en monitoring weet je waar je staat.</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <a href="#" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Discussieplatform</a>
-    <a href="/dev/over-ons" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
-    <a href="/dev/contact" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
-  </div>
-</header>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-white border-t border-gray-200">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">MKI zonder gedoe. Van inschrijving tot realisatie</h2>
+      <p class="text-base text-dark mb-8">Wil je tijd besparen, fouten voorkomen en meer grip op je MKI-aanpak? Neem contact met ons op voor een praktische en heldere samenwerking.</p>
+      <a href="/contact" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Vraag een kennismakingsgesprek aan</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
