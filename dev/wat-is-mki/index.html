@@ -4,27 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Over ons – MKI Expertisecentrum</title>
-  <meta name="description" content="Wie wij zijn, waarom we MKI begrijpelijk willen maken en hoe we opdrachtgevers, opdrachtnemers en leveranciers helpen bij duurzaam inkopen en ontwerpen." />
+  <title>Wat is MKI? | Milieukostenindicator uitgelegd – MKI Expertisecentrum</title>
+  <meta name="description" content="Wat is de Milieukostenindicator (MKI)? Lees wat MKI is, hoe het werkt, hoe je het berekent en hoe het wordt toegepast in aanbestedingen en duurzame GWW-projecten." />
   <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/over" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Over ons – MKI Expertisecentrum" />
-  <meta property="og:description" content="Maak kennis met het team achter MKI Expertisecentrum en ontdek onze missie om MKI praktisch en toepasbaar te maken in de GWW." />
+  <meta property="og:title" content="Wat is MKI? | Milieukostenindicator uitgelegd – MKI Expertisecentrum" />
+  <meta property="og:description" content="Leer alles over de Milieukostenindicator (MKI): definitie, berekening, toepassingen in GWW, en hoe MKI duurzame keuzes onderbouwt." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/over" />
   <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-preview.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Over ons – MKI Expertisecentrum" />
-  <meta name="twitter:description" content="Wij helpen je om MKI werkbaar te maken in projecten, aanbestedingen en beleid. Ontmoet het team en onze aanpak." />
+  <meta name="twitter:title" content="Wat is MKI? – MKI Expertisecentrum" />
+  <meta name="twitter:description" content="Wat is MKI precies? Ontdek hoe deze milieuscore duurzaamheid meetbaar maakt voor ontwerp, aanbesteding en uitvoering." />
   <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-preview.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Wat is MKI?",
+    "description": "Uitleg over de Milieukostenindicator (MKI), hoe het wordt berekend, en hoe het wordt gebruikt binnen de GWW-sector voor duurzame besluitvorming.",
+    "url": "https://www.mkiexpertisecentrum.nl/over"
+  }
+  </script>
 
   <link rel="icon" href="/dev/images/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -53,13 +64,12 @@
 
 <body class="bg-whitegray font-sans text-dark">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-SNE51N8K74');
   </script>
 
@@ -68,7 +78,7 @@
   <div class="h-[72px] md:h-[80px]"></div>
   <script>
     fetch("/dev/includes/header.html")
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => {
         document.getElementById("main-header").innerHTML = data;
       });
@@ -77,53 +87,53 @@
   <!-- Hero -->
   <section class="text-center py-20 px-6 bg-white shadow-sm">
     <div class="max-w-content mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Wat is MKI?</h1>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Wat is de Milieukostenindicator (MKI)?</h1>
       <p class="text-lg text-dark mb-6 max-w-2xl mx-auto">
-        De MilieuKostenIndicator (MKI) is een instrument om duurzaamheid van bouwprojecten en materialen objectief en vergelijkbaar te maken. Hier lees je wat het is, hoe het werkt en wat je eraan hebt.
+        MKI maakt de milieu-impact van producten, ontwerpen en projecten meetbaar in één duidelijke score. Ontdek hoe het werkt en waarom het steeds belangrijker wordt in de bouw en infrastructuur.
       </p>
     </div>
   </section>
 
-  <!-- MKI uitleg blokken -->
+  <!-- MKI uitleg -->
   <section class="py-20 px-6 bg-lightgreen">
     <div class="max-w-content mx-auto grid md:grid-cols-2 gap-8">
 
       <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Wat is de MKI?</h2>
         <p class="text-base text-dark">
-          De Milieukostenindicator (MKI) drukt de milieubelasting van een product, ontwerp of project uit in één getal, weergegeven in euro’s. Dit getal vertegenwoordigt de kosten die theoretisch nodig zijn om milieuschade te herstellen. De MKI is gebaseerd op een levenscyclusanalyse (LCA) en wordt breed toegepast binnen de GWW-sector.
+          De Milieukostenindicator (MKI) vertaalt de totale milieubelasting van een product of ontwerp naar een getal in euro’s. Deze score is gebaseerd op een levenscyclusanalyse (LCA) en wordt gebruikt om milieuschade inzichtelijk én vergelijkbaar te maken.
         </p>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
-        <h2 class="text-xl font-semibold mb-3 text-primary">Waarom is MKI relevant voor de GWW-sector?</h2>
+        <h2 class="text-xl font-semibold mb-3 text-primary">Waarom is MKI belangrijk voor GWW?</h2>
         <p class="text-base text-dark">
-          De MKI biedt opdrachtgevers en opdrachtnemers een objectieve methode om duurzaamheid te betrekken bij ontwerpkeuzes, aanbestedingen en uitvoering. Denk aan het vergelijken van materiaalopties, het onderbouwen van variantenstudies of het opnemen van MKI als EMVI-criterium. 
-          <a href="/dev/kennis/mki-in-projectfases.html" class="text-primary underline">Lees hoe MKI past in verschillende projectfases</a>.
+          MKI helpt bij het nemen van duurzame beslissingen in ontwerp, aanbesteding en uitvoering. Zo kun je alternatieven vergelijken, eisen stellen en duurzaamheid meewegen in gunning. 
+          <a href="/dev/kennis/mki-in-projectfases.html" class="text-primary underline">Bekijk MKI in projectfases</a>.
         </p>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Hoe wordt een MKI-score berekend?</h2>
         <p class="text-base text-dark">
-          Een MKI-score is gebaseerd op een levenscyclusanalyse (LCA) van een product of bouwwerk. Hierbij worden alle relevante fasen – van grondstofwinning tot productie, transport, gebruik en einde levensduur – meegenomen. 
-          <a href="/dev/kennis/mki-berekening.html" class="text-primary underline">Lees meer over de rekenmethodiek</a>.
+          De score komt voort uit een LCA waarin alle fasen – van grondstofwinning tot afvalverwerking – worden meegenomen. De milieueffecten worden omgerekend naar monetaire waarden.
+          <a href="/dev/kennis/mki-berekening.html" class="text-primary underline">Lees meer over MKI-berekeningen</a>.
         </p>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
         <h2 class="text-xl font-semibold mb-3 text-primary">Wat maakt MKI waardevol?</h2>
         <p class="text-base text-dark">
-          De MKI biedt een integrale benadering van duurzaamheid. Circulariteit, biobased materiaalgebruik, CO₂-reductie en andere thema’s worden samengebracht in één score. 
-          <a href="/dev/kennis/mki-als-integrale-score.html" class="text-primary underline">Bekijk hoe MKI zich verhoudt tot CO₂ en circulariteit</a>.
+          MKI combineert CO₂-uitstoot, materiaalgebruik, energieverbruik en andere milieueffecten in één getal. Daarmee krijg je inzicht in duurzaamheid als geheel.
+          <a href="/dev/kennis/mki-als-integrale-score.html" class="text-primary underline">Bekijk hoe MKI zich verhoudt tot CO₂</a>.
         </p>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow border border-hovergreen md:col-span-2">
         <h2 class="text-xl font-semibold mb-3 text-primary">Toepassing in de praktijk</h2>
         <p class="text-base text-dark">
-          In de praktijk wordt MKI toegepast bij aanbestedingen (als gunningscriterium of minimumeis), tijdens de ontwerpfase voor variantvergelijking, en in monitoring van milieuprestaties. Zowel overheden, aannemers als leveranciers gebruiken MKI om keuzes te onderbouwen en impact aantoonbaar te verlagen. 
-          <a href="/dev/kennis/tools-en-voorbeelden.html" class="text-primary underline">Bekijk praktische tools en voorbeelden</a>.
+          MKI wordt gebruikt als gunningscriterium (EMVI), als minimumeis of als monitoringsinstrument in contracten. Zowel overheden, aannemers als leveranciers gebruiken het om duurzaamheid onderbouwd vorm te geven.
+          <a href="/dev/kennis/tools-en-voorbeelden.html" class="text-primary underline">Bekijk tools en praktijkvoorbeelden</a>.
         </p>
       </div>
 
@@ -133,8 +143,8 @@
   <!-- CTA -->
   <section class="py-20 px-6 bg-white">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">En nu aan de slag?</h2>
-      <p class="text-base text-dark mb-8">Kies jouw rol en bekijk hoe je MKI toepast in jouw organisatie of project.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Wil je aan de slag met MKI?</h2>
+      <p class="text-base text-dark mb-8">Bekijk hoe MKI aansluit bij jouw rol in de keten en start met toepassen in aanbestedingen, beleid of uitvoering.</p>
       <div class="flex flex-col md:flex-row justify-center gap-4">
         <a href="/dev/opdrachtgevers/index.html" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Voor opdrachtgevers</a>
         <a href="/dev/opdrachtnemers/index.html" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Voor opdrachtnemers</a>
@@ -152,5 +162,6 @@
         document.getElementById("main-footer").innerHTML = data;
       });
   </script>
+
 </body>
 </html>
