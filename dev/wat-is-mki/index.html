@@ -42,7 +42,7 @@
       theme: {
         extend: {
           colors: {
-            primary: '#0B7D6D',
+            primary: '#134a3c',
             hovergreen: '#11785E',
             lightgreen: '#E1F4F0',
             yellow: '#FFD166',
@@ -84,18 +84,26 @@
       });
   </script>
 
-  <!-- Hero -->
-  <section class="text-center py-20 px-6 bg-white shadow-sm">
-    <div class="max-w-content mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Wat is de Milieukostenindicator (MKI)?</h1>
-      <p class="text-lg text-dark mb-6 max-w-2xl mx-auto">
-        MKI maakt de milieu-impact van producten, ontwerpen en projecten meetbaar in één duidelijke score. Ontdek hoe het werkt en waarom het steeds belangrijker wordt in de bouw en infrastructuur.
-      </p>
-    </div>
-  </section>
+<!-- Hero Section met groene overlay en witte tekst -->
+<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
+  <!-- Achtergrondafbeelding -->
+  <div class="absolute inset-0">
+    <img src="/dev/images/wat-is-mki-gww.webp" alt="Wat is de Milieukostenindicator (MKI)?" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-primary opacity-80"></div> <!-- Groene waas -->
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 max-w-content mx-auto text-white">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Wat is de Milieukostenindicator (MKI)?</h1>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">
+      MKI maakt de milieu-impact van producten, ontwerpen en projecten meetbaar in één duidelijke score. Ontdek hoe het werkt en waarom het steeds belangrijker wordt in de bouw en infrastructuur.
+    </p>
+  </div>
+</section>
+
 
   <!-- MKI uitleg -->
-  <section class="py-20 px-6 bg-lightgreen">
+  <section class="py-20 px-6 bg-white">
     <div class="max-w-content mx-auto grid md:grid-cols-2 gap-8">
 
       <div class="bg-white p-6 rounded-lg shadow border border-hovergreen">
