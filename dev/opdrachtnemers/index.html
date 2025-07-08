@@ -86,14 +86,23 @@
       });
   </script>
 
-  <!-- Hero Section -->
-  <section class="bg-white py-20 px-6 shadow-sm">
-    <div class="max-w-content mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Grip op MKI in jouw project? Zo pak je het aan.</h1>
-      <p class="text-lg text-dark max-w-2xl mx-auto mb-6">Of je nu werkt aan ontwerp, inschrijving of uitvoering – MKI is steeds vaker onderdeel van je projectverantwoordelijkheid. Hier lees je wat je moet weten, doen en gebruiken om het goed aan te pakken.</p>
-      <a href="#aan-de-slag" class="inline-block bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Aan de slag</a>
-    </div>
-  </section>
+<!-- Hero Section met achtergrond (standaardstructuur) -->
+<section class="relative text-center px-6 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
+  <!-- Achtergrondafbeelding -->
+  <div class="absolute inset-0">
+    <img src="/dev/images/fietsrotonde-mki-gww.webp" alt="Grip op MKI in jouw project" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-white opacity-80"></div> <!-- Witte waas -->
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 max-w-content mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Grip op MKI in jouw project? Zo pak je het aan.</h1>
+    <p class="text-lg text-dark mb-8 max-w-2xl mx-auto">
+      Of je nu werkt aan ontwerp, inschrijving of uitvoering – MKI is steeds vaker onderdeel van je projectverantwoordelijkheid. Hier lees je wat je moet weten, doen en gebruiken om het goed aan te pakken.
+    </p>
+    <a href="#aan-de-slag" class="inline-block bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Aan de slag</a>
+  </div>
+</section>
 
   <!-- Voordelen -->
   <section class="py-16 px-6 bg-lightgreen">
