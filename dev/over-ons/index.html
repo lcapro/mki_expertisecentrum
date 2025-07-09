@@ -54,7 +54,7 @@
       theme: {
         extend: {
           colors: {
-            primary: '#0B7D6D',
+            primary: '#134a3c',
             hovergreen: '#11785E',
             lightgreen: '#E4F4E2',
             yellow: '#FFD166',
@@ -95,18 +95,25 @@
       });
   </script>
 
-  <!-- Intro -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-content mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Over ons</h1>
-      <p class="text-lg text-dark max-w-3xl mx-auto">
-        Bij MKI Expertisecentrum geloven we dat échte verduurzaming begint met inzicht. Inzicht in de milieuprestaties van materialen en keuzes, én in hoe je die prestaties op een praktische manier kunt verbeteren. Daarom helpen wij publieke opdrachtgevers, opdrachtnemers en leveranciers om meer grip te krijgen op MKI en LCA in de bouw.
-      </p>
-    </div>
-  </section>
+<!-- Hero Section met groene overlay en witte tekst -->
+<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
+  <!-- Achtergrondafbeelding -->
+  <div class="absolute inset-0">
+    <img src="/dev/images/over-ons-mki.webp" alt="Over MKI Expertisecentrum" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-primary opacity-80"></div> <!-- Groene waas -->
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 max-w-content mx-auto text-white">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Over ons</h1>
+    <p class="text-lg mb-8 max-w-3xl mx-auto">
+      Bij MKI Expertisecentrum geloven we dat échte verduurzaming begint met inzicht. Daarom helpen wij publieke opdrachtgevers, opdrachtnemers en leveranciers om meer grip te krijgen op MKI en LCA in de bouw.
+    </p>
+  </div>
+</section>
 
   <!-- Persoonlijk voorstelstuk -->
-  <section class="bg-lightgreen py-20 px-6">
+  <section class="bg-white py-20 px-6">
     <div class="max-w-content mx-auto grid md:grid-cols-2 gap-10 items-center">
 
       <!-- Afbeelding -->
@@ -135,25 +142,25 @@
     <div class="max-w-content mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">Wat wij doen</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-lightgreen p-6 rounded-lg shadow border border-hovergreen">
+        <div class="bg-primary p-6 rounded-lg shadow border border-hovergreen">
           <h3 class="text-lg font-semibold text-primary mb-2">Advies & ondersteuning</h3>
           <p class="text-base text-dark">
             We helpen bij MKI-vraagstukken in aanbestedingen, contracten en projecten. Praktisch, helder en afgestemd op jouw situatie.
           </p>
         </div>
-        <div class="bg-lightgreen p-6 rounded-lg shadow border border-hovergreen">
+        <div class="bg-primary p-6 rounded-lg shadow border border-hovergreen">
           <h3 class="text-lg font-semibold text-primary mb-2">Kennisdeling & uitleg</h3>
           <p class="text-base text-dark">
             Trainingen, artikelen en formats over MKI, LCA en duurzaamheid in de GWW-sector, gericht op toepasbaarheid.
           </p>
         </div>
-        <div class="bg-lightgreen p-6 rounded-lg shadow border border-hovergreen">
+        <div class="bg-primary p-6 rounded-lg shadow border border-hovergreen">
           <h3 class="text-lg font-semibold text-primary mb-2">Samenwerking & netwerk</h3>
           <p class="text-base text-dark">
             We brengen marktpartijen bij elkaar die willen leren, verbeteren en ervaringen willen delen rond MKI en LCA.
           </p>
         </div>
-        <div class="bg-lightgreen p-6 rounded-lg shadow border border-hovergreen">
+        <div class="bg-primary p-6 rounded-lg shadow border border-hovergreen">
           <h3 class="text-lg font-semibold text-primary mb-2">Tooling & formats</h3>
           <p class="text-base text-dark">
             Van rekenhulpen tot standaardteksten: alles om MKI eenvoudiger en werkbaarder te maken in de dagelijkse praktijk.
@@ -164,7 +171,7 @@
   </section>
 
   <!-- Visie -->
-  <section class="bg-lightgreen py-20 px-6">
+  <section class="bg-primary py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl font-bold mb-6 text-primary">Onze visie</h2>
       <p class="text-base text-dark mb-4">
