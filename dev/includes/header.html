@@ -12,6 +12,7 @@
     <!-- Desktop navigatie -->
     <nav class="hidden md:flex space-x-6 text-sm font-normal text-[#1F2937] items-center" role="navigation">
       <a href="/dev" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Home</a>
+      <a href="/dev/tools" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Tools</a>
 
       <!-- Kennisartikelen dropdown -->
       <div class="relative group">
@@ -36,8 +37,15 @@
       </div>
 
       <a href="#" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Discussie</a>
-      <a href="/dev/over-ons" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
-      <a href="/dev/contact" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
+
+      <!-- Contact dropdown -->
+      <div class="relative group">
+        <a href="/dev/contact" class="block px-2 py-2 hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
+        <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 z-50 transition-all duration-200 ease-in-out opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+          <a href="/dev/contact" class="block px-4 py-2 hover:bg-[#E4F4E2]">Contactformulier</a>
+          <a href="/dev/over-ons" class="block px-4 py-2 hover:bg-[#E4F4E2]">Over ons</a>
+        </div>
+      </div>
     </nav>
 
     <!-- Mobiel menu knop -->
@@ -51,6 +59,7 @@
   <!-- Mobiele navigatie -->
   <nav id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-normal text-[#1F2937]" role="navigation" aria-label="Mobiele hoofdmenu">
     <a href="/dev" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Home</a>
+    <a href="/dev/tools" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Tools</a>
 
     <!-- Kennisartikelen submenu -->
     <div>
@@ -75,7 +84,14 @@
     </div>
 
     <a href="#" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Discussie</a>
-    <a href="/dev/over-ons" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Over ons</a>
-    <a href="/dev/contact" class="block hover:text-[#11785E] underline-offset-2 hover:underline">Contact</a>
+
+    <!-- Contact submenu -->
+    <div>
+      <button data-dropdown-toggle="contact-dropdown-mob" class="w-full text-left hover:text-[#11785E] underline-offset-2 hover:underline" aria-expanded="false">Contact</button>
+      <div id="contact-dropdown-mob" class="hidden ml-4 mt-1 space-y-1" role="menu">
+        <a href="/dev/contact" class="block px-2 py-1 hover:bg-[#E4F4E2]">Contactformulier</a>
+        <a href="/dev/over-ons" class="block px-2 py-1 hover:bg-[#E4F4E2]">Over ons</a>
+      </div>
+    </div>
   </nav>
 </header>
