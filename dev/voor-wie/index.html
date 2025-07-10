@@ -44,7 +44,7 @@
       theme: {
         extend: {
           colors: {
-            primary: '#0B7D6D',
+            primary: '#134a3c',
             hovergreen: '#11785E',
             lightgreen: '#E4F4E2',
             yellow: '#FFD166',
@@ -85,16 +85,25 @@
       });
   </script>
 
-  <!-- Hero -->
-  <section class="text-center py-20 px-6 bg-white shadow-sm">
-    <div class="max-w-content mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Voor wie is dit platform?</h1>
-      <p class="text-lg text-dark mb-8">MKI Expertisecentrum is er voor alle professionals die duurzaamheid in GWW-projecten willen verankeren – van beleidsmakers en ontwerpers tot aannemers en leveranciers.</p>
-    </div>
-  </section>
+<!-- Hero Section met groene overlay en witte tekst -->
+<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
+  <!-- Achtergrondafbeelding -->
+  <div class="absolute inset-0">
+    <img src="/dev/images/voor-wie-is-dit-platform-mki-gww.webp" alt="Voor wie is dit platform?" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-primary opacity-80"></div> <!-- Groene waas -->
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 max-w-content mx-auto text-white">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Voor wie is dit platform?</h1>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">
+      MKI Expertisecentrum is er voor alle professionals die duurzaamheid in GWW-projecten willen verankeren – van beleidsmakers en ontwerpers tot aannemers en leveranciers.
+    </p>
+  </div>
+</section>
 
   <!-- Doelgroepen -->
-  <section class="py-16 px-6 bg-lightgreen">
+  <section class="py-16 px-6 bg-white">
     <div class="max-w-content mx-auto grid md:grid-cols-3 gap-8">
 
       <a href="/dev/opdrachtgevers" class="block bg-white rounded-lg p-8 shadow hover:shadow-md transition text-center border border-hovergreen">
