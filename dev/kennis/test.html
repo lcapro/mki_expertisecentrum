@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uitleg over de MKI rekenmethodiek</title>
+  <meta name="description" content="Leer stap voor stap hoe een MKI-berekening werkt: van functionele eenheid tot schaduwprijzen. Voor professionals in GWW die duurzaamheid meetbaar willen maken." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/mki-berekening" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Uitleg over de MKI rekenmethodiek" />
+  <meta property="og:description" content="Hoe wordt een MKI-score berekend? Ontdek alle stappen in de berekening en waarom het essentieel is voor duurzaam inkopen." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/mki-berekening" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-berekening.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MKI-berekening uitgelegd – van LCA tot eindscore" />
+  <meta name="twitter:description" content="Van systeemgrenzen tot schaduwprijzen: alles over de stappen in een MKI-berekening voor infrastructuurprojecten." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-berekening.png" />
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-dark">
+
+    <!-- Header sectie (geladen via fetch) -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+
+  <!-- Header gedrag + inladen HTML via JS -->
+  <script src="/dev/js/header-behavior.js" defer></script>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Paginalayout: Grid met TOC en artikel -->
+  <div class="max-w-screen-xl mx-auto px-4 pt-16 pb-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Inhoudsopgave -->
+    <aside class="hidden md:block md:col-span-1">
+      <nav class="sticky top-24 bg-primary rounded-lg shadow p-6 border border-hovergreen">
+        <h2 class="text-2xl font-bold text-white mb-6">Inhoudsopgave</h2>
+        <ul class="space-y-2 text-base leading-relaxed">
+          <li><a href="#hoofdstuk-1" class="text-white font-medium hover:text-yellow hover:font-semibold transition">1. Inleiding</a></li>
+          <li><a href="#hoofdstuk-2" class="text-white font-medium hover:text-yellow hover:font-semibold transition">2. Internationale en nationale basis</a></li>
+          <li><a href="#hoofdstuk-3" class="text-white font-medium hover:text-yellow hover:font-semibold transition">3. Rekenstappen MKI</a></li>
+          <li><a href="#hoofdstuk-4" class="text-white font-medium hover:text-yellow hover:font-semibold transition">4. Databronnen en kwaliteit</a></li>
+          <li><a href="#hoofdstuk-5" class="text-white font-medium hover:text-yellow hover:font-semibold transition">5. Impactcategorieën</a></li>
+          <li><a href="#hoofdstuk-6" class="text-white font-medium hover:text-yellow hover:font-semibold transition">6. Software & tools</a></li>
+          <li><a href="#hoofdstuk-7" class="text-white font-medium hover:text-yellow hover:font-semibold transition">7. Praktische aandachtspunten</a></li>
+          <li><a href="#hoofdstuk-8" class="text-white font-medium hover:text-yellow hover:font-semibold transition">8. Vervolg en verdieping</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Artikelstart -->
+    <main class="md:col-span-3">
+
+      <!-- Intro-header -->
+      <header class="mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Uitleg over de MKI rekenmethodiek</h1>
+        <p class="text-base text-dark mb-4">
+          Wat zit er achter de MKI-score in euro’s? In dit artikel lees je hoe de Milieukostenindicator wordt opgebouwd, van internationale normen tot nationale berekening. Je krijgt inzicht in rekenstappen, gebruikte databronnen en aandachtspunten voor de praktijk.
+        </p>
+        <p class="text-sm text-dark">door MKI Expertisecentrum · Laatst bijgewerkt op 14 juni 2025</p>
+        <figure class="mt-6 mb-8">
+          <picture>
+            <source srcset="/dev/images/social-share-berekening.webp" type="image/webp">
+            <img src="/dev/images/social-share-berekening.png" alt="Visualisatie van MKI-berekening in projecten" loading="lazy" class="w-full h-auto rounded-lg">
+          </picture>
+        </figure>
+      </header>
+
+      <section id="hoofdstuk-1" class="scroll-mt-28 mb-12">
+  <h2 class="text-3xl font-bold text-primary mb-6">1. Inleiding – Waarom deze MKI-rekenmethodiek belangrijk is</h2>
+
+  <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+    <p class="mb-2 font-semibold text-dark">Achter één getal zit een hele systematiek</p>
+    <p class="text-base text-dark">De MKI-score is zichtbaar in aanbestedingen of ontwerpafwegingen — maar hoe komt dat getal eigenlijk tot stand?</p>
+  </div>
+
+  <p class="mb-4 text-base text-dark">
+    De Milieukostenindicator (MKI) is een indicator die milieubelasting kwantificeert in euro’s. Achter dit eenduidige getal schuilt echter een complexe, gestandaardiseerde rekenmethodiek. Dit artikel beschrijft hoe die berekening tot stand komt.
+  </p>
+
+  <p class="mb-4 text-base text-dark">
+    We behandelen de wetenschappelijke en normatieve basis van de MKI-score, de nationale vertaling via de Bepalingsmethode, de rol van databronnen zoals de Nationale Milieudatabase (NMD), de omzetting van milieueffecten naar maatschappelijke kosten, en de software die daarbij gebruikt wordt.
+  </p>
+
+  <p class="mb-4 text-base text-dark">
+    Deze verdieping is bedoeld voor professionals die zich bezighouden met MKI-berekeningen, toetsing, beleidsontwikkeling of duurzaam inkopen, en die grip willen krijgen op de onderliggende methodiek.
+  </p>
+
+  <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+    <p class="text-base text-dark leading-relaxed">
+      <strong>Doel van dit artikel:</strong> inzicht geven in de stappen, keuzes en uitgangspunten achter een MKI-score — zodat je beter kunt rekenen, beoordelen of aanbesteden op basis van milieuprestatie.
+    </p>
+  </div>
+</section>
+
+      <section id="hoofdstuk-2" class="scroll-mt-28 mb-12">
+  <h2 class="text-3xl font-bold text-primary mb-6">2. Internationale en nationale basis</h2>
+
+  <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+    <p class="mb-2 font-semibold text-dark">Van wereldwijde standaard naar nationale toepassing</p>
+    <p class="text-base text-dark">De MKI-berekening is geworteld in internationale LCA-normen en krijgt vorm via Nederlandse uitvoeringsregels.</p>
+  </div>
+
+  <p class="mb-4 text-base text-dark">
+    De MKI-methodiek is opgebouwd uit meerdere lagen van normen en richtlijnen: van ISO-standaarden tot Nederlandse uitvoeringsregels. Deze gelaagdheid zorgt voor consistentie, transparantie en vergelijkbaarheid van MKI-scores binnen projecten en aanbestedingen.
+  </p>
+
+  <!-- ISO-normen -->
+  <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">2.1 ISO 14040 en 14044 – Grondslag van LCA</h3>
+  <p class="mb-4 text-base text-dark">
+    De fundamentele rekenkundige basis van MKI is de levenscyclusanalyse (LCA). De internationale normen ISO 14040 en ISO 14044 structureren dit in vier fasen:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>Doel- en scopebepaling</li>
+    <li>Levenscyclusinventarisatie (LCI)</li>
+    <li>Levenscyclusimpactanalyse (LCIA)</li>
+    <li>Interpretatie van resultaten</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Een MKI-score is feitelijk een gemonetariseerde uitkomst van de LCIA-stap, aangevuld met schaduwprijzen die maatschappelijke kosten representeren.
+  </p>
+
+  <!-- EN 15804 -->
+  <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">2.2 EN 15804 – Europese norm voor bouwproducten</h3>
+  <p class="mb-4 text-base text-dark">
+    Binnen Europa is EN 15804 de geharmoniseerde norm voor milieuprofielen van bouwproducten. Deze vormt de basis voor Environmental Product Declarations (EPD’s), waarop MKI-berekeningen in Nederland aansluiten.
+  </p>
+  <p class="mb-4 text-base text-dark">
+    Sinds versie EN 15804+A2 wordt gewerkt met 19 impactcategorieën. Nederland bereidt de overstap naar deze nieuwe structuur voor — met verplichting vanaf 2026.
+  </p>
+  <p class="mb-4 text-base text-dark italic">
+    Meer hierover lees je in het artikel: <a href="/dev/en15804-a2-mki" class="text-primary underline hover:text-yellow">Wat verandert er met EN 15804+A2 voor MKI-berekeningen?</a>
+  </p>
+
+  <!-- Nederlandse bepalingsmethode -->
+  <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">2.3 Nederlandse bepalingsmethode (versie 3.0 en hoger)</h3>
+  <p class="mb-4 text-base text-dark">
+    De Bepalingsmethode Milieuprestatie Bouwwerken vertaalt de internationale normen naar de Nederlandse MKI-praktijk. Deze methode — beheerd door Stichting NMD — bevat onder andere:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>De elf impactcategorieën volgens EN 15804+A1</li>
+    <li>Gebruik van gevalideerde data uit de Nationale Milieudatabase (categorie 1–3)</li>
+    <li>Vastgelegde schaduwprijzen per milieueffect</li>
+    <li>Instructies voor systeemgrenzen, rapportage en kwaliteitsborging</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Deze bepalingsmethode is verplicht voor MKI-berekeningen in de GWW én voor MPG-toetsingen in de woningbouw.
+  </p>
+
+  <!-- MKI versus MPG -->
+  <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">2.4 Relatie tussen MKI en MPG</h3>
+  <p class="mb-4 text-base text-dark">
+    Hoewel MKI en MPG op dezelfde LCA-basis zijn gestoeld, verschillen ze in toepassing:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li><strong>MPG:</strong> verplicht bij omgevingsvergunningen voor woningen/kantoren. Eenheid: €/m²/jaar.</li>
+    <li><strong>MKI:</strong> vrijwillig, maar vaak gevraagd in GWW-aanbestedingen. Eenheid: € per functionele eenheid (bijv. m¹, ton, m³).</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Software en databronnen kunnen gelijk zijn, maar de interpretatie en rapportage verschilt per context.
+  </p>
+</section>
+
+      <section id="hoofdstuk-3" class="scroll-mt-28 mb-12">
+  <h2 class="text-3xl font-bold text-primary mb-6">3. Overzicht van de rekenstappen in een MKI-berekening</h2>
+
+  <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+    <p class="mb-2 font-semibold text-dark">Van analyse naar score</p>
+    <p class="text-base text-dark">Een MKI-score is het resultaat van een reeks gestandaardiseerde stappen, gebaseerd op LCA-principes.</p>
+  </div>
+
+  <p class="mb-4 text-base text-dark">
+    Een MKI-score wordt opgebouwd op basis van een levenscyclusanalyse (LCA). De berekening volgt vaste stappen en regels zoals vastgelegd in de Bepalingsmethode Milieuprestatie Bouwwerken. Hieronder zie je hoe dit proces stapsgewijs verloopt.
+  </p>
+
+  <!-- 3.1 Functionele eenheid -->
+  <h3 class="text-2xl font-semibold text-primary mt-10 mb-3">3.1 Bepalen van de functionele eenheid</h3>
+  <p class="mb-4 text-base text-dark">
+    De functionele eenheid is het startpunt van elke MKI-berekening. Deze bepaalt wat je precies beoordeelt, in welke hoeveelheid, over welke tijdsduur en onder welke prestatievoorwaarden. Voorbeelden:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>1 strekkende meter damwandconstructie (levensduur 75 jaar)</li>
+    <li>1 m² asfaltverharding inclusief fundering (40 jaar)</li>
+    <li>1 betonnen duiker met diameter 2 m (levensduur 60 jaar)</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Een duidelijke en eenduidige functionele eenheid is essentieel voor transparantie en vergelijkbaarheid tussen ontwerpvarianten.
+  </p>
+
+  <!-- 3.2 Systeemgrenzen -->
+  <h3 class="text-2xl font-semibold text-primary mt-10 mb-3">3.2 Afbakenen van systeemgrenzen</h3>
+  <p class="mb-4 text-base text-dark">
+    De systeemgrenzen bepalen welke onderdelen van de levenscyclus worden meegenomen. In de MKI-berekening moeten ten minste de volgende modules worden opgenomen:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>A1–A3: grondstoffen, transport naar fabriek, productie</li>
+    <li>A4: transport naar de bouwplaats</li>
+    <li>A5: bouwplaatsprocessen en installatie</li>
+    <li>B: gebruiksfase (indien relevant, bijv. onderhoud/vervanging)</li>
+    <li>C1–C4: sloop, afvoer en afvalverwerking</li>
+    <li>D: hergebruik en recycling (optioneel indien data beschikbaar)</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Juist afbakenen voorkomt interpretatiefouten en maakt vergelijking tussen alternatieven eerlijker.
+  </p>
+
+  <!-- 3.3 LCI -->
+  <h3 class="text-2xl font-semibold text-primary mt-10 mb-3">3.3 Levenscyclusinventarisatie (LCI)</h3>
+  <p class="mb-4 text-base text-dark">
+    In deze stap worden alle relevante materiaalketens en processen geïnventariseerd, zoals:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>Hoeveelheden en soorten materialen</li>
+    <li>Transportafstanden en modaliteiten</li>
+    <li>Energieverbruik tijdens productie en aanleg</li>
+    <li>Emissies, afval- en reststromen</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Deze data komen uit de Nationale Milieudatabase (NMD), eventueel aangevuld met project- of productspecifieke gegevens.
+  </p>
+
+  <!-- 3.4 LCIA -->
+  <h3 class="text-2xl font-semibold text-primary mt-10 mb-3">3.4 Impactanalyse (LCIA)</h3>
+  <p class="mb-4 text-base text-dark">
+    De verzamelde data worden omgerekend naar milieueffecten in elf impactcategorieën, zoals:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>Klimaatverandering (CO₂-equivalenten)</li>
+    <li>Verzuring van bodem en water</li>
+    <li>Smogvorming (fotochemische oxidanten)</li>
+    <li>Ecotoxiciteit</li>
+    <li>Uitputting van fossiele of minerale grondstoffen</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    De totale milieubelasting is de som van deze effecten over alle fasen van de levenscyclus.
+  </p>
+
+  <!-- 3.5 Monetarisering -->
+  <h3 class="text-2xl font-semibold text-primary mt-10 mb-3">3.5 Monetarisering met schaduwprijzen</h3>
+  <p class="mb-4 text-base text-dark">
+    Iedere impactcategorie wordt omgerekend naar een geldwaarde met behulp van vastgestelde schaduwprijzen:
+  </p>
+  <p class="mb-4 text-base text-dark font-semibold">
+    MKI = ∑ (Impactcategorie × Schaduwprijs)
+  </p>
+  <p class="mb-4 text-base text-dark">
+    Zo ontstaat een enkel getal in euro’s per functionele eenheid. Dit maakt het mogelijk om alternatieven objectief te vergelijken op basis van milieukosten.
+  </p>
+
+  <!-- 3.6 Rapportage -->
+  <h3 class="text-2xl font-semibold text-primary mt-10 mb-3">3.6 Rapportage en toetsing</h3>
+  <p class="mb-4 text-base text-dark">
+    De uitkomsten worden gerapporteerd volgens de instructies uit de Bepalingsmethode. Daarbij moet je altijd vermelden:
+  </p>
+  <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+    <li>Gebruikte productkaarten en NMD-categorieën</li>
+    <li>Aannames m.b.t. levensduur, onderhoud en systeemgrenzen</li>
+    <li>De exacte definitie van de functionele eenheid</li>
+    <li>Welke software is gebruikt en of deze geverifieerd is</li>
+  </ul>
+  <p class="mb-4 text-base text-dark">
+    Correcte rapportage is essentieel voor beoordelaars, opdrachtgevers en toetsende instanties.
+  </p>
+</section>
+
+      
