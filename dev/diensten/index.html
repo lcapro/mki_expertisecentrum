@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diensten – MKI Expertisecentrum</title>
+  <meta name="description" content="Advies, kennisdeling en ondersteuning bij MKI in de GWW. Ontdek onze diensten voor opdrachtgevers, opdrachtnemers en leveranciers." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/diensten" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-whitegray font-sans text-dark">
+
+  <!-- Header -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <section class="text-center px-6 py-20 bg-white shadow-sm">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-bold text-primary mb-4">Onze diensten</h1>
+      <p class="text-lg text-gray-700">Van strategie tot uitvoering – wij helpen je MKI concreet, werkbaar en impactvol te maken in de GWW-sector.</p>
+    </div>
+  </section>
+
+  <!-- Dienstblokken -->
+  <section class="bg-lightgreen py-20 px-6">
+    <div class="max-w-content mx-auto grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-primary mb-2">🔍 MKI-beleid & strategie</h2>
+        <p class="text-sm text-gray-800">Beleid, aanbestedingsleidraden of standaardwerkwijzen ontwikkelen waarin MKI logisch en werkbaar is opgenomen.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-primary mb-2">📑 Tenderbegeleiding & bestek</h2>
+        <p class="text-sm text-gray-800">Praktische hulp bij het formuleren en onderbouwen van MKI-scores in EMVI, knock-out of besteksverplichtingen.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-primary mb-2">🧮 MKI-berekening & validatie</h2>
+        <p class="text-sm text-gray-800">We helpen bij het opstellen, controleren of interpreteren van MKI-berekeningen. Inclusief DuboCalc en NMD.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-primary mb-2">🎓 Training & kennisdeling</h2>
+        <p class="text-sm text-gray-800">Incompany trainingen, workshops en formats op maat. Voor beleidsmakers, ontwerpers, calculators of leveranciers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verdieping -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-primary mb-4">Voor wie?</h2>
+      <p class="text-sm text-gray-700 mb-6">Onze diensten zijn afgestemd op verschillende doelgroepen binnen de GWW-sector:</p>
+      <div class="flex flex-col md:flex-row justify-center gap-6 text-sm text-dark">
+        <a href="/dev/opdrachtgevers" class="underline hover:text-hovergreen">Voor opdrachtgevers</a>
+        <a href="/dev/opdrachtnemers" class="underline hover:text-hovergreen">Voor opdrachtnemers</a>
+        <a href="/dev/leveranciers" class="underline hover:text-hovergreen">Voor leveranciers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-lightgreen border-t border-gray-200">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary">Nieuw met MKI of verder verdiepen?</h2>
+      <p class="text-sm text-dark mb-6">We helpen je graag verder met een vrijblijvende kennismaking of gerichte ondersteuning. Praktisch, onafhankelijk en doelgericht.</p>
+      <a href="/contact" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-[#ffe596] transition">Vraag een kennismaking aan</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
