@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wat vind je hier? – MKI Expertisecentrum</title>
+  <meta name="description" content="Wat biedt het MKI Expertisecentrum? Van uitleg tot tools: ontdek wat je hier kunt vinden." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/wat-vind-je-hier" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            accent: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            lightgray: '#FAFAF9'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-lightgray text-dark font-sans">
+
+<!-- Hero Section met groene overlay en witte tekst -->
+<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
+  <!-- Achtergrondafbeelding -->
+  <div class="absolute inset-0">
+    <img src="/dev/images/wat-vind-je-hier-achtergrond-mki-gww.webp" alt="Overzicht van tools, uitleg en toepassingen van MKI" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-primary opacity-80"></div> <!-- Groene waas -->
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 max-w-content mx-auto text-white">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Wat vind je hier?</h1>
+    <p class="text-lg max-w-2xl mx-auto">
+      Van uitleg tot tools, van beleid tot berekening. Alles wat je nodig hebt om MKI praktisch toe te passen.
+    </p>
+  </div>
+</section>
+
+  <!-- Inhoudsblokken -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
+
+      <div class="bg-accent rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-semibold mb-3 text-primary">🔍 Kennisartikelen</h2>
+        <p class="text-sm text-gray-800">Verdiepende artikelen over MKI, LCA, normen, methodiek en toepassing in projecten. Geschreven voor beleidsmakers, ontwerpers en aannemers.</p>
+      </div>
+
+      <div class="bg-accent rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-semibold mb-3 text-primary">🧰 Tools & formats</h2>
+        <p class="text-sm text-gray-800">Van standaardteksten voor bestekken tot rekenhulpen en voorbeeld-PvE’s. Alles om MKI direct te integreren in je werkproces.</p>
+      </div>
+
+      <div class="bg-accent rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-semibold mb-3 text-primary">💡 Praktijkvoorbeelden</h2>
+        <p class="text-sm text-gray-800">Bekijk hoe andere organisaties MKI toepassen. Leer van hun aanpak, fouten en succesfactoren.</p>
+      </div>
+
+      <div class="bg-accent rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-semibold mb-3 text-primary">💬 Discussieplatform (binnenkort)</h2>
+        <p class="text-sm text-gray-800">Stel vragen, deel ervaringen en leer van anderen. Het forum biedt ruimte voor praktijkvragen, afstemming en co-creatie.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 bg-white border-t border-accent text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4 text-primary">Zoek je iets specifieks?</h2>
+      <p class="text-sm text-gray-700 mb-6">Mis je iets of wil je een onderwerp aandragen? Laat het weten — we breiden de kennisbank continu uit.</p>
+      <a href="/dev/contact" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Stel je vraag</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
