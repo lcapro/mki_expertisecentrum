@@ -198,9 +198,9 @@
           Hieronder een gedetailleerd overzicht van de impactcategorieën voor zowel EN 15804 A1 als A2, inclusief bijbehorende indicatoren en eenheden:
         </p>
 
-                <!-- Tabel voor EN 15804 A1 -->
+        <!-- Tabel voor EN 15804 A1 -->
         <div class="overflow-x-auto mt-6 mb-4">
-          <table class="w-full bg-white rounded-lg shadow-md border border-hovergreen text-sm">
+          <table class="w-full bg-white rounded-lg shadow-md border border-hovergreen">
             <thead>
               <tr class="bg-primary text-white">
                 <th class="py-3 px-4 text-left">Milieu-impactcategorie</th>
@@ -209,54 +209,193 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b hover:bg-lightgreen"><td class="py-2 px-4">Klimaatverandering</td><td class="py-2 px-4">GWP</td><td class="py-2 px-4">kg CO₂-eq</td></tr>
-              <tr class="border-b hover:bg-lightgreen"><td class="py-2 px-4">Ozonlaagafbraak</td><td class="py-2 px-4">ODP</td><td class="py-2 px-4">kg CFC-11-eq</td></tr>
-              <tr class="border-b hover:bg-lightgreen"><td class="py-2 px-4">Verzuring</td><td class="py-2 px-4">AP</td><td class="py-2 px-4">kg SO₂-eq</td></tr>
-              <!-- Voeg andere rijen toe zoals in originele structuur -->
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Uitputting abiotische grondstoffen (elementen)</td>
+                <td class="py-2 px-4 text-dark">ADP-elementen</td>
+                <td class="py-2 px-4 text-dark">kg Sb-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Uitputting fossiele energiedragers</td>
+                <td class="py-2 px-4 text-dark">ADP-fossiel</td>
+                <td class="py-2 px-4 text-dark">MJ</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Klimaatverandering</td>
+                <td class="py-2 px-4 text-dark">GWP</td>
+                <td class="py-2 px-4 text-dark">kg CO₂-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Ozonlaagaantasting</td>
+                <td class="py-2 px-4 text-dark">ODP</td>
+                <td class="py-2 px-4 text-dark">kg CFC-11-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Fotochemische oxidantvorming</td>
+                <td class="py-2 px-4 text-dark">POCP</td>
+                <td class="py-2 px-4 text-dark">kg etheen-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Verzuring</td>
+                <td class="py-2 px-4 text-dark">AP</td>
+                <td class="py-2 px-4 text-dark">kg SO₂-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Vermesting</td>
+                <td class="py-2 px-4 text-dark">EP</td>
+                <td class="py-2 px-4 text-dark">kg (PO₄)³⁻-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Humane toxiciteit</td>
+                <td class="py-2 px-4 text-dark">HTP</td>
+                <td class="py-2 px-4 text-dark">kg 1,4-DCB-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Ecotoxiciteit zoetwater</td>
+                <td class="py-2 px-4 text-dark">FAETP</td>
+                <td class="py-2 px-4 text-dark">kg 1,4-DCB-eq.</td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-lightgreen">
+                <td class="py-2 px-4 text-dark">Ecotoxiciteit zeewater</td>
+                <td class="py-2 px-4 text-dark">MAETP</td>
+                <td class="py-2 px-4 text-dark">kg 1,4-DCB-eq.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 text-dark">Ecotoxiciteit terrestrisch</td>
+                <td class="py-2 px-4 text-dark">TETP</td>
+                <td class="py-2 px-4 text-dark">kg 1,4-DCB-eq.</td>
+              </tr>
             </tbody>
           </table>
-          <p class="mt-2 text-sm text-dark">Tabel: impactcategorieën volgens EN 15804+A1</p>
         </div>
+        <p class="text-sm text-dark mb-10">* Tabel: impactcategorieën conform EN 15804+A1</p>
 
         <!-- Tabel voor EN 15804 A2 -->
-        <div class="overflow-x-auto mt-10 mb-6">
-          <table class="w-full bg-white rounded-lg shadow-md border border-hovergreen text-sm">
-            <thead>
-              <tr class="bg-primary text-white">
-                <th class="py-3 px-4 text-left">Milieu-impactcategorie</th>
-                <th class="py-3 px-4 text-left">Indicator</th>
-                <th class="py-3 px-4 text-left">Eenheid</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b hover:bg-lightgreen"><td class="py-2 px-4">Klimaatverandering – fossiel</td><td class="py-2 px-4">GWP-fossiel</td><td class="py-2 px-4">kg CO₂-eq</td></tr>
-              <tr class="border-b hover:bg-lightgreen"><td class="py-2 px-4">Klimaatverandering – biogeen</td><td class="py-2 px-4">GWP-biogeen</td><td class="py-2 px-4">kg CO₂-eq</td></tr>
-              <tr class="border-b hover:bg-lightgreen"><td class="py-2 px-4">Watergebruik</td><td class="py-2 px-4">WDP</td><td class="py-2 px-4">m³ eq deprived</td></tr>
-              <!-- Voeg andere rijen toe zoals in originele structuur -->
-            </tbody>
-          </table>
-          <p class="mt-2 text-sm text-dark">Tabel: impactcategorieën volgens EN 15804+A2</p>
-        </div>
+<div class="overflow-x-auto mt-6 mb-4">
+  <table class="w-full bg-white rounded-lg shadow-md border border-hovergreen">
+    <thead>
+      <tr class="bg-primary text-white">
+        <th class="py-3 px-4 text-left">Milieu-impactcategorie</th>
+        <th class="py-3 px-4 text-left">Indicator</th>
+        <th class="py-3 px-4 text-left">Eenheid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Klimaatverandering – totaal</td>
+        <td class="py-2 px-4 text-dark">GWP-total</td>
+        <td class="py-2 px-4 text-dark">kg CO₂-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Klimaatverandering – fossiel</td>
+        <td class="py-2 px-4 text-dark">GWP-fossiel</td>
+        <td class="py-2 px-4 text-dark">kg CO₂-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Klimaatverandering – biogeen</td>
+        <td class="py-2 px-4 text-dark">GWP-biogeen</td>
+        <td class="py-2 px-4 text-dark">kg CO₂-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Klimaatverandering – landgebruik en landgebruikverandering</td>
+        <td class="py-2 px-4 text-dark">GWP-luluc</td>
+        <td class="py-2 px-4 text-dark">kg CO₂-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Verzuring</td>
+        <td class="py-2 px-4 text-dark">AP</td>
+        <td class="py-2 px-4 text-dark">mol H⁺-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Vermesting – zoetwater</td>
+        <td class="py-2 px-4 text-dark">EP-freshwater</td>
+        <td class="py-2 px-4 text-dark">kg P-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Vermesting – marien</td>
+        <td class="py-2 px-4 text-dark">EP-marine</td>
+        <td class="py-2 px-4 text-dark">kg N-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Vermesting – terrestrisch</td>
+        <td class="py-2 px-4 text-dark">EP-terrestrial</td>
+        <td class="py-2 px-4 text-dark">mol N-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Fotochemische ozonvorming (menselijke gezondheid)</td>
+        <td class="py-2 px-4 text-dark">POCP</td>
+        <td class="py-2 px-4 text-dark">kg NMVOC-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Aantasting ozonlaag</td>
+        <td class="py-2 px-4 text-dark">ODP</td>
+        <td class="py-2 px-4 text-dark">kg CFC-11-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Ecotoxiciteit – zoetwater</td>
+        <td class="py-2 px-4 text-dark">ETP-fw</td>
+        <td class="py-2 px-4 text-dark">CTUe</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Humane toxiciteit – kankerverwekkend</td>
+        <td class="py-2 px-4 text-dark">HTP-cancer</td>
+        <td class="py-2 px-4 text-dark">CTUh</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Humane toxiciteit – niet-kankerverwekkend</td>
+        <td class="py-2 px-4 text-dark">HTP-non-cancer</td>
+        <td class="py-2 px-4 text-dark">CTUh</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Gebruik van water</td>
+        <td class="py-2 px-4 text-dark">WDP</td>
+        <td class="py-2 px-4 text-dark">m³ world-eq. deprived</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Landgebruik</td>
+        <td class="py-2 px-4 text-dark">Soil quality index</td>
+        <td class="py-2 px-4 text-dark">-</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Gebruik van abiotische hulpbronnen – mineralen & metalen</td>
+        <td class="py-2 px-4 text-dark">ADP-mineral</td>
+        <td class="py-2 px-4 text-dark">kg Sb-eq.</td>
+      </tr>
+      <tr class="border-b border-gray-200 hover:bg-lightgreen">
+        <td class="py-2 px-4 text-dark">Gebruik van abiotische hulpbronnen – fossiele energie</td>
+        <td class="py-2 px-4 text-dark">ADP-fossil</td>
+        <td class="py-2 px-4 text-dark">MJ</td>
+      </tr>
+      <tr>
+        <td class="py-2 px-4 text-dark">Gebruik van hernieuwbare energie</td>
+        <td class="py-2 px-4 text-dark">PERE</td>
+        <td class="py-2 px-4 text-dark">MJ</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="text-sm text-dark">* Volledige lijst van verplichte impactcategorieën volgens EN 15804+A2</p>
 
         <p class="mb-6 text-base text-dark">
           Voor MKI betekent dit: er komt een nieuwe set schaduwprijzen om deze extra categorieën te vertalen naar maatschappelijke kosten.
         </p>
 
-        <!-- 3.2 Aanpassing in rekenregels -->
-        <div class="pl-4 border-l-4 border-primary mb-4">
-          <h3 class="text-2xl font-semibold text-primary mt-6 mb-3">3.2 Aanpassing in rekenregels en modelstructuur</h3>
-        </div>
+              <!-- 3.2 Aanpassing in rekenregels -->
+      <h3 class="text-2xl font-semibold text-primary mt-10 mb-4">3.2 Aanpassing in rekenregels</h3>
 
-        <p class="mb-4 text-base text-dark">De rekenregels in A2 zijn op verschillende punten aangescherpt, onder andere:</p>
-        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
-          <li>Herziene module-indeling (met striktere vereisten voor scenario’s in B- en C-fasen)</li>
-          <li>Verplicht rapporteren van energierecoveries en materiaalverliezen in de D-fase</li>
-          <li>Strengere eisen aan LCI-datatransparantie en bronverantwoording</li>
-        </ul>
+      <p class="mb-4 text-base text-dark">
+        De rekenregels voor EPD’s zijn in A2 aangescherpt, met als doel om beter aan te sluiten bij internationale normen (zoals ISO 21930) en om dubbeltellingen te vermijden. Dit heeft impact op de manier waarop modules worden berekend en gerapporteerd:
+      </p>
 
-        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
-          <p class="text-base text-dark"><strong>Belangrijk:</strong> producenten moeten hun bestaande EPD-modellen en gebruikte datasets mogelijk herzien of opnieuw laten verifiëren.</p>
-        </div>
+      <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+        <li>Verplicht rapporteren van Modules A1-A3 (productie), C1-C4 (einde levensduur) en D (recyclingpotentieel)</li>
+        <li>Uniforme toerekening van bijproducten, co-producten en afvalstromen</li>
+        <li>Verdere standaardisering van cut-off regels</li>
+      </ul>
+
+      <p class="mb-6 text-base text-dark">
+        Waar in A1 nog ruimte bestond voor verschillende interpretaties, dwingt A2 tot striktere en transparantere keuzes bij systeemgrenzen, datarepresentatie en modelaannames. Dit verbetert de vergelijkbaarheid tussen EPD’s, maar vereist ook een meer gedetailleerde LCA-aanpak.
+      </p>
+
 
         <!-- 3.3 Aangescherpte EPD-rapportagevereisten -->
         <div class="pl-4 border-l-4 border-primary mb-4">
