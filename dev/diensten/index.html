@@ -47,23 +47,29 @@
       });
   </script>
 
-<!-- Hero Section met groene overlay en witte tekst -->
-<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
+<!-- Hero Section met groene overlay en witte tekst + knoppen -->
+<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[400px] flex items-center justify-center">
   <!-- Achtergrondafbeelding -->
   <div class="absolute inset-0">
-    <img src="/dev/images/onze-diensten-mki-gww.webp" alt="Onze diensten MKI Expertisecentrum" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
-    <div class="absolute inset-0 bg-primary opacity-80"></div> <!-- Groene waas -->
+    <img src="/dev/images/onze-diensten-mki-gww.webp" alt="Diensten MKI Expertisecentrum" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-primary opacity-80"></div>
   </div>
 
   <!-- Inhoud -->
-  <div class="relative z-10 max-w-4xl mx-auto text-white">
+  <div class="relative z-10 max-w-content mx-auto text-white">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">Onze diensten</h1>
-    <p class="text-lg mb-8">
-      Van strategie tot uitvoering – wij helpen je MKI concreet, werkbaar en impactvol te maken in de GWW-sector.
+    <p class="text-lg mb-6 max-w-2xl mx-auto">
+      Van strategie tot uitvoering: wij helpen opdrachtgevers, opdrachtnemers en leveranciers om MKI concreet toe te passen in beleid, aanbesteding en project.
     </p>
+
+    <!-- Knoppen -->
+    <div class="flex flex-col md:flex-row justify-center gap-4 mt-6">
+      <a href="/dev/opdrachtgevers" class="bg-yellow text-dark px-5 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition text-sm">Voor opdrachtgevers</a>
+      <a href="/dev/opdrachtnemers" class="bg-yellow text-dark px-5 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition text-sm">Voor opdrachtnemers</a>
+      <a href="/dev/leveranciers" class="bg-yellow text-dark px-5 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition text-sm">Voor leveranciers</a>
+    </div>
   </div>
 </section>
-
 
   <!-- Dienstblokken -->
   <section class="bg-white py-20 px-6">
