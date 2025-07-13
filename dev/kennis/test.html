@@ -53,7 +53,8 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS config -->
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -62,10 +63,10 @@
           colors: {
             primary: '#134a3c',
             hovergreen: '#11785E',
-            lightgreen: '#E4F4E2',
+            accent: '#E4F4E2',
             yellow: '#FFD166',
             dark: '#1F2937',
-            whitegray: '#FAFAF9'
+            lightgray: '#FAFAF9'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif']
@@ -78,8 +79,19 @@
     }
   </script>
 
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .toc-link {
+      @apply text-dark font-medium transition duration-200;
+    }
+    .toc-link:hover {
+      @apply text-hovergreen font-semibold;
+    }
+  </style>
 </head>
-<body class="bg-whitegray font-sans text-dark">
+<body class="bg-lightgray font-sans text-dark">
 
 <!-- Header wordt hierna toegevoegd -->
 <!-- Google Analytics -->
