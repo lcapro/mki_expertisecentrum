@@ -3,10 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wat vind je hier? – MKI Expertisecentrum</title>
-  <meta name="description" content="Wat biedt het MKI Expertisecentrum? Van uitleg tot tools: ontdek wat je hier kunt vinden." />
-  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/wat-vind-je-hier" />
+  <title>MKI Expertisecentrum | Alles over de Milieukostenindicator in de GWW-sector</title>
+  <meta name="description" content="Leer alles over MKI (Milieukostenindicator) in de GWW: uitleg, tools, praktijkvoorbeelden en toepassingen voor opdrachtgevers, aannemers en leveranciers." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MKI Expertisecentrum – Alles over MKI in de GWW-sector" />
+  <meta property="og:description" content="Praktische uitleg, tools en praktijkvoorbeelden over MKI voor opdrachtgevers, aannemers en leveranciers." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MKI Expertisecentrum – Alles over MKI in de GWW-sector" />
+  <meta name="twitter:description" content="Vind uitleg, tools en praktijkvoorbeelden voor toepassing van MKI in ontwerp en aanbesteding." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-home.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MKI Expertisecentrum",
+    "url": "https://www.mkiexpertisecentrum.nl",
+    "description": "Alles over de Milieukostenindicator (MKI) voor de GWW-sector: uitleg, tools en toepassingen voor duurzaam inkopen en ontwerpen.",
+    "inLanguage": "nl-NL"
+  }
+  </script>
+
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -15,10 +44,10 @@
           colors: {
             primary: '#134a3c',
             hovergreen: '#11785E',
-            accent: '#E4F4E2',
+            lightgreen: '#E4F4E2',
             yellow: '#FFD166',
             dark: '#1F2937',
-            lightgray: '#FAFAF9'
+            whitegray: '#FAFAF9',
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif']
@@ -30,8 +59,29 @@
       }
     }
   </script>
+  <script src="/dev/js/header-behavior.js" defer></script>
 </head>
-<body class="bg-lightgray text-dark font-sans">
+<body class="bg-whitegray text-dark font-sans">
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE51N8K74');
+  </script>
+
+  <!-- Header -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
 
 <!-- Hero Section met groene overlay en witte tekst -->
 <section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[350px] flex items-center justify-center">
@@ -86,7 +136,7 @@
   <section class="py-16 px-6 bg-white border-t border-accent text-center">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-2xl font-bold mb-4 text-primary">Zoek je iets specifieks?</h2>
-      <p class="text-sm text-gray-700 mb-6">Mis je iets of wil je een onderwerp aandragen? Laat het weten — we breiden de kennisbank continu uit.</p>
+      <p class="text-sm text-gray-700 mb-6">Mis je iets of wil je een onderwerp aandragen? Laat het weten, we breiden de kennisbank continu uit.</p>
       <a href="/dev/contact" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Stel je vraag</a>
     </div>
   </section>
