@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools voor MKI | MKI Expertisecentrum</title>
+  <meta name="description" content="Ontdek praktische tools voor het uitvoeren van MKI-berekeningen in de GWW-sector. Inclusief DuboCalc, SimaPro, LCAPro en meer." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/tools" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tools voor MKI | MKI Expertisecentrum" />
+  <meta property="og:description" content="Ontdek praktische MKI-tools zoals DuboCalc, LCAPro en SimaPro voor de GWW-sector." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/tools" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-tools.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tools voor MKI | MKI Expertisecentrum" />
+  <meta name="twitter:description" content="Gebruiksvriendelijke tools voor MKI-berekeningen in de GWW-sector." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-tools.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Tools voor MKI",
+    "url": "https://www.mkiexpertisecentrum.nl/dev/tools",
+    "description": "Gebruiksvriendelijke tools voor MKI-berekeningen in de GWW-sector, zoals DuboCalc, SimaPro en LCAPro.",
+    "inLanguage": "nl-NL"
+  }
+  </script>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0B7D6D',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="/dev/js/header-behavior.js" defer></script>
+</head>
+<body class="bg-whitegray text-dark font-sans">
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SNE51N8K74');
+  </script>
+
+  <!-- Header -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Hero -->
+  <section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[300px] flex items-center justify-center">
+    <div class="absolute inset-0">
+      <img src="/dev/images/tools-mki-gww.webp" alt="Tools voor MKI in de GWW-sector" class="w-full h-full object-cover object-center" loading="lazy" />
+      <div class="absolute inset-0 bg-primary opacity-80"></div>
+    </div>
+    <div class="relative z-10 max-w-content mx-auto text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Tools voor MKI-berekeningen en analyse</h1>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">
+        Gebruiksvriendelijke tools helpen je bij het uitvoeren van MKI-berekeningen en het analyseren van milieueffecten. Klik door naar de websites van deze hulpmiddelen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tool Cards -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-content mx-auto grid md:grid-cols-3 gap-8">
+
+      <a href="https://www.dubocalc.nl" target="_blank" rel="noopener" class="block bg-white rounded-lg p-8 shadow hover:shadow-md hover:-translate-y-[2px] transition-transform duration-200 text-center border border-hovergreen">
+        <img src="/dev/images/tools/dubocalc.png" alt="DuboCalc logo" class="mx-auto w-20 h-20 mb-4" />
+        <h2 class="text-xl font-semibold text-primary mb-2">DuboCalc</h2>
+        <p class="text-base text-dark">Rijkswaterstaat-tool voor MKI-berekeningen in GWW-projecten. Integreert data uit de Nationale Milieudatabase.</p>
+      </a>
+
+      <a href="https://simapro.com" target="_blank" rel="noopener" class="block bg-white rounded-lg p-8 shadow hover:shadow-md hover:-translate-y-[2px] transition-transform duration-200 text-center border border-hovergreen">
+        <img src="/dev/images/tools/simapro.png" alt="SimaPro logo" class="mx-auto w-20 h-20 mb-4" />
+        <h2 class="text-xl font-semibold text-primary mb-2">SimaPro</h2>
+        <p class="text-base text-dark">Internationale LCA-software voor diepgaande milieuanalyse. Gebruikt door onderzoekers, beleidsmakers en adviseurs.</p>
+      </a>
+
+      <a href="https://www.lcapro.nl" target="_blank" rel="noopener" class="block bg-white rounded-lg p-8 shadow hover:shadow-md hover:-translate-y-[2px] transition-transform duration-200 text-center border border-hovergreen">
+        <img src="/dev/images/tools/lcapro.png" alt="LCAPro logo" class="mx-auto w-20 h-20 mb-4" />
+        <h2 class="text-xl font-semibold text-primary mb-2">LCAPro</h2>
+        <p class="text-base text-dark">Toegankelijke LCA-tool voor MKB en GWW, ontwikkeld voor gebruik met Nederlandse MKI-methodiek.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Meer weten over tools?</h2>
+      <p class="text-base text-dark mb-8">Neem contact op als je ondersteuning wilt bij het kiezen of gebruiken van een MKI-tool in jouw project.</p>
+      <a href="/dev/contact" class="inline-block bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Neem contact op</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
