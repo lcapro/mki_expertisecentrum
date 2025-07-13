@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wat verandert er met EN 15804+A2 voor MKI-berekeningen?</title>
+  <meta name="description" content="Vanaf 2026 wordt EN 15804+A2 verplicht. Wat betekent dit voor MKI-berekeningen, impactcategorieën en software? Lees hier de wijzigingen." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/en15804-a2-mki" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Wat verandert er met EN 15804+A2 voor MKI-berekeningen?" />
+  <meta property="og:description" content="EN 15804+A2 brengt 19 impactcategorieën en aangepaste MKI-regels. Ontdek wat dit betekent voor de Nederlandse GWW-praktijk." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/en15804-a2-mki" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/duurzaam-bouwen-en15804-a2-header.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EN 15804+A2 en MKI: wat verandert er?" />
+  <meta name="twitter:description" content="Lees wat de overstap naar EN 15804+A2 betekent voor MKI-berekeningen, impactcategorieën en tools." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/duurzaam-bouwen-en15804-a2-header.jpg" />
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-whitegray font-sans text-dark">
+
+    <!-- Header sectie (geladen via fetch) -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+
+  <!-- Header gedrag + inladen HTML via JS -->
+  <script src="/dev/js/header-behavior.js" defer></script>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Paginalayout: Grid met TOC en artikel -->
+  <div class="max-w-screen-xl mx-auto px-4 pt-16 pb-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Inhoudsopgave -->
+    <aside class="hidden md:block md:col-span-1">
+      <nav class="sticky top-24 bg-white rounded-lg shadow p-6 border border-hovergreen">
+        <h2 class="text-2xl font-bold text-primary mb-6">Inhoudsopgave</h2>
+        <ul class="space-y-2 text-base leading-relaxed">
+          <li><a href="#hoofdstuk-1" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">1. Inleiding</a></li>
+          <li><a href="#hoofdstuk-2" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">2. Wat is EN 15804+A2?</a></li>
+          <li><a href="#hoofdstuk-3" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">3. Belangrijkste verschillen A1 vs A2</a></li>
+          <li><a href="#hoofdstuk-4" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">4. Gevolgen voor MKI in Nederland</a></li>
+          <li><a href="#hoofdstuk-5" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">5. Wat betekent dit voor jou?</a></li>
+          <li><a href="#hoofdstuk-6" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">6. Tijdspad en invoering</a></li>
+          <li><a href="#hoofdstuk-7" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">7. Wat kun je nu al doen?</a></li>
+          <li><a href="#hoofdstuk-8" class="text-dark font-medium hover:text-hovergreen hover:font-semibold transition">8. Vervolg en verdieping</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Artikelstart -->
+    <main class="md:col-span-3">
+
+            <!-- Intro-header -->
+      <header class="mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Wat verandert er met EN 15804+A2 voor MKI-berekeningen?</h1>
+        <p class="text-base text-dark mb-4">
+          De Europese norm EN 15804 is vernieuwd. In dit artikel lees je wat de komst van versie A2 betekent voor MKI-berekeningen, productkaarten en software in de Nederlandse GWW-praktijk.
+        </p>
+        <p class="text-sm text-dark">door MKI Expertisecentrum · Laatst bijgewerkt op 19 juni 2025</p>
+        <figure class="mt-6 mb-8">
+          <picture>
+            <source srcset="/dev/images/duurzaam-bouwen-en15804-a2-header.webp" type="image/webp">
+            <img src="/dev/images/duurzaam-bouwen-en15804-a2-header.jpg" alt="Bomen langs een weg als symbool voor duurzaam bouwen met EN 15804+A2" loading="lazy" class="w-full h-auto rounded-lg">
+          </picture>
+        </figure>
+      </header>
+
+      <!-- Hoofdstuk 1 -->
+      <section id="hoofdstuk-1" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">1. Inleiding – Waarom EN 15804 is herzien en wat dit betekent voor MKI</h2>
+        <p class="mb-4 text-base text-dark">
+          Binnen de Europese bouwsector groeit de behoefte aan betrouwbare, actuele en breed toepasbare milieudata. Om hierop aan te sluiten, is de geharmoniseerde norm EN 15804 in 2019 herzien. Deze nieuwe versie, aangeduid als EN 15804+A2, bevat aangescherpte eisen voor milieuproductverklaringen (EPD’s) en een uitgebreide set impactcategorieën.
+        </p>
+        <p class="mb-4 text-base text-dark">
+          In Nederland vormt deze norm een belangrijke basis voor MKI-berekeningen. De MKI-methodiek is immers gebaseerd op levenscyclusanalyses (LCA’s) van bouwproducten en -processen, die hun gegevens ontlenen aan EPD’s opgesteld volgens EN 15804.
+        </p>
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="mb-2 font-semibold text-dark">Wat verandert er concreet?</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>De inhoud van productkaarten in de Nationale Milieudatabase (NMD)</li>
+            <li>Het aantal impactcategorieën dat in de MKI moet worden meegenomen</li>
+            <li>De herziening van schaduwprijzen en de bepalingsmethode Milieuprestatie Bouwwerken</li>
+          </ul>
+        </div>
+        <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>Belangrijk:</strong> In dit artikel leggen we uit wat EN 15804+A2 precies inhoudt, wat de verschillen zijn ten opzichte van de A1-versie, en hoe deze wijziging wordt doorgevoerd in Nederland. Ook bespreken we wat dit betekent voor producenten, opdrachtgevers, rekenaars en beleidsmakers.
+          </p>
+        </div>
+      </section>
