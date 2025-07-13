@@ -1,1 +1,538 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKI in elke projectfase – Toepassing van initiatief tot oplevering</title>
+  <meta name="description" content="Ontdek hoe je de Milieukostenindicator (MKI) toepast in elke fase van GWW-projecten. Van initiatief tot oplevering – inclusief voorbeelden, tips en tools." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/mki-in-projectfases" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="MKI toepasbaar in elke projectfase – van initiatief tot oplevering" />
+  <meta property="og:description" content="Hoe gebruik je MKI in ontwerp, aanbesteding en uitvoering? Bekijk het overzicht per projectfase – inclusief tips en visueel stappenplan." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/mki-in-projectfases" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-projectfasen.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MKI in alle projectfasen – Toepasbaar van initiatief tot uitvoering" />
+  <meta name="twitter:description" content="Bekijk hoe je MKI inzet in elk onderdeel van een GWW-project. Praktisch, concreet en toepasbaar." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-projectfasen.png" />
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind configuratie -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+  <body class="bg-white font-sans text-dark">
+
+  <!-- Header sectie (geladen via fetch) -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+
+  <!-- Header gedrag + inladen HTML via JS -->
+  <script src="/dev/js/header-behavior.js" defer></script>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+  <!-- Paginalayout: Grid met TOC en artikel -->
+  <div class="max-w-screen-xl mx-auto px-4 pt-16 pb-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Inhoudsopgave -->
+    <aside class="hidden md:block md:col-span-1">
+      <nav class="sticky top-24 bg-primary rounded-lg shadow p-6 border border-hovergreen">
+        <h2 class="text-2xl font-bold text-white mb-6">Inhoudsopgave</h2>
+        <ul class="space-y-2 text-base leading-relaxed">
+          <li><a href="#hoofdstuk-1" class="text-white font-medium hover:text-yellow hover:font-semibold transition">1. Inleiding</a></li>
+          <li><a href="#hoofdstuk-2" class="text-white font-medium hover:text-yellow hover:font-semibold transition">2. Initiatief- en verkenningsfase</a></li>
+          <li><a href="#hoofdstuk-3" class="text-white font-medium hover:text-yellow hover:font-semibold transition">3. Ontwerpfase</a></li>
+          <li><a href="#hoofdstuk-4" class="text-white font-medium hover:text-yellow hover:font-semibold transition">4. Aanbestedingsfase</a></li>
+          <li><a href="#hoofdstuk-5" class="text-white font-medium hover:text-yellow hover:font-semibold transition">5. Uitvoeringsfase</a></li>
+          <li><a href="#hoofdstuk-6" class="text-white font-medium hover:text-yellow hover:font-semibold transition">6. Oplevering en evaluatie</a></li>
+          <li><a href="#hoofdstuk-7" class="text-white font-medium hover:text-yellow hover:font-semibold transition">7. Tips voor integraal gebruik</a></li>
+          <li><a href="#hoofdstuk-8" class="text-white font-medium hover:text-yellow hover:font-semibold transition">8. Vervolg en verdieping</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Artikelstart -->
+    <main class="md:col-span-3">
+
+      <!-- Intro-header -->
+      <header class="mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">MKI toepasbaar in elke projectfase – van initiatief tot oplevering</h1>
+        <p class="text-base text-dark mb-4">
+          In dit artikel ontdek je hoe je de Milieukostenindicator (MKI) strategisch kunt inzetten door alle fasen van een GWW-project heen — van initiatief tot en met oplevering. Inclusief voorbeelden, praktische tips en formats (binnenkort beschikbaar).
+        </p>
+        <p class="text-sm text-dark">door MKI Expertisecentrum · Laatst bijgewerkt op 17 juni 2025</p>
+        <figure class="mt-6 mb-8">
+          <picture>
+            <source srcset="/dev/images/kennis-projectfasen-mki.webp" type="image/webp">
+            <img src="/dev/images/kennis-projectfasen-mki.webp" alt="Visualisatie projectfasen en toepassing MKI" loading="lazy" class="w-full h-auto rounded-lg">
+          </picture>
+        </figure>
+      </header>
+
+            <!-- Hoofdstuk 1 -->
+      <section id="hoofdstuk-1" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">1. Inleiding – Waarom MKI niet alleen bij aanbesteding hoort</h2>
+
+        <p class="mb-4 text-base text-dark">
+          De Milieukostenindicator (MKI) wordt in de praktijk vaak vooral ingezet tijdens aanbestedingen — bijvoorbeeld als EMVI-criterium of minimumeis. Maar wie duurzaamheid echt wil borgen, begint niet bij de gunning, maar veel eerder.
+        </p>
+
+        <p class="mb-4 text-base text-dark">
+          Vanuit het principe van <em>duurzaamheid over de gehele levenscyclus</em> is het essentieel om MKI al in de initiatief- en ontwerpfase te benutten — en vervolgens te blijven toepassen tot in uitvoering en evaluatie. Zo wordt MKI meer dan een getal: het wordt een onderbouwd besluitvormingsinstrument.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="mb-2 font-semibold text-dark">Wat verandert er in aanpak?</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>MKI wordt al in de eerste projectstappen meegenomen</li>
+            <li>Het helpt strategische keuzes te onderbouwen en sturen</li>
+            <li>Het versterkt consistentie en transparantie over fases heen</li>
+          </ul>
+        </div>
+
+        <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>In dit artikel:</strong> we tonen hoe MKI per projectfase kan bijdragen aan duurzaamheid. Van beleidsambitie tot monitoring — met praktijkvoorbeelden, tips en verwijzingen naar hulpmiddelen.
+          </p>
+        </div>
+
+        <p class="mt-6 mb-4 text-base text-dark">
+          De infographic hieronder geeft een visueel overzicht van hoe MKI zich door een GWW-project beweegt – en waar de grootste impactmomenten liggen.
+        </p>
+
+        <figure class="mt-4 mb-8">
+          <picture>
+            <source srcset="/dev/images/MKI_procesfases.webp" type="image/webp">
+            <img src="/dev/images/MKI_procesfases.png" alt="Infographic MKI in projectfasen" loading="lazy" class="w-full h-auto rounded-lg shadow-md">
+          </picture>
+        </figure>
+      </section>
+
+            <!-- Hoofdstuk 2 -->
+      <section id="hoofdstuk-2" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">2. Initiatief- en verkenningsfase</h2>
+
+        <p class="mb-4 text-base text-dark">
+          In deze vroege projectfase worden strategische lijnen uitgezet: denk aan beleidsdoelen, locatiekeuzes en systeembeslissingen. Juist hier kan MKI een waardevolle rol spelen als richtinggevend meetinstrument.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="mb-2 font-semibold text-dark">MKI helpt om ambitie concreet te maken:</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>“We streven naar minimaal 30% MKI-reductie t.o.v. een referentieontwerp.”</li>
+            <li>“Varianten worden mede beoordeeld op basis van MKI, niet enkel CO₂.”</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">MKI als ambitiebepaler</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI maakt milieudoelen in deze fase kwantificeerbaar. Zo krijgt duurzaamheid al vroeg plek in het gesprek met bestuurders, ontwerpers en stakeholders.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Onderbouwing van systeemkeuzes</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI kan helpen bij hoofdlijnbeslissingen zoals tracé, materiaalkeuze of constructietype. Met globale ramingen of referentiekaarten kunnen oplossingsrichtingen worden vergeleken.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Voorbereiding op eisen in PvE of beleid</h3>
+        <p class="mb-4 text-base text-dark">
+          Door MKI al hier in te zetten ontstaat een logische lijn naar aanbesteding. MKI-doelen kunnen dan worden vastgelegd als randvoorwaarde of gunningscriterium.
+        </p>
+
+        <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>Let op:</strong> data in deze fase zijn vaak beperkt. Werk daarom met scenario’s of standaardkaarten uit de Nationale Milieudatabase (NMD).
+          </p>
+        </div>
+      </section>
+
+            <!-- Hoofdstuk 3 -->
+      <section id="hoofdstuk-3" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">3. Ontwerpfase (SO / VO / DO)</h2>
+
+        <p class="mb-4 text-base text-dark">
+          In de ontwerpfase kan MKI concreet invloed uitoefenen op materiaalkeuzes, constructiemethoden en ontwerpvarianten. De ontwerpvrijheid is nog groot, terwijl er al voldoende technische onderbouwing is voor onderbouwde MKI-berekeningen.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="font-semibold text-dark">Waar kun je MKI hier voor gebruiken?</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>Objectieve vergelijking van ontwerpvarianten</li>
+            <li>Optimalisatie van materiaalgebruik en detaillering</li>
+            <li>Onderbouwing van duurzame ontwerpkeuzes</li>
+            <li>Voorbereiding op aanbesteding en vervolgfasen</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Vergelijken van ontwerpvarianten</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI wordt vaak gebruikt om ontwerpopties te vergelijken op milieuprestatie. Denk aan:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Asfaltverharding vs. betonverharding</li>
+          <li>Prefab vs. in situ uitvoering</li>
+          <li>Nieuw materiaal vs. hergebruik</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Ontwerpoptimalisatie</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI helpt ook bij optimalisatie op detailniveau, zoals het verlagen van materiaaldiktes, inzetten van secundaire of biobased materialen, of het wijzigen van funderingsopbouw.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Onderbouwing van keuzes</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI maakt ontwerpkeuzes transparant en herleidbaar — richting opdrachtgever, stakeholders of intern projectteam. Dit versterkt draagvlak en traceerbaarheid.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Input voor aanbesteding</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI-resultaten uit het ontwerp kunnen worden doorgezet naar de aanbestedingsfase. Dat voorkomt dubbel werk en zorgt voor inhoudelijke continuïteit.
+        </p>
+
+        <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>Let op:</strong> werk bij voorkeur iteratief: update de MKI bij elk detailniveau (SO, VO, DO). Zo blijft duurzaamheid een doorlopende afweging.
+          </p>
+        </div>
+      </section>
+
+            <!-- Hoofdstuk 4 -->
+      <section id="hoofdstuk-4" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">4. Aanbestedingsfase</h2>
+
+        <p class="mb-4 text-base text-dark">
+          In de aanbesteding krijgt MKI een formele rol. Het is de fase waarin duurzaamheidseisen worden verankerd en meetbare milieuprestaties worden gevraagd van inschrijvers.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="font-semibold text-dark">MKI kan hier op meerdere manieren worden toegepast:</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>Als gunningscriterium (EMVI)</li>
+            <li>Als minimumeis of knock-outcriterium</li>
+            <li>Als verificatie- of toetsinstrument</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">MKI als EMVI-criterium</h3>
+        <p class="mb-4 text-base text-dark">
+          Een veelgebruikte methode is het inzetten van MKI als onderdeel van de EMVI-score. Hoe lager de MKI, hoe meer fictieve korting in de beoordeling. Varianten:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Lineair: elke euro besparing = vaste waardering</li>
+          <li>Met ondergrens of drempelwaarden</li>
+          <li>Automatisch verwerkt via tools zoals DuboCalc</li>
+        </ul>
+        <p class="mb-4 text-base text-dark">
+          Vooraf moet duidelijk zijn:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Welke functionele eenheid wordt gehanteerd</li>
+          <li>Welke software en schaduwprijzentabel verplicht zijn</li>
+          <li>Of project-EPD’s zijn toegestaan of alleen vaste NMD-kaarten</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">MKI als minimumeis</h3>
+        <p class="mb-4 text-base text-dark">
+          Een opdrachtgever kan ook een maximale MKI-score eisen. Inschrijvingen boven deze waarde worden uitgesloten. Belangrijke voorwaarden:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Een realistisch referentieontwerp</li>
+          <li>Voldoende marktcapaciteit om alternatieven te bieden</li>
+          <li>Duidelijke afspraken over toetsing en herberekening</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">MKI als verificatiemiddel</h3>
+        <p class="mb-4 text-base text-dark">
+          Soms wordt MKI pas na gunning gecontroleerd. Bijvoorbeeld via herberekening of toetsing door een derde partij. Dit vraagt om:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Transparante data en aannames</li>
+          <li>Beschikbare en herleidbare EPD’s</li>
+          <li>Toegankelijke software-outputs</li>
+        </ul>
+
+        <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>Tip:</strong> stem MKI-eisen in de aanbesteding af op wat eerder in het project al is vastgelegd. Dit versterkt de lijn en voorkomt interpretatieverschillen.
+          </p>
+        </div>
+      </section>
+
+            <!-- Hoofdstuk 5 -->
+      <section id="hoofdstuk-5" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">5. Uitvoeringsfase en realisatie</h2>
+
+        <p class="mb-4 text-base text-dark">
+          In deze fase verschuift de aandacht van plannen naar praktijk. MKI helpt om gemaakte afspraken te borgen, wijzigingen te beoordelen en milieuprestaties te monitoren tijdens de uitvoering.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="font-semibold text-dark">Waar gebruik je MKI voor in de uitvoering?</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>Controle van afgesproken MKI-scores</li>
+            <li>Beoordeling van materiaalwijzigingen</li>
+            <li>Ondersteuning van projectmonitoring</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Toetsing van MKI-afspraken</h3>
+        <p class="mb-4 text-base text-dark">
+          Als MKI is opgenomen als eis of gunningscriterium, moet in de uitvoering worden aangetoond dat de beloofde score wordt gehaald. Dat gebeurt via:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Onderbouwing met bewijsdocumentatie</li>
+          <li>Herberekening met actuele hoeveelheden</li>
+          <li>Verificatie door een onafhankelijke partij of opdrachtgever</li>
+        </ul>
+        <p class="mb-4 text-base text-dark">
+          Belangrijk is om vooraf duidelijk vast te leggen:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Welke productkaarten toegestaan zijn</li>
+          <li>Welk moment als definitieve rekenpeildatum geldt</li>
+          <li>Welke softwareversie en schaduwprijzen verplicht zijn</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Omgaan met wijzigingen</h3>
+        <p class="mb-4 text-base text-dark">
+          Tijdens uitvoering kunnen wijzigingen ontstaan. MKI helpt om alternatieven te beoordelen op milieubelasting:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Blijft de MKI binnen de afgesproken grens?</li>
+          <li>Wat is het beste alternatief qua milieu-impact?</li>
+          <li>Hoe verantwoord je de wijziging in rapportage?</li>
+        </ul>
+        <p class="mb-4 text-base text-dark">
+          Grotere wijzigingen vragen vaak om een nieuwe berekening als onderdeel van het wijzigingsverzoek.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Monitoring van prestaties</h3>
+        <p class="mb-4 text-base text-dark">
+          Steeds vaker wordt MKI ook gebruikt voor bredere monitoring. Denk aan:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Controle van materiaalgebruik conform EPD’s</li>
+          <li>Volgen van MKI-doelstellingen binnen raamcontracten</li>
+          <li>Vergelijking met referentieprojecten</li>
+        </ul>
+
+        <div class="bg-yellow/20 border-l-4 border-yellow p-5 rounded">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>Aandachtspunt:</strong> maak MKI praktisch toepasbaar in uitvoering. Gebruik heldere formats, toegankelijke tools en werkbare eisen voor leveranciers en onderaannemers.
+          </p>
+        </div>
+      </section>
+
+            <!-- Hoofdstuk 6 -->
+      <section id="hoofdstuk-6" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">6. Oplevering, monitoring en evaluatie</h2>
+
+        <p class="mb-4 text-base text-dark">
+          Ook na afronding van het project blijft MKI relevant. In deze fase draait het om valideren van prestaties, leren van resultaten en het borgen van kennis voor toekomstige projecten.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="font-semibold text-dark">Wat kun je doen met MKI ná oplevering?</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>Controleren of beloofde scores zijn gehaald</li>
+            <li>Gebruik als benchmark voor andere projecten</li>
+            <li>Lessen trekken voor volgende ontwerpen</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Validatie bij oplevering</h3>
+        <p class="mb-4 text-base text-dark">
+          Bij gunningscriteria of eisen op basis van MKI is controle achteraf cruciaal. Dat kan door:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Een eindberekening met actuele hoeveelheden</li>
+          <li>Toetsing door onafhankelijke partij</li>
+          <li>Formele goedkeuring als onderdeel van oplevering</li>
+        </ul>
+        <p class="mb-4 text-base text-dark">
+          Zorg hierbij voor:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Consistente uitgangspunten met de aanbesteding</li>
+          <li>Herleidbare koppeling tussen berekening en toegepaste producten</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Gebruik in monitoring en benchmarks</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI-resultaten zijn waardevol voor bredere evaluaties. Voorbeelden:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Vergelijking tussen projecten of ontwerpvarianten</li>
+          <li>Analyse op programmaniveau (bijv. per gemeente, regio)</li>
+          <li>Effectmeting van toegepaste maatregelen of innovaties</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Leren voor volgende projecten</h3>
+        <p class="mb-4 text-base text-dark">
+          Een MKI-analyse na afloop levert waardevolle inzichten op:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Welke keuzes hadden de grootste milieuwinst?</li>
+          <li>Waar zat onverwachte belasting?</li>
+          <li>Hoe kan het proces beter gestuurd worden?</li>
+        </ul>
+        <p class="mb-4 text-base text-dark">
+          Zo wordt MKI niet alleen een middel om te toetsen, maar ook een manier om duurzaamheidskennis structureel te verbeteren.
+        </p>
+      </section>
+
+            <!-- Hoofdstuk 7 -->
+      <section id="hoofdstuk-7" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">7. Tips voor integraal MKI-gebruik over het hele project</h2>
+
+        <p class="mb-4 text-base text-dark">
+          Om MKI effectief te gebruiken als duurzaamheidsinstrument, is consistentie cruciaal. Zie MKI niet als losse meting, maar als een rode draad door het hele project.
+        </p>
+
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+          <p class="font-semibold text-dark">Aanbevelingen voor doorlopende MKI-toepassing:</p>
+          <ul class="list-disc list-inside ml-4 text-base text-dark">
+            <li>Begin vroeg, liefst al in de initiatief- of verkenningsfase</li>
+            <li>Gebruik overal dezelfde rekenregels en software</li>
+            <li>Herhaal MKI-berekeningen bij elk ontwerpniveau</li>
+            <li>Leg uitgangspunten en aannames goed vast</li>
+            <li>Betrek ontwerpers, opdrachtgevers én uitvoerders</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Start in de vroege fase</h3>
+        <p class="mb-4 text-base text-dark">
+          Hoe eerder je MKI gebruikt, hoe groter de impact op ontwerpkeuzes, budgetten en duurzaamheidsambities. Formuleer al bij start meetbare MKI-doelen.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Zorg voor consistentie</h3>
+        <p class="mb-4 text-base text-dark">
+          Gebruik in alle fases dezelfde:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Functionele eenheid</li>
+          <li>Bepalingsmethode (rekenregels en scenario’s)</li>
+          <li>Software en productkaarten (zoals DuboCalc of NMD)</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Werk iteratief</h3>
+        <p class="mb-4 text-base text-dark">
+          Bereken MKI niet één keer, maar herhaal bij elk detailniveau. Dat geeft richting én ruimte voor verbetering.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Documenteer keuzes en aannames</h3>
+        <p class="mb-4 text-base text-dark">
+          Een MKI-score is alleen bruikbaar als duidelijk is hoe die tot stand kwam. Leg dus vast:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+          <li>Welke productkaarten zijn gebruikt</li>
+          <li>Welke hoeveelheden en scenario’s zijn aangenomen</li>
+          <li>Welke softwareversie en parameters zijn toegepast</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-primary mt-8 mb-3">Betrek alle betrokken partijen</h3>
+        <p class="mb-4 text-base text-dark">
+          MKI werkt het best als iedereen eigenaarschap voelt. Betrek:
+        </p>
+        <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+          <li>Ontwerpers bij het opstellen van varianten</li>
+          <li>Opdrachtnemers bij uitvoeringskeuzes en praktijktoets</li>
+          <li>Opdrachtgevers bij sturing en toetsing</li>
+        </ul>
+        <p class="mb-4 text-base text-dark">
+          Zo wordt MKI geen controle-instrument achteraf, maar een gedeeld sturingsmiddel.
+        </p>
+      </section>
+
+            <!-- Hoofdstuk 8 -->
+      <section id="hoofdstuk-8" class="scroll-mt-28 mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">8. Vervolg en verdieping</h2>
+
+        <p class="mb-4 text-base text-dark">
+          MKI is méér dan een rekentool. Het is een methode om duurzame keuzes onderbouwd, meetbaar en bespreekbaar te maken — in elke projectfase.
+        </p>
+
+        <p class="mb-4 text-base text-dark">
+          Wil je je verder verdiepen of meteen praktisch aan de slag? Bekijk dan de volgende artikelen en hulpmiddelen:
+        </p>
+
+        <div class="space-y-2 mb-6">
+          <p><a href="/dev/kennis/mki-berekening.html" class="text-primary underline hover:text-yellow transition-colors">Hoe wordt een MKI-score berekend?</a></p>
+          <p><a href="/dev/kennis/mki-in-aanbesteding.html" class="text-primary underline hover:text-yellow transition-colors">MKI in de aanbesteding: EMVI, minimumeisen en beoordeling</a></p>
+          <p><a href="/dev/kennis/mki-in-ontwerp.html" class="text-primary underline hover:text-yellow transition-colors">MKI als ontwerptool: sturen en vergelijken in VO en DO</a></p>
+          <p><a href="/dev/kennis/stappenplan-mki.html" class="text-primary underline hover:text-yellow transition-colors">Stappenplan: MKI gebruiken van initiatief tot oplevering</a></p>
+          <p><a href="/dev/kennis/mki-vs-mpg.html" class="text-primary underline hover:text-yellow transition-colors">Verschil tussen MKI en MPG uitgelegd</a></p>
+        </div>
+
+        <div class="bg-yellow/10 border-l-4 border-yellow p-5 rounded mb-6">
+          <p class="text-base text-dark leading-relaxed">
+            <strong>Tip:</strong> Binnenkort verschijnen hier formats voor MKI-gebruik in PvE’s, aanbestedingsleidraden en ontwerpafwegingen.
+          </p>
+        </div>
+
+        <p class="text-base text-dark">
+          Heb je een specifieke vraag of casus over MKI-gebruik binnen jouw project of organisatie?
+        </p>
+        <a href="/contact" class="inline-block mt-4 px-5 py-2 rounded bg-yellow text-dark font-semibold hover:bg-hovergreen hover:text-white transition-colors">
+          Neem contact op via het contactformulier
+        </a>
+      </section>
+
+            </main>
+    </div> <!-- einde van grid-container -->
+
+    <!-- Footer -->
+    <div id="main-footer"></div>
+    <script>
+      fetch("/dev/includes/footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("main-footer").innerHTML = data;
+        });
+    </script>
+
+  </body>
+</html>
 
