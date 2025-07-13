@@ -1,1 +1,492 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hoe MKI werkt in de praktijk – Tools, toepassingen en voorbeelden | MKI Expertisecentrum</title>
+  <meta name="description" content="Bekijk hoe MKI concreet wordt toegepast in ontwerp, aanbesteding en uitvoering. Met tools zoals DuboCalc, LCApro en voorbeelden uit echte GWW-projecten." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/mki-in-praktijk" />
+  <meta name="robots" content="index, follow" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Hoe MKI werkt in de praktijk – Tools, toepassingen en voorbeelden" />
+  <meta property="og:description" content="MKI in de praktijk: tools, projecten en aanpakken in ontwerp en aanbesteding. Met DuboCalc, NMD, LCApro en praktijkcases." />
+  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/dev/mki-in-praktijk" />
+  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-mki-praktijk.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hoe MKI werkt in de praktijk – Tools en voorbeelden" />
+  <meta name="twitter:description" content="Bekijk hoe MKI concreet wordt toegepast in projecten. Ontdek tools zoals DuboCalc, LCApro en meer." />
+  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/dev/images/social-share-mki-praktijk.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Hoe MKI werkt in de praktijk – Tools, toepassingen en voorbeelden",
+    "description": "Bekijk hoe MKI concreet wordt toegepast in ontwerp, aanbesteding en uitvoering. Met tools zoals DuboCalc, LCApro en voorbeelden uit echte GWW-projecten.",
+    "image": "https://www.mkiexpertisecentrum.nl/dev/images/social-share-mki-praktijk.png",
+    "author": {
+      "@type": "Organization",
+      "name": "MKI Expertisecentrum"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MKI Expertisecentrum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mkiexpertisecentrum.nl/logo.png"
+      }
+    },
+    "datePublished": "2025-06-23",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.mkiexpertisecentrum.nl/dev/mki-in-praktijk"
+    }
+  }
+  </script>
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .toc-link {
+      @apply text-dark font-medium transition duration-200;
+    }
+    .toc-link:hover {
+      @apply text-hovergreen font-semibold;
+    }
+  </style>
+</head>
+<body class="bg-whitegray font-sans text-dark">
+
+<!-- Header wordt hierna toegevoegd -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SNE51N8K74');
+</script>
+
+<!-- Header -->
+<div id="main-header"></div>
+<div class="h-[72px] md:h-[80px]"></div>
+<script>
+  fetch("/dev/includes/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("main-header").innerHTML = data;
+    });
+</script>
+<script src="/dev/js/header-behavior.js" defer></script>
+
+<!-- Layout: artikel + inhoudsopgave -->
+<div class="max-w-screen-xl mx-auto px-4 pt-16 pb-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+  <!-- Inhoudsopgave -->
+  <aside class="hidden md:block md:col-span-1">
+    <nav class="sticky top-24 bg-white rounded-lg shadow p-6 border border-hovergreen">
+      <h2 class="text-2xl font-bold text-primary mb-6">Inhoudsopgave</h2>
+      <ul class="space-y-2 text-base leading-relaxed">
+        <li><a href="#hoofdstuk-1" class="toc-link">1. Inleiding – Waarom praktische toepassing telt</a></li>
+        <li><a href="#hoofdstuk-2" class="toc-link">2. Ontwerpen met MKI: varianten en materiaalkeuzes</a></li>
+        <li><a href="#hoofdstuk-3" class="toc-link">3. MKI in aanbestedingen: gunning en eisen</a></li>
+        <li><a href="#hoofdstuk-4" class="toc-link">4. Monitoring en toetsing tijdens uitvoering</a></li>
+        <li><a href="#hoofdstuk-5" class="toc-link">5. Tools om MKI mee te berekenen</a></li>
+        <li><a href="#hoofdstuk-6" class="toc-link">6. Voorbeelden uit de praktijk</a></li>
+        <li><a href="#hoofdstuk-7" class="toc-link">7. Vervolg en verdieping</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Artikelcontent -->
+  <main class="md:col-span-3 p-0 space-y-16">
+
+    <!-- Hoofdstuk 1 -->
+    <section id="hoofdstuk-1" class="scroll-mt-28">
+      <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+        <h2 class="text-3xl font-bold text-primary mb-6">1. Inleiding – Waarom praktische toepassing telt</h2>
+        <p class="mb-4 text-base text-dark">
+          De Milieukostenindicator (MKI) is een krachtig instrument om duurzaamheid te objectiveren, maar uiteindelijk draait het om wat je er in de praktijk mee doet. Hoe gebruik je MKI om ontwerpkeuzes te onderbouwen? Hoe werkt het in een aanbesteding? En welke tools zijn er om tot een correcte berekening te komen?
+        </p>
+        <p class="mb-4 text-base text-dark">
+          In dit artikel geven we een overzicht van hoe MKI in de praktijk wordt toegepast — met concrete voorbeelden en hulpmiddelen voor ontwerp, aanbesteding, uitvoering en monitoring.
+        </p>
+        <p class="mb-4 text-base text-dark">
+          Of je nu opdrachtgever, adviseur of aannemer bent: met MKI kun je beter onderbouwde én aantoonbaar duurzamere keuzes maken.
+        </p>
+        <div class="bg-yellow/10 border border-yellow rounded-lg p-4">
+          <p class="mb-1 font-semibold text-dark">Van theorie naar praktijk</p>
+          <p class="text-sm text-dark">Uiteindelijk draait duurzaamheid niet om scores, maar om wat je ermee doet in je project.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hoofdstuk 2 -->
+<section id="hoofdstuk-2" class="scroll-mt-28">
+  <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+    <h2 class="text-3xl font-bold text-primary mb-6">2. Ontwerpen met MKI: varianten en materiaalkeuzes</h2>
+    <p class="mb-4 text-base text-dark">
+      In de ontwerpfase biedt MKI een objectieve basis om de milieubelasting van ontwerpvarianten te vergelijken. Dit wordt steeds vaker toegepast in de vroege planvorming en in de VO- of DO-fase.
+    </p>
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+      <p class="mb-1 font-semibold text-dark">MKI als stuurinstrument in ontwerp</p>
+      <p class="text-sm text-dark">Door vroegtijdige inzet kun je duurzame keuzes onderbouwen én optimaliseren voordat het vastligt.</p>
+    </div>
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Toepassingen in ontwerp</h3>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Vergelijken van varianten: prefab vs. in situ, staal vs. beton, of gerecycled vs. nieuw materiaal</li>
+      <li>Afwegen van materiaalsoorten: welk asfalt of beton heeft de laagste milieu-impact?</li>
+      <li>Detailoptimalisatie: minder materiaal, biobased keuzes, langere levensduur</li>
+    </ul>
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Hoe werkt dat in de praktijk?</h3>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Ontwerpteams gebruiken MKI-tools zoals DuboCalc voor onderbouwing</li>
+      <li>MKI-scores worden opgenomen in rapportages of variantenstudies</li>
+      <li>Een referentie-MKI kan dienen als interne richtlijn of aanbestedingsvoorbereiding</li>
+    </ul>
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4">
+      <p class="text-base text-dark">
+        <strong>Praktijktip:</strong> Door MKI actief in te zetten tijdens het ontwerp ontstaat ruimte voor optimalisatie met vaak minimale extra kosten.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Hoofdstuk 3 -->
+<section id="hoofdstuk-3" class="scroll-mt-28">
+  <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+    <h2 class="text-3xl font-bold text-primary mb-6">3. MKI in aanbestedingen: gunning en eisen</h2>
+    <p class="mb-4 text-base text-dark">
+      De aanbestedingsfase is het moment waarop duurzaamheidsambities concreet worden omgezet in beoordelingscriteria en contractvoorwaarden. De Milieukostenindicator (MKI) wordt daarbij gebruikt als objectief instrument om milieuprestatie meetbaar te maken.
+    </p>
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+      <p class="mb-1 font-semibold text-dark">Van ambitie naar contract</p>
+      <p class="text-sm text-dark">De aanbesteding bepaalt of duurzaamheid ook daadwerkelijk wordt beloond. MKI maakt dat concreet en toetsbaar.</p>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">1. MKI als EMVI-gunningscriterium</h3>
+    <p class="mb-4 text-base text-dark">
+      De MKI-score wordt onderdeel van de EMVI-beoordeling. Inschrijvers met een lagere MKI krijgen fictieve korting of extra punten.
+    </p>
+    <p class="font-semibold text-dark mb-2">Toepassingsvormen:</p>
+    <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+      <li>Lineaire koppeling: €1 MKI-reductie = €50 fictieve korting</li>
+      <li>Staffels: extra waardering vanaf een drempelwaarde</li>
+      <li>Plafonds: maximale bonus bij lage MKI-score</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">2. MKI als minimumeis</h3>
+    <p class="mb-4 text-base text-dark">
+      De opdrachtgever stelt een maximale MKI-score vast. Inschrijvers moeten aantonen dat hun voorstel onder deze grens blijft.
+    </p>
+    <p class="font-semibold text-dark mb-2">Voorbeelden:</p>
+    <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+      <li>Max. 0,85 €/m³ voor een betonsoort</li>
+      <li>Max. 1,25 €/ton voor asfalt</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Verificatie tijdens en na gunning</h3>
+    <p class="mb-4 text-base text-dark">
+      MKI moet controleerbaar en herleidbaar zijn. De geclaimde score wordt herberekend en geverifieerd.
+    </p>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Herberekening met as-built gegevens</li>
+      <li>Controle van gebruikte productkaarten</li>
+      <li>Validatie door audit of derde partij</li>
+    </ul>
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4">
+      <p class="text-base text-dark">
+        <strong>Samenvattend:</strong> MKI kan effectief bijdragen aan duurzame inkoop. Kies voor heldere eisen, transparante beoordeling en goede verificatie.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Hoofdstuk 4 -->
+<section id="hoofdstuk-4" class="scroll-mt-28">
+  <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+    <h2 class="text-3xl font-bold text-primary mb-6">4. Monitoring en toetsing tijdens uitvoering</h2>
+    <p class="mb-4 text-base text-dark">
+      De toepassing van MKI stopt niet bij gunning. Zodra een project in uitvoering gaat, is het essentieel om de geclaimde milieuprestatie ook daadwerkelijk aan te tonen en te borgen.
+    </p>
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+      <p class="mb-1 font-semibold text-dark">MKI stopt niet bij gunning</p>
+      <p class="text-sm text-dark">Monitoring van MKI tijdens uitvoering zorgt voor transparantie, naleving en structurele kwaliteitsverbetering.</p>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Toetsing van MKI-scores</h3>
+    <p class="mb-4 text-base text-dark">Als een MKI-score is opgegeven in de aanbesteding, dan moet deze bevestigd worden tijdens de uitvoering via:</p>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Herberekening met as-built hoeveelheden</li>
+      <li>Gebruik van werkelijk toegepaste productkaarten</li>
+      <li>Volledige rapportage inclusief softwareversie, functionele eenheid en aannames</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Omgaan met wijzigingen</h3>
+    <p class="mb-4 text-base text-dark">Bij wijzigingen in materiaal, hoeveelheden of uitvoering is herberekening nodig. Dit kan leiden tot:</p>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Acceptatie, bijstelling of afwijzing</li>
+      <li>Bonus/malus bij EMVI-afspraken</li>
+      <li>Verrekening bij eindafrekening of kwaliteitsbeoordeling</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Brede monitoring van MKI</h3>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Doelen op programmaniveau (bijv. 30% MKI-reductie over 5 jaar)</li>
+      <li>Gebruik in KPI’s, dashboards en voortgangsrapportages</li>
+      <li>Vergelijkingen tussen projecten voor leren en verbeteren</li>
+    </ul>
+
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4">
+      <p class="text-base text-dark">
+        <strong>Samenvattend:</strong> toetsing en monitoring zijn cruciaal voor het borgen van duurzaamheid. Ze laten zien of de geclaimde MKI-scores ook echt gehaald worden — en geven sturing voor toekomstige projecten.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Hoofdstuk 5 -->
+<section id="hoofdstuk-5" class="scroll-mt-28">
+  <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+    <h2 class="text-3xl font-bold text-primary mb-6">5. Tools om MKI mee te berekenen</h2>
+    <p class="mb-4 text-base text-dark">
+      Een betrouwbare MKI-score begint bij een juiste berekening. Daarvoor zijn diverse tools beschikbaar, elk met hun eigen toepassingsgebied, mate van detail en aansluiting op de Nederlandse bepalingsmethode.
+    </p>
+
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+      <p class="mb-1 font-semibold text-dark">Kies de juiste tool voor het juiste doel</p>
+      <p class="text-sm text-dark">Niet elke tool is geschikt voor elke fase. Verkenning vraagt iets anders dan inschrijving of toetsing.</p>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">DuboCalc (Rijkswaterstaat)</h3>
+    <p class="mb-4 text-base text-dark">
+      DuboCalc is de meest toegepaste MKI-tool in de GWW-sector. De software is ontwikkeld door Rijkswaterstaat en sluit volledig aan op de Bepalingsmethode Milieuprestatie Bouwwerken.
+    </p>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Koppeling met NMD-productkaarten</li>
+      <li>Toepasbaar voor gunning, toetsing en ontwerp</li>
+      <li>Wordt standaard gebruikt bij Rijkswaterstaat</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">LCApro</h3>
+    <p class="mb-4 text-base text-dark">
+      LCApro is een webtool voor projectspecifieke LCA’s en MKI-berekeningen. Geschikt voor maatwerk, innovatie en gedetailleerde analyses.
+    </p>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Werkt met EPD’s uit de NMD</li>
+      <li>Ondersteunt toetsbare en verifieerbare berekeningen</li>
+      <li>Inzetbaar bij productontwikkeling of niet-standaard toepassingen</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Simapro / openLCA</h3>
+    <p class="mb-4 text-base text-dark">
+      Voor het opstellen van milieuprofielen en EPD’s gebruiken producenten tools als Simapro en openLCA. Deze zijn vooral geschikt voor onderliggende analyses, niet voor directe aanbestedingen.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Quickscans en branchetools</h3>
+    <p class="mb-4 text-base text-dark">
+      Ontwerpers en leveranciers gebruiken soms eenvoudige hulpmiddelen zoals quickscans of Excel-sjablonen voor oriënterende analyses.
+    </p>
+    <ul class="list-disc list-inside ml-4 mb-6 text-base text-dark">
+      <li>Voor vroege fase ontwerpkeuzes</li>
+      <li>Niet geschikt voor formele toetsing of aanbesteding</li>
+    </ul>
+
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4">
+      <p class="text-base text-dark">
+        <strong>Tip:</strong> Gebruik een tool die past bij je projectfase en doel. Verkenning vraagt snelheid, toetsing vraagt transparantie en betrouwbaarheid.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Hoofdstuk 6 -->
+<section id="hoofdstuk-6" class="scroll-mt-28">
+  <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+    <h2 class="text-3xl font-bold text-primary mb-6">6. Voorbeelden uit de praktijk</h2>
+    <p class="mb-4 text-base text-dark">
+      MKI wordt op diverse manieren toegepast binnen GWW-projecten. Hieronder staan vier praktijkvoorbeelden waarin opdrachtgevers, aannemers en leveranciers MKI concreet hebben toegepast.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Afsluitdijk – Rijkswaterstaat</h3>
+    <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+      <li>MKI ingezet als EMVI-gunningscriterium via DuboCalc</li>
+      <li>Contractuele vastlegging van de geclaimde MKI-score</li>
+      <li>Monitoring tijdens uitvoering en actieve sturing op materiaalhergebruik</li>
+    </ul>
+    <p class="mb-6 text-base text-dark">
+      <strong>Effect:</strong> MKI ondersteunde duurzame ontwerpkeuzes en vormde de basis voor latere aanpakken van RWS.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Gemeente – Minimumeis voor beton en staal</h3>
+    <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+      <li>Concrete MKI-grenzen (bijv. max. 0,85 €/m³ voor beton)</li>
+      <li>Vrijheid voor markt om geschikte producten aan te bieden</li>
+      <li>Toetsing op basis van erkende kaarten en software</li>
+    </ul>
+    <p class="mb-6 text-base text-dark">
+      <strong>Effect:</strong> MKI maakte duurzaam inkopen mogelijk zonder productvoorschriften — marktneutraal én controleerbaar.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Aannemer – Optimalisatie met MKI-berekening</h3>
+    <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+      <li>Reductie van milieubelasting via materiaaloptimalisatie</li>
+      <li>Combinatie van kosteneffectiviteit en lage MKI-score</li>
+      <li>Inzet van MKI als onderbouwing én voor gunningsscore</li>
+    </ul>
+    <p class="mb-6 text-base text-dark">
+      <strong>Effect:</strong> MKI gaf richting aan keuzes tijdens ontwerp én aanbesteding, met aantoonbaar duurzame impact.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Leverancier – EPD voor verkeersbord in de NMD</h3>
+    <ul class="list-disc list-inside ml-4 mb-4 text-base text-dark">
+      <li>EPD opgesteld en opgenomen als categorie 1-kaart</li>
+      <li>Product kreeg aantoonbaar voordeel in EMVI-projecten</li>
+      <li>Mogelijkheid voor aannemers om het bord mee te nemen in DuboCalc</li>
+    </ul>
+    <p class="mb-6 text-base text-dark">
+      <strong>Effect:</strong> De leverancier werd transparanter én aantrekkelijker voor duurzame projecten.
+    </p>
+
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4">
+      <p class="text-base text-dark">
+        <strong>Samenvattend:</strong> MKI is inzetbaar voor ontwerp, gunning én productontwikkeling. Van strategisch tot praktisch: het versterkt onderbouwde duurzame keuzes in elk projecttype.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Hoofdstuk 7 -->
+<section id="hoofdstuk-7" class="scroll-mt-28">
+  <div class="bg-white p-6 md:p-10 rounded-lg shadow">
+    <h2 class="text-3xl font-bold text-primary mb-6">7. Vervolg en verdieping</h2>
+    <p class="mb-4 text-base text-dark">
+      De kracht van MKI zit in de combinatie van inhoudelijke diepgang en praktische toepasbaarheid. Door het instrument slim in te zetten in ontwerp, aanbesteding, uitvoering en productontwikkeling, kunnen partijen in de GWW-sector aantoonbaar sturen op duurzaamheid.
+    </p>
+    <p class="mb-6 text-base text-dark">
+      Wil je zelf aan de slag of je verder verdiepen in één van de onderdelen? Hieronder vind je handige vervolgbronnen.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Verdiepende artikelen en hulpmiddelen</h3>
+    <ul class="space-y-2 mb-6">
+      <li><a href="/dev/kennis/mki-berekening.html" class="text-primary underline hover:text-yellow font-medium">Hoe wordt een MKI-score berekend?</a></li>
+      <li><a href="/dev/kennis/en15804-a2-mki.html" class="text-primary underline hover:text-yellow font-medium">Wat verandert er met EN 15804+A2?</a></li>
+      <li><a href="/dev/kennis/mki-in-projectfases.html" class="text-primary underline hover:text-yellow font-medium">MKI toepassen in alle projectfasen</a></li>
+      <li><a href="/dev/kennis/mki-als-integrale-score.html" class="text-primary underline hover:text-yellow font-medium">Wat maakt MKI waardevol? (CO₂, circulariteit, biobased)</a></li>
+      <li><a href="/dev/kennis/mki-in-aanbesteding.html" class="text-primary underline hover:text-yellow font-medium">MKI als criterium in aanbesteding: zo werkt het</a></li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-primary mt-6 mb-2">Tools en databronnen</h3>
+    <ul class="space-y-2 mb-6">
+      <li><a href="https://dubocalc.nl" target="_blank" class="text-primary underline hover:text-yellow font-medium">DuboCalc – MKI-rekentool (Rijkswaterstaat)</a></li>
+      <li><a href="https://milieudatabase.nl" target="_blank" class="text-primary underline hover:text-yellow font-medium">Nationale Milieudatabase (NMD)</a></li>
+      <li><a href="https://www.lcapro.nl" target="_blank" class="text-primary underline hover:text-yellow font-medium">LCApro – project-LCA’s en MKI-berekeningen</a></li>
+      <li><a href="https://www.pre-sustainability.com/simapro" target="_blank" class="text-primary underline hover:text-yellow font-medium">openLCA en Simapro – LCA-software</a></li>
+    </ul>
+
+    <div class="bg-yellow/10 border border-yellow rounded-lg p-4 mb-6">
+      <p class="text-base text-dark">
+        <strong>Tip:</strong> gebruik dit moment om je kennis te verdiepen en collega’s mee te nemen in de MKI-aanpak. Zo zorg je dat je organisatie niet alleen voldoet aan de norm, maar ook de voordelen ervan benut.
+      </p>
+    </div>
+
+    <a href="/dev/contact" class="inline-block bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Neem contact op</a>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wat is de Milieukostenindicator (MKI)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De Milieukostenindicator (MKI) is een score die de milieubelasting van een product of bouwwerk in euro's uitdrukt. Het helpt opdrachtgevers en opdrachtnemers om duurzaamheid objectief te maken in ontwerp, aanbesteding en uitvoering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt MKI gebruikt in aanbestedingen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MKI kan worden gebruikt als EMVI-gunningscriterium of als minimumeis. In beide gevallen moeten inschrijvers aantonen dat hun ontwerp een bepaalde milieuprestatie levert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke tools zijn beschikbaar voor MKI-berekeningen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor MKI-berekeningen zijn er verschillende tools beschikbaar, zoals DuboCalc, LCApro, openLCA en Simapro. Welke tool het meest geschikt is, hangt af van de fase en het doel van het project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan MKI worden gemonitord tijdens de uitvoering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, tijdens de uitvoering wordt de MKI-score vaak opnieuw berekend met as-built hoeveelheden en gecontroleerd op basis van gebruikte productkaarten. Dit waarborgt dat de beloofde milieuprestaties ook echt gehaald worden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waar vind ik praktijkvoorbeelden van MKI-toepassing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Op deze pagina vind je voorbeelden van projecten van o.a. Rijkswaterstaat, gemeenten en aannemers waarin MKI werd toegepast in ontwerp, gunning en uitvoering."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
