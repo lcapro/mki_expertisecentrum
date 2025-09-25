@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diensten – MKI Expertisecentrum</title>
+  <meta name="description" content="Advies, kennisdeling en ondersteuning bij MKI in de GWW. Ontdek onze diensten voor opdrachtgevers, opdrachtnemers en producenten." />
+  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/dev/diensten" />
+  <meta name="robots" content="index, follow" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wat biedt het MKI Expertisecentrum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wij bieden ondersteuning, advies, berekeningen en begeleiding bij MKI-implementatie in projecten en aanbestedingen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat kost het inschakelen van het MKI Expertisecentrum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De kosten hangen af van de complexiteit en duur van de aanvraag. We zoeken altijd naar de best passende oplossing tegen de best mogelijke prijs. Neem gerust contact met ons op voor een vrijblijvende offerte."
+      }
+    }
+  ]
+}
+</script>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134a3c',
+            hovergreen: '#11785E',
+            lightgreen: '#E4F4E2',
+            yellow: '#FFD166',
+            dark: '#1F2937',
+            whitegray: '#FAFAF9'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          maxWidth: {
+            content: '1200px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-whitegray font-sans text-dark">
+
+  <!-- Header -->
+  <div id="main-header"></div>
+  <div class="h-[72px] md:h-[80px]"></div>
+  <script>
+    fetch("/dev/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+      });
+  </script>
+
+<!-- Hero Section met groene overlay en witte tekst + knoppen -->
+<section class="relative text-center px-6 py-20 bg-white shadow-sm overflow-hidden min-h-[400px] flex items-center justify-center">
+  <!-- Achtergrondafbeelding -->
+  <div class="absolute inset-0">
+    <img src="/dev/images/onze-diensten-mki-gww.webp" alt="Diensten MKI Expertisecentrum" class="w-full h-full object-cover object-[center_30%]" loading="lazy" />
+    <div class="absolute inset-0 bg-primary opacity-80"></div>
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 max-w-content mx-auto text-white">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Onze diensten</h1>
+    <p class="text-lg mb-6 max-w-2xl mx-auto">
+      Van strategie tot uitvoering: wij helpen opdrachtgevers, opdrachtnemers en producenten om MKI concreet toe te passen in beleid, aanbesteding en project.
+    </p>
+
+    <!-- Knoppen -->
+    <div class="flex flex-col md:flex-row justify-center gap-4 mt-6">
+      <a href="/dev/opdrachtgevers" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-white hover:text-primary transition"">Voor opdrachtgevers</a>
+      <a href="/dev/opdrachtnemers" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-white hover:text-primary transition"">Voor opdrachtnemers</a>
+      <a href="/dev/producenten" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-white hover:text-primary transition"">Voor producenten</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Dienstblokken -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-content mx-auto grid md:grid-cols-2 gap-8">
+      <div class="bg-primary p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-white mb-2">MKI-beleid & strategie</h2>
+        <p class="text-sm text-white">Beleid, aanbestedingsleidraden of standaardwerkwijzen ontwikkelen waarin MKI logisch en werkbaar is opgenomen.</p>
+      </div>
+      <div class="bg-primary p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-white mb-2">Tenderbegeleiding & bestek</h2>
+        <p class="text-sm text-white">Praktische hulp bij het formuleren en onderbouwen van MKI-scores in EMVI, knock-out of besteksverplichtingen.</p>
+      </div>
+      <div class="bg-primary p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-white mb-2">MKI-berekening & validatie</h2>
+        <p class="text-sm text-white">We helpen bij het opstellen, controleren of interpreteren van MKI-berekeningen. Van reviews van huidige MKI berekeningen tot het opstellen van de gehele berekening.</p>
+      </div>
+      <div class="bg-primary p-8 rounded-xl shadow-sm">
+        <h2 class="text-xl font-bold text-white mb-2">Training & kennisdeling</h2>
+        <p class="text-sm text-white">Incompany trainingen, workshops en formats op maat. Voor beleidsmakers, ontwerpers, calculators of producenten.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary">Nieuw met MKI of verder verdiepen?</h2>
+      <p class="text-sm text-dark mb-6">We helpen je graag verder met een vrijblijvende kennismaking of gerichte ondersteuning. Praktisch, onafhankelijk en doelgericht.</p>
+      <a href="/contact" class="bg-yellow text-dark px-6 py-3 rounded-lg font-semibold shadow hover:bg-hovergreen hover:text-white transition">Vraag een kennismaking aan</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+  <script>
+    fetch("/dev/includes/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("main-footer").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
