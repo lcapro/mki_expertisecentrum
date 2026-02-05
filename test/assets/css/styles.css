@@ -110,7 +110,12 @@ h1 {
   gap: 2cm;
   max-width: calc(100% - 6cm);
   margin: 0 auto;
-  justify-items: start;
+  justify-content: center;
+  justify-items: center;
+}
+
+.cta-grid .cta-card:nth-child(2) {
+  justify-self: center;
 }
 
 .cta-card {
