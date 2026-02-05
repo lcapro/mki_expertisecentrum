@@ -106,11 +106,11 @@ h1 {
 
 .cta-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.25rem;
+  max-width: 1100px;
   margin: 0 auto;
-  justify-items: center;
+  justify-items: start;
 }
 
 .cta-card {
@@ -122,12 +122,12 @@ h1 {
   background-repeat: no-repeat;
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 3.75rem 3rem;
+  padding: clamp(2.75rem, 2.4vw, 3.4rem) clamp(2rem, 2.2vw, 2.8rem);
   cursor: pointer;
   transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease, filter 300ms ease;
-  min-height: 330px;
+  min-height: clamp(260px, 26vw, 320px);
   width: 100%;
-  max-width: 570px;
+  max-width: none;
   filter: grayscale(100%);
   display: flex;
   align-items: center;
