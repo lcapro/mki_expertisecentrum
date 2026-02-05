@@ -22,6 +22,7 @@ body {
   color: var(--ink);
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -40,6 +41,9 @@ a {
 }
 
 .hero {
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
   background-image: url("../Zwart_zand.jpg");
   background-size: cover;
   background-position: center;
@@ -49,36 +53,49 @@ a {
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
   z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.4));
+  z-index: 0;
 }
 
 .hero__inner {
   max-width: 980px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.7rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: clamp(2.7rem, 4vw, 4rem);
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
 .subheader {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 1.2rem;
 }
 
 .intro {
   max-width: 680px;
   margin-bottom: 2.4rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .cta-block h2 {
@@ -89,13 +106,14 @@ h1 {
 .cta-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  gap: 1.75rem;
   max-width: 1040px;
   margin: 0 auto;
   justify-items: center;
 }
 
 .cta-card {
+  position: relative;
   text-align: center;
   background-image: url("../blad.jpg");
   background-size: cover;
@@ -103,20 +121,37 @@ h1 {
   background-repeat: no-repeat;
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 3.75rem 2.75rem;
+  padding: 2.5rem 2rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, filter 0.3s ease;
-  min-height: 320px;
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease, filter 300ms ease;
+  min-height: 220px;
   width: 100%;
   max-width: 380px;
   filter: grayscale(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
 }
 
 .cta-card__title {
   display: block;
   font-weight: 600;
-  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
-  margin-bottom: 0.6rem;
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  color: #fff;
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
 }
 
 .cta-card__copy {
@@ -134,9 +169,18 @@ h1 {
 }
 
 main {
-  padding: 3rem 1.5rem 4rem;
+  padding: 0;
   position: relative;
   z-index: 1;
+}
+
+.faq {
+  background-image: url("../Wit_zand.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5rem 1.5rem 4rem;
+  position: relative;
 }
 
 .section-inner {
@@ -173,9 +217,33 @@ main {
 .footer {
   padding: 2rem 1.5rem 3rem;
   border-top: 1px solid var(--border);
-  background: #f1f1ec;
+  background-image: url("../Wit_zand.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   z-index: 1;
+}
+
+.section-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -1px;
+  height: 120px;
+  line-height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section-divider path {
+  fill: transparent;
 }
 
 .footer__inner {
@@ -406,6 +474,15 @@ label.checkbox input {
 @media (max-width: 640px) {
   .hero {
     padding-top: 4.5rem;
+  }
+
+  .cta-card {
+    aspect-ratio: 4 / 3;
+    padding: 2rem 1.5rem;
+  }
+
+  .faq {
+    padding-top: 4rem;
   }
 
   .modal__panel {
