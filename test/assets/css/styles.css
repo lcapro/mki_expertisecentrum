@@ -40,7 +40,10 @@ a {
 }
 
 .hero {
-  background: radial-gradient(circle at top, #fefefe 0%, #e5e5e0 50%, #cfcfc6 100%);
+  background-image: url("../Zwart_zand.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 6rem 1.5rem 4rem;
   min-height: 100vh;
   display: flex;
@@ -52,13 +55,6 @@ a {
 .hero__inner {
   max-width: 980px;
   margin: 0 auto;
-}
-
-.hero__logo {
-  width: min(200px, 60vw);
-  height: auto;
-  display: block;
-  margin-bottom: 1.2rem;
 }
 
 .eyebrow {
@@ -101,15 +97,19 @@ h1 {
 
 .cta-card {
   text-align: center;
-  background: var(--panel);
+  background-image: url("../blad.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 3.75rem 2.75rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, filter 0.3s ease;
   min-height: 320px;
   width: 100%;
   max-width: 380px;
+  filter: grayscale(100%);
 }
 
 .cta-card__title {
@@ -130,6 +130,7 @@ h1 {
   border-color: var(--accent);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
   outline: none;
+  filter: grayscale(0%);
 }
 
 main {
@@ -198,9 +199,11 @@ main {
   height: 32px;
 }
 
-.brand__logo svg {
+.brand__logo img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .footer__note {
