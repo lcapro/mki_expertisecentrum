@@ -44,7 +44,7 @@ a {
   width: 100vw;
   max-width: 100%;
   margin-left: calc(50% - 50vw);
-  background-image: url("../Zwart_zand.jpg");
+  background-image: url("../Zwart_zand.webp");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -121,7 +121,7 @@ h1 {
 .cta-card {
   position: relative;
   text-align: center;
-  background-image: url("../Blad.jpg");
+  background-image: url("../Blad.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -185,7 +185,7 @@ main {
   width: 100vw;
   max-width: 100%;
   margin-left: calc(50% - 50vw);
-  background-image: url("../Wit_zand.jpg");
+  background-image: url("../Wit_zand.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -230,7 +230,7 @@ main {
 .footer {
   padding: 2rem 1.5rem 3rem;
   border-top: 1px solid var(--border);
-  background-image: url("../Wit_zand.jpg");
+  background-image: url("../Wit_zand.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
