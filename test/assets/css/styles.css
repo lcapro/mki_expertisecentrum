@@ -188,14 +188,6 @@ main {
   overflow: hidden;
 }
 
-.faq::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(246, 246, 243, 0) 0%, rgba(246, 246, 243, 0.85) 140px, rgba(246, 246, 243, 1) 260px);
-  pointer-events: none;
-}
-
 .section-inner {
   max-width: 900px;
   margin: 0 auto;
