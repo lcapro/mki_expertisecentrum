@@ -106,8 +106,8 @@ h1 {
 
 .cta-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.25rem;
+  grid-template-columns: repeat(3, minmax(390px, 1fr));
+  gap: 2cm;
   max-width: calc(100% - 6cm);
   margin: 0 auto;
   justify-items: start;
@@ -128,7 +128,7 @@ h1 {
   min-height: clamp(260px, 26vw, 320px);
   width: 100%;
   max-width: none;
-  min-width: 260px;
+  min-width: 390px;
   filter: grayscale(100%);
   display: flex;
   align-items: center;
