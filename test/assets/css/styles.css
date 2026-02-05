@@ -108,7 +108,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.25rem;
-  max-width: 1100px;
+  max-width: calc(100% - 6cm);
   margin: 0 auto;
   justify-items: start;
 }
@@ -128,6 +128,7 @@ h1 {
   min-height: clamp(260px, 26vw, 320px);
   width: 100%;
   max-width: none;
+  min-width: 260px;
   filter: grayscale(100%);
   display: flex;
   align-items: center;
