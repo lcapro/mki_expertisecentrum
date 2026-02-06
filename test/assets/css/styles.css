@@ -111,7 +111,7 @@ h1 {
 .cta-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  gap: clamp(2rem, 4vw, 4.8rem);
   max-width: calc(100% - 3rem);
   margin: 0 auto;
   justify-content: center;
