@@ -45,6 +45,10 @@ a {
   max-width: 100%;
   margin-left: calc(50% - 50vw);
   background-image: url("../Bosweg.webp");
+  background-image: image-set(
+    url("../Bosweg.avif") type("image/avif"),
+    url("../Bosweg.webp") type("image/webp")
+  );
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -106,7 +110,7 @@ h1 {
 
 .cta-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   max-width: calc(100% - 3rem);
   margin: 0 auto;
@@ -122,6 +126,10 @@ h1 {
   position: relative;
   text-align: center;
   background-image: url("../Light_bulb_off.webp");
+  background-image: image-set(
+    url("../Light_bulb_off.avif") type("image/avif"),
+    url("../Light_bulb_off.webp") type("image/webp")
+  );
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,6 +163,10 @@ h1 {
   position: absolute;
   inset: 0;
   background-image: url("../Light_bulb_on.webp");
+  background-image: image-set(
+    url("../Light_bulb_on.avif") type("image/avif"),
+    url("../Light_bulb_on.webp") type("image/webp")
+  );
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -204,6 +216,10 @@ main {
   max-width: 100%;
   margin-left: calc(50% - 50vw);
   background-image: url("../Wit_zand.webp");
+  background-image: image-set(
+    url("../Wit_zand.avif") type("image/avif"),
+    url("../Wit_zand.webp") type("image/webp")
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -249,6 +265,10 @@ main {
   padding: 2rem 1.5rem 3rem;
   border-top: 1px solid var(--border);
   background-image: url("../Wit_zand.webp");
+  background-image: image-set(
+    url("../Wit_zand.avif") type("image/avif"),
+    url("../Wit_zand.webp") type("image/webp")
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -273,9 +293,6 @@ main {
   height: 100%;
 }
 
-.section-divider path {
-  fill: transparent;
-}
 
 .footer__inner {
   max-width: 980px;
@@ -502,8 +519,37 @@ label.checkbox input {
   }
 }
 
+@media (max-width: 680px) {
+  .cta-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .cta-card {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1024px) {
+  .cta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+  }
+
+  .cta-card {
+    min-width: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .hero {
+    background-image: url("../Bosweg.webp");
+    background-image: image-set(
+      url("../Bosweg-640.avif") type("image/avif"),
+      url("../Bosweg-640.webp") type("image/webp"),
+      url("../Bosweg.avif") type("image/avif"),
+      url("../Bosweg.webp") type("image/webp")
+    );
     padding-top: 4.5rem;
   }
 
@@ -527,5 +573,41 @@ label.checkbox input {
 
   .form-actions {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero {
+    background-image: url("../Bosweg.webp");
+    background-image: image-set(
+      url("../Bosweg-1024.avif") type("image/avif"),
+      url("../Bosweg-1024.webp") type("image/webp"),
+      url("../Bosweg.avif") type("image/avif"),
+      url("../Bosweg.webp") type("image/webp")
+    );
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+  .hero {
+    background-image: url("../Bosweg.webp");
+    background-image: image-set(
+      url("../Bosweg-1600.avif") type("image/avif"),
+      url("../Bosweg-1600.webp") type("image/webp"),
+      url("../Bosweg.avif") type("image/avif"),
+      url("../Bosweg.webp") type("image/webp")
+    );
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    background-image: url("../Bosweg.webp");
+    background-image: image-set(
+      url("../Bosweg-2400.avif") type("image/avif"),
+      url("../Bosweg-2400.webp") type("image/webp"),
+      url("../Bosweg.avif") type("image/avif"),
+      url("../Bosweg.webp") type("image/webp")
+    );
   }
 }
