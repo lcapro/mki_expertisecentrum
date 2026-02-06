@@ -32,6 +32,25 @@
     <!-- TODO: voeg een OG image toe bij livegang. -->
     <meta name="twitter:card" content="summary_large_image" />
 
+    <link
+      rel="preload"
+      as="image"
+      href="assets/Bosweg.avif"
+      type="image/avif"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/Bosweg.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="assets/Light_bulb_off.avif" type="image/avif" />
+    <link rel="preload" as="image" href="assets/Light_bulb_off.webp" type="image/webp" />
+    <link rel="preload" as="image" href="assets/Light_bulb_on.avif" type="image/avif" />
+    <link rel="preload" as="image" href="assets/Light_bulb_on.webp" type="image/webp" />
+
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -71,13 +90,14 @@
       <div class="section-divider" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none" role="presentation">
           <defs>
-            <pattern id="faq-texture" patternUnits="userSpaceOnUse" width="1440" height="120">
-              <image href="assets/Wit_zand.webp" x="0" y="0" width="1440" height="120" />
-            </pattern>
+            <linearGradient id="faq-divider-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f6f6f3" stop-opacity="0" />
+              <stop offset="100%" stop-color="#f6f6f3" stop-opacity="1" />
+            </linearGradient>
           </defs>
           <path
             d="M0,32 C240,96 480,96 720,64 C960,32 1200,0 1440,16 L1440,120 L0,120 Z"
-            fill="url(#faq-texture)"
+            fill="url(#faq-divider-gradient)"
           ></path>
         </svg>
       </div>
