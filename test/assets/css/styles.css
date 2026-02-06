@@ -121,8 +121,8 @@ h1 {
 .cta-card {
   position: relative;
   text-align: center;
-  background-image: url("../Blad.webp");
-  background-size: cover;
+  background-image: url("../Light_bulb_off.webp");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid var(--border);
@@ -147,6 +147,19 @@ h1 {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../Light_bulb_on.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 200ms ease;
   z-index: 0;
 }
 
@@ -157,7 +170,7 @@ h1 {
   color: #fff;
   padding: 0 0.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   line-height: 1.2;
 }
 
@@ -173,6 +186,11 @@ h1 {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
   outline: none;
   filter: grayscale(0%);
+}
+
+.cta-card:hover::after,
+.cta-card:focus-visible::after {
+  opacity: 1;
 }
 
 main {
