@@ -75,13 +75,13 @@
         </p>
         <div class="cta-block">
           <div class="cta-grid">
-            <button class="cta-card" data-role="Opdrachtgever" type="button">
+            <button class="cta-card" data-role="opdrachtgever" type="button">
               <span class="cta-card__title">Opdrachtgever</span>
             </button>
-            <button class="cta-card" data-role="Opdrachtnemer" type="button">
+            <button class="cta-card" data-role="opdrachtnemer" type="button">
               <span class="cta-card__title">Opdrachtnemer</span>
             </button>
-            <button class="cta-card" data-role="Leverancier/Producent" type="button">
+            <button class="cta-card" data-role="leverancier_producent" type="button">
               <span class="cta-card__title">Leverancier/<br />Producent</span>
             </button>
           </div>
@@ -247,90 +247,220 @@
       <button class="btn" type="button" data-consent>Akkoord</button>
     </div>
 
-    <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vragenlijst" hidden>
+    <div
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      hidden
+    >
       <div class="modal__backdrop" data-close></div>
       <div class="modal__panel" role="document">
         <button class="modal__close" type="button" data-close aria-label="Sluiten">✕</button>
         <div class="modal__header">
-          <p class="modal__role">Rol: <span data-role-output></span></p>
-          <p class="modal__step" data-step>Stap 1/4</p>
+          <div>
+            <h2 id="modal-title" class="modal__title" data-modal-title></h2>
+            <p class="modal__intro" data-modal-intro></p>
+          </div>
         </div>
         <div class="modal__body">
           <form
             id="mki-form"
-            action="https://formspree.io/f/XXXXXXXX"
+            action="https://formspree.io/f/xnjbqdrj"
             method="POST"
             novalidate
           >
             <input type="hidden" name="role" value="" />
-            <input type="hidden" name="_subject" value="Nieuwe MKI aanvraag via testpagina" />
+            <input type="hidden" name="source" value="mkiexpertisecentrum_test" />
+            <input type="hidden" name="page_url" value="" />
+            <input type="hidden" name="timestamp" value="" />
+            <input type="hidden" name="_subject" value="" />
             <input type="hidden" name="_replyto" value="" />
-            <input type="hidden" name="_format" value="plain" />
+            <input type="text" name="_gotcha" style="display: none" tabindex="-1" autocomplete="off" />
 
-            <fieldset class="form-step choice-step" data-step="1">
-              <legend>Waar loop je tegenaan?</legend>
-              <label><input type="radio" name="issue" required value="MKI eisen in aanbesteding" /> MKI eisen in aanbesteding</label>
-              <label><input type="radio" name="issue" value="MKI verbeteren / optimaliseren" /> MKI verbeteren / optimaliseren</label>
-              <label><input type="radio" name="issue" value="Data/EPD’s verzamelen" /> Data/EPD’s verzamelen</label>
-              <label><input type="radio" name="issue" value="Onzekerheid over methode / uitgangspunten" /> Onzekerheid over methode / uitgangspunten</label>
-              <label><input type="radio" name="issue" value="Inzicht in drivers (wat telt echt?)" /> Inzicht in drivers (wat telt echt?)</label>
-              <label><input type="radio" name="issue" value="Controle/validatie van berekening" /> Controle/validatie van berekening</label>
-              <label>
-                <input type="radio" name="issue" value="Anders" data-conditional="issue" /> Anders, namelijk:
-              </label>
-              <input class="conditional" type="text" name="issue_other" placeholder="Licht toe" />
-            </fieldset>
+            <p class="form-error" data-form-error role="alert" hidden>
+              Er ging iets mis bij het versturen. Probeer het opnieuw of mail naar info@infraimpact.nl.
+            </p>
 
-            <fieldset class="form-step choice-step" data-step="2">
-              <legend>In welke fase zit je?</legend>
-              <label><input type="radio" name="phase" required value="Oriëntatie" /> Oriëntatie</label>
-              <label><input type="radio" name="phase" value="Lopend project" /> Lopend project</label>
-              <label><input type="radio" name="phase" value="Aanbesteding (voorbereiding)" /> Aanbesteding (voorbereiding)</label>
-              <label><input type="radio" name="phase" value="Verificatie/onderbouwing achteraf" /> Verificatie/onderbouwing achteraf</label>
-              <label><input type="radio" name="phase" value="Productdata / EPD-traject" /> Productdata / EPD-traject</label>
-            </fieldset>
+            <div class="form-role" data-role-section="opdrachtgever">
+              <fieldset class="form-section">
+                <legend>Context</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="context_type" required value="Beleidsmatig (kaders, eisen, sturing)" /> Beleidsmatig (kaders, eisen, sturing)</label>
+                  <label><input type="radio" name="context_type" value="Projectgericht" /> Projectgericht</label>
+                  <label><input type="radio" name="context_type" value="Combinatie beleid &amp; projecten" /> Combinatie beleid &amp; projecten</label>
+                </div>
+              </fieldset>
 
-            <fieldset class="form-step choice-step" data-step="3">
-              <legend>Wat wil je bereiken? (max 3)</legend>
-              <label><input type="checkbox" name="goal" value="Sneller duidelijkheid" /> Sneller duidelijkheid</label>
-              <label><input type="checkbox" name="goal" value="Beter scoren op MKI" /> Beter scoren op MKI</label>
-              <label><input type="checkbox" name="goal" value="Compliant / aantoonbaar" /> Compliant / aantoonbaar</label>
-              <label><input type="checkbox" name="goal" value="Minder faalkosten / minder rekenwerk" /> Minder faalkosten / minder rekenwerk</label>
-              <label><input type="checkbox" name="goal" value="Data op orde (EPD’s / productkaarten)" /> Data op orde (EPD’s / productkaarten)</label>
-            </fieldset>
+              <fieldset class="form-section">
+                <legend>Doel van je vraag</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="goal_focus" required value="MKI opnemen in beleid of inkoopstrategie" /> MKI opnemen in beleid of inkoopstrategie</label>
+                  <label><input type="radio" name="goal_focus" value="MKI als eis (minimale prestatie)" /> MKI als eis (minimale prestatie)</label>
+                  <label><input type="radio" name="goal_focus" value="MKI als gunningscriterium" /> MKI als gunningscriterium</label>
+                  <label><input type="radio" name="goal_focus" value="Vergelijken van varianten / ontwerpkeuzes" /> Vergelijken van varianten / ontwerpkeuzes</label>
+                  <label><input type="radio" name="goal_focus" value="Controle of validatie van aangeleverde MKI/LCA" /> Controle of validatie van aangeleverde MKI/LCA</label>
+                  <label><input type="radio" name="goal_focus" value="Datavraag (EPD’s / productinformatie)" /> Datavraag (EPD’s / productinformatie)</label>
+                </div>
+              </fieldset>
 
-            <fieldset class="form-step" data-step="4">
-              <legend>Contactgegevens</legend>
-              <label>Naam <input type="text" name="name" required /></label>
-              <label>Organisatie <input type="text" name="organization" required /></label>
-              <label>E-mail <input type="email" name="email" required /></label>
-              <label>Telefoon <input type="tel" name="phone" /></label>
-              <label>Toelichting <textarea name="note" rows="3"></textarea></label>
-              <label class="checkbox">
-                <input type="checkbox" name="consent" required />
-                Ik ga akkoord dat mijn gegevens worden gebruikt om contact op te nemen.
-              </label>
-            </fieldset>
+              <fieldset class="form-section" data-max-checks="2">
+                <legend>Waar zit de uitdaging? (max 2)</legend>
+                <div class="choice-group">
+                  <label><input type="checkbox" name="challenge" value="Onzekerheid over juiste eisen of grenswaarden" /> Onzekerheid over juiste eisen of grenswaarden</label>
+                  <label><input type="checkbox" name="challenge" value="Moeilijk vergelijken van aanbiedingen" /> Moeilijk vergelijken van aanbiedingen</label>
+                  <label><input type="checkbox" name="challenge" value="Onvoldoende grip op aannames en scope" /> Onvoldoende grip op aannames en scope</label>
+                  <label><input type="checkbox" name="challenge" value="Behoefte aan praktisch beoordelingskader" /> Behoefte aan praktisch beoordelingskader</label>
+                  <label><input type="checkbox" name="challenge" value="Behoefte aan onderbouwd en uitlegbaar beleid" /> Behoefte aan onderbouwd en uitlegbaar beleid</label>
+                </div>
+                <p class="form-warning" data-max-warning hidden>Je kunt maximaal 2 opties kiezen.</p>
+              </fieldset>
 
-            <div class="form-actions">
-              <button class="btn btn--ghost" type="button" data-prev>Vorige</button>
-              <button class="btn" type="button" data-next>Volgende</button>
-              <button class="btn btn--primary" type="submit" data-submit>Verstuur</button>
+              <fieldset class="form-section">
+                <legend>Open vraag</legend>
+                <label>
+                  Wat wil je helder krijgen of beslissen?
+                  <textarea name="open_question" rows="3" required></textarea>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>Naam <input type="text" name="name" required /></label>
+                <label>Organisatie <input type="text" name="organization" required /></label>
+                <label>Rol/functie <input type="text" name="role_title" /></label>
+                <label>E-mail <input type="email" name="email" required /></label>
+                <label>Telefoon <input type="tel" name="phone" /></label>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" required />
+                  Ik geef toestemming om contact op te nemen over deze aanvraag.
+                </label>
+              </fieldset>
             </div>
 
-            <p class="form-note">
-              Je ontvangt een bevestiging per mail. (Autoreply instellen in Formspree dashboard — paid feature.)
-            </p>
-            <p class="form-note">
-              Fallback: gebruik Zapier/Make webhook op Formspree submission om een bevestigingsmail via
-              Gmail/SMTP te versturen.
-            </p>
+            <div class="form-role" data-role-section="opdrachtnemer">
+              <fieldset class="form-section">
+                <legend>Contextniveau</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="context_level" required value="Projectgericht" /> Projectgericht</label>
+                  <label><input type="radio" name="context_level" value="Bedrijfsbreed" /> Bedrijfsbreed</label>
+                  <label><input type="radio" name="context_level" value="Combinatie van beide" /> Combinatie van beide</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Waarop wil je sturen?</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="steer_focus" required value="MKI verbeteren (lagere score)" /> MKI verbeteren (lagere score)</label>
+                  <label><input type="radio" name="steer_focus" value="Risico en controle (klopt de berekening?)" /> Risico en controle (klopt de berekening?)</label>
+                  <label><input type="radio" name="steer_focus" value="Snelheid en efficiëntie" /> Snelheid en efficiëntie</label>
+                  <label><input type="radio" name="steer_focus" value="Varianten onderbouwen richting opdrachtgever" /> Varianten onderbouwen richting opdrachtgever</label>
+                  <label><input type="radio" name="steer_focus" value="Bedrijfsbrede aanpak voor MKI/LCA" /> Bedrijfsbrede aanpak voor MKI/LCA</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section" data-max-checks="2">
+                <legend>Waar loop je op vast? (max 2)</legend>
+                <div class="choice-group">
+                  <label><input type="checkbox" name="blocking_issue" value="Onduidelijk welke keuzes echt effect hebben" /> Onduidelijk welke keuzes echt effect hebben</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Rekenregels of aannames zijn onduidelijk" /> Rekenregels of aannames zijn onduidelijk</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Data ontbreekt of is versnipperd" /> Data ontbreekt of is versnipperd</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Varianten lastig eerlijk te vergelijken" /> Varianten lastig eerlijk te vergelijken</label>
+                  <label><input type="checkbox" name="blocking_issue" value="MKI/LCA komt te laat in het proces" /> MKI/LCA komt te laat in het proces</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Te afhankelijk van externe berekeningen" /> Te afhankelijk van externe berekeningen</label>
+                </div>
+                <p class="form-warning" data-max-warning hidden>Je kunt maximaal 2 opties kiezen.</p>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Open vraag</legend>
+                <label>
+                  Wat moet er beter, slimmer of sneller?
+                  <textarea name="open_question" rows="3" required></textarea>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>Naam <input type="text" name="name" required /></label>
+                <label>Organisatie <input type="text" name="organization" required /></label>
+                <label>E-mail <input type="email" name="email" required /></label>
+                <label>Telefoon <input type="tel" name="phone" /></label>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" required />
+                  Ik geef toestemming om contact op te nemen over deze aanvraag.
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="form-role" data-role-section="leverancier_producent">
+              <fieldset class="form-section">
+                <legend>Wat wil je opleveren?</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="deliverable" required value="EPD (gecertificeerd)" /> EPD (gecertificeerd)</label>
+                  <label><input type="radio" name="deliverable" value="Productkaart / milieudata voor projecten" /> Productkaart / milieudata voor projecten</label>
+                  <label><input type="radio" name="deliverable" value="Input voor MKI-berekeningen" /> Input voor MKI-berekeningen</label>
+                  <label><input type="radio" name="deliverable" value="Inzicht in verbeterpotentieel (LCA)" /> Inzicht in verbeterpotentieel (LCA)</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Productcategorie</legend>
+                <label>
+                  <span class="sr-only">Productcategorie</span>
+                  <select name="product_category" required>
+                    <option value="" selected disabled>Kies een categorie</option>
+                    <option value="Beton(gerelateerd)">Beton(gerelateerd)</option>
+                    <option value="Staal / metalen">Staal / metalen</option>
+                    <option value="Asfalt / bitumen">Asfalt / bitumen</option>
+                    <option value="Hout / biobased">Hout / biobased</option>
+                    <option value="Kunststoffen / isolatie">Kunststoffen / isolatie</option>
+                    <option value="Overig">Overig</option>
+                  </select>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Status van data</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="data_status" required value="We hebben al LCA-data" /> We hebben al LCA-data</label>
+                  <label><input type="radio" name="data_status" value="We hebben deels data" /> We hebben deels data</label>
+                  <label><input type="radio" name="data_status" value="We hebben nog niets gestructureerd" /> We hebben nog niets gestructureerd</label>
+                  <label><input type="radio" name="data_status" value="We hebben EPD maar willen verbeteren/actualiseren" /> We hebben EPD maar willen verbeteren/actualiseren</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Open vraag</legend>
+                <label>
+                  Wat is je product en wat wil je bereiken?
+                  <textarea name="open_question" rows="3" required></textarea>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>Naam <input type="text" name="name" required /></label>
+                <label>Organisatie <input type="text" name="organization" required /></label>
+                <label>E-mail <input type="email" name="email" required /></label>
+                <label>Telefoon <input type="tel" name="phone" /></label>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" required />
+                  Ik geef toestemming om contact op te nemen over deze aanvraag.
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit" data-submit>Verstuur</button>
+            </div>
           </form>
 
           <div class="success" hidden>
-            <h3>Dankjewel! We nemen contact op.</h3>
-            <p>Je ontvangt een bevestiging per e-mail zodra het autoresponder-profiel actief is.</p>
-            <div class="success__summary" data-summary></div>
+            <h3>Verzonden</h3>
+            <p>Dank! Je aanvraag is verstuurd. We nemen meestal binnen 1–2 werkdagen contact op.</p>
+            <button class="btn btn--primary" type="button" data-close>Sluiten</button>
           </div>
         </div>
       </div>

@@ -1,28 +1,68 @@
 const modal = document.querySelector('.modal');
 const modalPanel = document.querySelector('.modal__panel');
-const roleOutput = document.querySelector('[data-role-output]');
+const modalTitle = document.querySelector('[data-modal-title]');
+const modalIntro = document.querySelector('[data-modal-intro]');
 const roleInput = document.querySelector('input[name="role"]');
+const pageUrlInput = document.querySelector('input[name="page_url"]');
+const timestampInput = document.querySelector('input[name="timestamp"]');
+const subjectInput = document.querySelector('input[name="_subject"]');
 const replyToInput = document.querySelector('input[name="_replyto"]');
+const honeypotInput = document.querySelector('input[name="_gotcha"]');
 const form = document.getElementById('mki-form');
 const successPanel = document.querySelector('.success');
-const summary = document.querySelector('[data-summary]');
-const stepOutput = document.querySelector('[data-step]');
-const nextBtn = document.querySelector('[data-next]');
-const prevBtn = document.querySelector('[data-prev]');
+const errorMessage = document.querySelector('[data-form-error]');
 const submitBtn = document.querySelector('[data-submit]');
 const consentBanner = document.querySelector('.consent');
 const consentBtn = document.querySelector('[data-consent]');
+const roleSections = Array.from(document.querySelectorAll('[data-role-section]'));
 
 const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-let currentStep = 1;
 let lastFocused = null;
+let activeRole = null;
 
-const openModal = (role) => {
+const roleConfig = {
+  opdrachtgever: {
+    title: 'Vraag stellen als opdrachtgever',
+    intro: 'Kies kort wat past, dan nemen we gericht contact op.',
+    subject: 'Opdrachtgever',
+    value: 'opdrachtgever'
+  },
+  opdrachtnemer: {
+    title: 'Vraag stellen als opdrachtnemer',
+    intro: 'Kies kort wat past, dan nemen we gericht contact op.',
+    subject: 'Opdrachtnemer',
+    value: 'opdrachtnemer'
+  },
+  leverancier_producent: {
+    title: 'Vraag stellen als leverancier / producent',
+    intro: 'Kies kort wat past, dan nemen we gericht contact op.',
+    subject: 'Leverancier / Producent',
+    value: 'leverancier_producent'
+  }
+};
+
+const setActiveRole = (roleKey) => {
+  roleSections.forEach((section) => {
+    const isActive = section.dataset.roleSection === roleKey;
+    section.classList.toggle('is-active', isActive);
+    section.querySelectorAll('input, select, textarea').forEach((field) => {
+      field.disabled = !isActive;
+    });
+  });
+};
+
+const openModal = (roleKey) => {
   if (!modal) return;
+  const config = roleConfig[roleKey];
+  if (!config) return;
   modal.hidden = false;
   modal.setAttribute('aria-hidden', 'false');
-  roleOutput.textContent = role;
-  roleInput.value = role;
+  modalTitle.textContent = config.title;
+  modalIntro.textContent = config.intro;
+  activeRole = roleKey;
+  roleInput.value = config.value;
+  subjectInput.value = `Nieuwe aanvraag MKI Expertisecentrum – ${config.subject}`;
+  setActiveRole(roleKey);
   resetForm();
   lastFocused = document.activeElement;
   const firstFocusable = modal.querySelector(focusableSelectors);
@@ -36,61 +76,19 @@ const closeModal = () => {
   if (lastFocused) lastFocused.focus();
 };
 
-const updateStepUI = () => {
-  const steps = Array.from(document.querySelectorAll('.form-step'));
-  steps.forEach((step) => {
-    const stepIndex = Number(step.dataset.step);
-    step.hidden = stepIndex !== currentStep;
-  });
-  stepOutput.textContent = `Stap ${currentStep}/4`;
-  prevBtn.hidden = currentStep === 1;
-  nextBtn.hidden = currentStep === 4;
-  submitBtn.hidden = currentStep !== 4;
-};
-
-const validateCurrentStep = () => {
-  const step = document.querySelector(`.form-step[data-step="${currentStep}"]`);
-  if (!step) return false;
-  const fields = Array.from(step.querySelectorAll('input, textarea'));
-  for (const field of fields) {
-    if (!field.checkValidity()) {
-      field.reportValidity();
-      return false;
-    }
-  }
-  if (currentStep === 3) {
-    const checked = step.querySelectorAll('input[type="checkbox"]:checked');
-    if (checked.length === 0 || checked.length > 3) {
-      alert('Selecteer maximaal 3 doelen.');
-      return false;
-    }
-  }
-  return true;
-};
-
 const resetForm = () => {
   form.reset();
   successPanel.hidden = true;
   form.hidden = false;
-  currentStep = 1;
-  updateStepUI();
-  summary.innerHTML = '';
-  const conditional = document.querySelector('.conditional');
-  conditional?.classList.remove('is-active');
-};
-
-const buildSummary = (formData) => {
-  const entries = [];
-  for (const [key, value] of formData.entries()) {
-    if (['_subject', '_replyto', '_format'].includes(key)) continue;
-    if (key === 'consent') continue;
-    if (key === 'goal') {
-      entries.push(`Doelen: ${formData.getAll('goal').join(', ')}`);
-      continue;
-    }
-    if (value) entries.push(`${key}: ${value}`);
+  errorMessage.hidden = true;
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Verstuur';
+  form.querySelectorAll('[data-max-warning]').forEach((warning) => {
+    warning.hidden = true;
+  });
+  if (activeRole) {
+    setActiveRole(activeRole);
   }
-  summary.innerHTML = `<ul>${entries.map((item) => `<li>${item}</li>`).join('')}</ul>`;
 };
 
 const trapFocus = (event) => {
@@ -108,17 +106,16 @@ const trapFocus = (event) => {
   }
 };
 
-const enableConditional = () => {
-  const trigger = document.querySelector('[data-conditional="issue"]');
-  const conditional = document.querySelector('.conditional');
-  if (!trigger || !conditional) return;
-  if (trigger.checked) {
-    conditional.classList.add('is-active');
-    conditional.focus();
-  } else {
-    conditional.classList.remove('is-active');
-    conditional.value = '';
+const enforceMaxChecks = (fieldset, target) => {
+  const max = Number(fieldset.dataset.maxChecks);
+  const checked = fieldset.querySelectorAll('input[type="checkbox"]:checked');
+  const warning = fieldset.querySelector('[data-max-warning]');
+  if (checked.length > max) {
+    target.checked = false;
+    if (warning) warning.hidden = false;
+    return;
   }
+  if (warning) warning.hidden = true;
 };
 
 const setupAccordion = () => {
@@ -188,36 +185,37 @@ window.addEventListener('keydown', (event) => {
   trapFocus(event);
 });
 
-nextBtn?.addEventListener('click', () => {
-  if (!validateCurrentStep()) return;
-  currentStep = Math.min(4, currentStep + 1);
-  updateStepUI();
-});
-
-prevBtn?.addEventListener('click', () => {
-  currentStep = Math.max(1, currentStep - 1);
-  updateStepUI();
-});
-
 form?.addEventListener('change', (event) => {
-  if (event.target?.name === 'issue') enableConditional();
   if (event.target?.name === 'email') {
     replyToInput.value = event.target.value;
+  }
+  if (event.target?.type === 'checkbox') {
+    const fieldset = event.target.closest('[data-max-checks]');
+    if (fieldset) enforceMaxChecks(fieldset, event.target);
   }
 });
 
 form?.addEventListener('submit', async (event) => {
-  if (!validateCurrentStep()) {
-    event.preventDefault();
-    return;
-  }
   if (!form.checkValidity()) {
     event.preventDefault();
     form.reportValidity();
     return;
   }
+  if (honeypotInput && honeypotInput.value) {
+    event.preventDefault();
+    return;
+  }
 
   event.preventDefault();
+  errorMessage.hidden = true;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Versturen…';
+  if (pageUrlInput) pageUrlInput.value = window.location.href;
+  if (timestampInput) timestampInput.value = new Date().toISOString();
+  if (replyToInput) {
+    const emailField = form.querySelector('input[name="email"]');
+    replyToInput.value = emailField?.value || '';
+  }
   const formData = new FormData(form);
   try {
     const response = await fetch(form.action, {
@@ -228,10 +226,11 @@ form?.addEventListener('submit', async (event) => {
       }
     });
     if (!response.ok) throw new Error('Submit failed');
-    buildSummary(formData);
     form.hidden = true;
     successPanel.hidden = false;
   } catch (error) {
-    alert('Verzenden lukt nu niet. Probeer het later opnieuw.');
+    errorMessage.hidden = false;
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Verstuur';
   }
 });
