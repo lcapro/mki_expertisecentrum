@@ -10,6 +10,8 @@ const replyToInput = document.querySelector('input[name="_replyto"]');
 const honeypotInput = document.querySelector('input[name="_gotcha"]');
 const form = document.getElementById('mki-form');
 const successPanel = document.querySelector('.success');
+const successTitle = document.querySelector('[data-success-title]');
+const successMessage = document.querySelector('[data-success-message]');
 const errorMessage = document.querySelector('[data-form-error]');
 const submitBtn = document.querySelector('[data-submit]');
 const consentBanner = document.querySelector('.consent');
@@ -78,6 +80,8 @@ const closeModal = () => {
 const resetForm = () => {
   form.reset();
   successPanel.hidden = true;
+  if (successTitle) successTitle.textContent = '';
+  if (successMessage) successMessage.textContent = '';
   form.hidden = false;
   errorMessage.hidden = true;
   submitBtn.disabled = false;
@@ -226,6 +230,11 @@ form?.addEventListener('submit', async (event) => {
     });
     if (!response.ok) throw new Error('Submit failed');
     form.hidden = true;
+    if (successTitle) successTitle.textContent = 'Verzonden';
+    if (successMessage) {
+      successMessage.textContent =
+        'Dank! Je aanvraag is verstuurd. We nemen meestal binnen 1–2 werkdagen contact op.';
+    }
     successPanel.hidden = false;
   } catch (error) {
     errorMessage.hidden = false;
