@@ -1,7 +1,11 @@
 const modal = document.querySelector('.modal');
-const modalPanel = document.querySelector('.modal__panel');
+const modalPanel = modal?.querySelector('.modal__panel');
+const successModal = document.getElementById('success-modal');
+const successModalPanel = successModal?.querySelector('.modal__panel');
 const modalTitle = document.querySelector('[data-modal-title]');
 const modalIntro = document.querySelector('[data-modal-intro]');
+const successModalTitle = document.querySelector('[data-success-modal-title]');
+const successModalIntro = document.querySelector('[data-success-modal-intro]');
 const roleInput = document.querySelector('input[name="role"]');
 const pageUrlInput = document.querySelector('input[name="page_url"]');
 const timestampInput = document.querySelector('input[name="timestamp"]');
@@ -55,6 +59,9 @@ const setActiveRole = (roleKey) => {
 
 const openModal = (roleKey) => {
   if (!modal) return;
+  if (successModal && !successModal.hidden) {
+    closeSuccessModal();
+  }
   const config = roleConfig[roleKey];
   if (!config) return;
   modal.hidden = false;
@@ -77,6 +84,22 @@ const closeModal = () => {
   if (lastFocused) lastFocused.focus();
 };
 
+const openSuccessModal = () => {
+  if (!successModal) return;
+  lastFocused = document.activeElement;
+  successModal.hidden = false;
+  successModal.setAttribute('aria-hidden', 'false');
+  const firstFocusable = successModal.querySelector(focusableSelectors);
+  firstFocusable?.focus();
+};
+
+const closeSuccessModal = () => {
+  if (!successModal) return;
+  successModal.hidden = true;
+  successModal.setAttribute('aria-hidden', 'true');
+  if (lastFocused) lastFocused.focus();
+};
+
 const resetForm = () => {
   form.reset();
   successPanel.hidden = true;
@@ -95,9 +118,11 @@ const resetForm = () => {
 };
 
 const trapFocus = (event) => {
-  if (!modal || modal.hidden) return;
+  if ((!modal || modal.hidden) && (!successModal || successModal.hidden)) return;
   if (event.key !== 'Tab') return;
-  const focusable = Array.from(modal.querySelectorAll(focusableSelectors));
+  const activeDialog = !modal?.hidden ? modal : successModal;
+  if (!activeDialog) return;
+  const focusable = Array.from(activeDialog.querySelectorAll(focusableSelectors));
   const first = focusable[0];
   const last = focusable[focusable.length - 1];
   if (event.shiftKey && document.activeElement === first) {
@@ -181,9 +206,18 @@ modalPanel?.addEventListener('click', (event) => {
   if (event.target.matches('[data-close]')) closeModal();
 });
 
+successModal?.addEventListener('click', (event) => {
+  if (event.target.matches('[data-success-close]')) closeSuccessModal();
+});
+
+successModalPanel?.addEventListener('click', (event) => {
+  if (event.target.matches('[data-success-close]')) closeSuccessModal();
+});
+
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && modal && !modal.hidden) {
-    closeModal();
+  if (event.key === 'Escape') {
+    if (modal && !modal.hidden) closeModal();
+    if (successModal && !successModal.hidden) closeSuccessModal();
   }
   trapFocus(event);
 });
@@ -232,11 +266,13 @@ form?.addEventListener('submit', async (event) => {
     form.hidden = true;
     const successText =
       'Dank! Je aanvraag is verstuurd. We nemen meestal binnen 1–2 werkdagen contact op.';
-    if (modalTitle) modalTitle.textContent = 'Verzonden';
-    if (modalIntro) modalIntro.textContent = successText;
     if (successTitle) successTitle.textContent = 'Verzonden';
     if (successMessage) successMessage.textContent = successText;
     successPanel.hidden = false;
+    if (successModalTitle) successModalTitle.textContent = 'Verzonden';
+    if (successModalIntro) successModalIntro.textContent = successText;
+    closeModal();
+    openSuccessModal();
   } catch (error) {
     errorMessage.hidden = false;
     submitBtn.disabled = false;
