@@ -230,11 +230,12 @@ form?.addEventListener('submit', async (event) => {
     });
     if (!response.ok) throw new Error('Submit failed');
     form.hidden = true;
+    const successText =
+      'Dank! Je aanvraag is verstuurd. We nemen meestal binnen 1–2 werkdagen contact op.';
+    if (modalTitle) modalTitle.textContent = 'Verzonden';
+    if (modalIntro) modalIntro.textContent = successText;
     if (successTitle) successTitle.textContent = 'Verzonden';
-    if (successMessage) {
-      successMessage.textContent =
-        'Dank! Je aanvraag is verstuurd. We nemen meestal binnen 1–2 werkdagen contact op.';
-    }
+    if (successMessage) successMessage.textContent = successText;
     successPanel.hidden = false;
   } catch (error) {
     errorMessage.hidden = false;
