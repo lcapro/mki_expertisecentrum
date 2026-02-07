@@ -517,6 +517,7 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://mkiexpertisecentrum.nl/test/#organization",
         "name": "MKI Expertisecentrum",
         "url": "https://mkiexpertisecentrum.nl/test/",
         "description": "Praktische hulp bij MKI en LCA voor aanbesteding, gunning en productdata in de GWW.",
@@ -532,7 +533,26 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "MKI Expertisecentrum",
-        "url": "https://mkiexpertisecentrum.nl/test/"
+        "@id": "https://mkiexpertisecentrum.nl/test/#website",
+        "url": "https://mkiexpertisecentrum.nl/test/",
+        "publisher": {
+          "@id": "https://mkiexpertisecentrum.nl/test/#organization"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://mkiexpertisecentrum.nl/test/#webpage",
+        "name": "MKI Expertisecentrum",
+        "url": "https://mkiexpertisecentrum.nl/test/",
+        "isPartOf": {
+          "@id": "https://mkiexpertisecentrum.nl/test/#website"
+        },
+        "about": {
+          "@id": "https://mkiexpertisecentrum.nl/test/#organization"
+        }
       }
     </script>
     <script type="application/ld+json">
