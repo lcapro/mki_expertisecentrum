@@ -554,6 +554,10 @@ label.checkbox input {
     padding-top: 4.5rem;
   }
 
+  .hero__inner {
+    margin-top: 0;
+  }
+
   .cta-card {
     aspect-ratio: 4 / 3;
     padding: 2rem 1.5rem;
