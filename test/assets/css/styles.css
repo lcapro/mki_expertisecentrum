@@ -130,6 +130,7 @@ h1 {
     url("../Light_bulb_off.avif") type("image/avif"),
     url("../Light_bulb_off.webp") type("image/webp")
   );
+  background-color: #0d0d0d;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
