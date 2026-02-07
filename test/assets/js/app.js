@@ -57,13 +57,12 @@ const openModal = (roleKey) => {
   if (!config) return;
   modal.hidden = false;
   modal.setAttribute('aria-hidden', 'false');
+  activeRole = roleKey;
+  resetForm();
   modalTitle.textContent = config.title;
   modalIntro.textContent = config.intro;
-  activeRole = roleKey;
   roleInput.value = config.value;
   subjectInput.value = `Nieuwe aanvraag MKI Expertisecentrum – ${config.subject}`;
-  setActiveRole(roleKey);
-  resetForm();
   lastFocused = document.activeElement;
   const firstFocusable = modal.querySelector(focusableSelectors);
   firstFocusable?.focus();
