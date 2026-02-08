@@ -2,6 +2,9 @@ import { promises as fs } from "fs";
 import path from "path";
 
 const templatePath = path.resolve("index.template.html");
+if (path.extname(templatePath) !== ".html") {
+  throw new Error("Template must be an .html file.");
+}
 const template = await fs.readFile(templatePath, "utf8");
 
 const outputs = [
@@ -37,6 +40,9 @@ await fs.mkdir(path.resolve("test"), { recursive: true });
 
 await Promise.all(
   outputs.map(async ({ filePath, replacements }) => {
+    if (path.extname(filePath) !== ".html") {
+      throw new Error(`Output path must be .html: ${filePath}`);
+    }
     const output = applyReplacements(template, replacements);
     await fs.writeFile(filePath, output, "utf8");
   })
