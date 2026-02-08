@@ -8,7 +8,6 @@ const outputs = [
   {
     filePath: path.resolve("index.html"),
     replacements: {
-      __BASE_HREF__: "/",
       __ROBOTS__: "index, follow",
       __CANONICAL__: "https://mkiexpertisecentrum.nl/",
       __OG_URL__: "https://mkiexpertisecentrum.nl/",
@@ -18,7 +17,6 @@ const outputs = [
   {
     filePath: path.resolve("test", "index.html"),
     replacements: {
-      __BASE_HREF__: "/test/",
       __ROBOTS__: "noindex, nofollow",
       __CANONICAL__: "https://mkiexpertisecentrum.nl/test/",
       __OG_URL__: "https://mkiexpertisecentrum.nl/test/",
