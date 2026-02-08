@@ -1,98 +1,663 @@
-<!DOCTYPE html>
+<!-- LIVEGANG CHECKLIST
+1) Verplaats /test -> root
+2) Verwijder <base href="/test/"> of pas aan
+3) Verwijder meta noindex
+4) Pas robots.txt aan
+5) Zet canonical naar root
+6) Vul Formspree endpoint in
+7) Zet Formspree autoresponder aan (of Zapier/Make fallback)
+8) Vul GA4 ID in
+-->
+<!doctype html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <title>MKI Expertisecentrum | Kennisplatform voor duurzaamheid in de bouw en GWW</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MKI Expertisecentrum | MKI &amp; LCA hulp voor GWW, aanbesteding en productdata</title>
+    <meta
+      name="description"
+      content="Praktische hulp bij MKI en LCA: inzicht in materiaalkeuzes, aanbesteding/gunning, EPD’s en onderbouwing. Snel, helder, toepasbaar."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mkiexpertisecentrum.nl/" />
 
-  <!-- SEO: beschrijving en zoekwoorden -->
-  <meta name="description" content="MKI Expertisecentrum – hét kennisplatform voor MilieuKostenIndicator (MKI), LCA en duurzaamheid in de bouw- en infrasector. Binnenkort beschikbaar met uitleg, tools en voorbeelden.">
-  <meta name="keywords" content="MKI, MilieuKostenIndicator, LCA, GWW, bouwsector, duurzaamheid, milieuprestatie, CO2-reductie, aanbesteding, MPG, NMD, circulariteit">
-  <meta name="author" content="MKI Expertisecentrum">
-  <link rel="canonical" href="https://www.mkiexpertisecentrum.nl/">
+    <meta property="og:title" content="MKI Expertisecentrum" />
+    <meta
+      property="og:description"
+      content="Praktische hulp bij MKI en LCA voor aanbesteding, gunning en productdata."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mkiexpertisecentrum.nl/" />
+    <!-- TODO: voeg een OG image toe bij livegang. -->
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="MKI Expertisecentrum – Kennisplatform voor MKI en duurzaamheid">
-  <meta property="og:description" content="Kennis, tools en ondersteuning voor MKI en LCA in de bouw- en infrasector. Binnenkort live op mkiexpertisecentrum.nl.">
-  <meta property="og:image" content="https://www.mkiexpertisecentrum.nl/logo.png">
-  <meta property="og:url" content="https://www.mkiexpertisecentrum.nl/">
-  <meta property="og:type" content="website">
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/Bosweg.avif"
+      type="image/avif"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/Bosweg.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="/assets/Light_bulb_off.avif" type="image/avif" />
+    <link rel="preload" as="image" href="/assets/Light_bulb_off.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/assets/Light_bulb_on.avif" type="image/avif" />
+    <link rel="preload" as="image" href="/assets/Light_bulb_on.webp" type="image/webp" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MKI Expertisecentrum – Binnenkort live">
-  <meta name="twitter:description" content="Het platform voor alles over MKI, duurzaamheid en milieuprestatie in GWW en bouw.">
-  <meta name="twitter:image" content="https://www.mkiexpertisecentrum.nl/logo.png">
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "MKI Expertisecentrum",
-    "url": "https://www.mkiexpertisecentrum.nl",
-    "description": "Het kennisplatform over de MilieuKostenIndicator (MKI) in de bouw- en infrasector, met tools, uitleg en ondersteuning voor opdrachtgevers, aannemers en leveranciers.",
-    "inLanguage": "nl"
-  }
-  </script>
+    <header class="hero" id="top">
+      <div class="hero__inner">
+        <p class="eyebrow">
+          MKI Expertisecentrum • powered by
+          <a href="https://infraimpact.nl" rel="noopener noreferrer">InfraImpact B.V.</a>
+        </p>
+        <h1>MKI Expertisecentrum</h1>
+        <p class="subheader">
+          Praktische hulp bij MKI: voor opdrachtgevers, opdrachtnemers en producenten.
+        </p>
+        <p class="intro">
+          Het MKI Expertisecentrum helpt je met MKI en LCA: de Milieukostenindicator is de
+          stuurwaarde, LCA is de methode erachter. Zo maak je milieuprestatie vergelijkbaar en zie je
+          welke keuzes de impact bepalen. We verbinden rekenregels met praktijk, van aanbesteding en
+          gunning tot productdata en EPD’s. Speciaal voor GWW en materiaalkeuzes zoals beton, staal en
+          asfalt.
+        </p>
+        <div class="cta-block">
+          <div class="cta-grid">
+            <button class="cta-card" data-role="opdrachtgever" type="button">
+              <span class="cta-card__title">Opdrachtgever</span>
+            </button>
+            <button class="cta-card" data-role="opdrachtnemer" type="button">
+              <span class="cta-card__title">Opdrachtnemer</span>
+            </button>
+            <button class="cta-card" data-role="leverancier_producent" type="button">
+              <span class="cta-card__title">Leverancier/<br />Producent</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="section-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" role="presentation">
+          <defs>
+            <linearGradient id="faq-divider-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f6f6f3" stop-opacity="0" />
+              <stop offset="100%" stop-color="#f6f6f3" stop-opacity="1" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,32 C240,96 480,96 720,64 C960,32 1200,0 1440,16 L1440,120 L0,120 Z"
+            fill="url(#faq-divider-gradient)"
+          ></path>
+        </svg>
+      </div>
+    </header>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wat doet het MKI Expertisecentrum?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wij zijn het centrale punt voor advies, begeleiding en informatie over MKI en LCA, gericht op opdrachtgevers, opdrachtnemers en leveranciers in de bouw en infra."
+    <main>
+      <section class="faq" id="faq">
+        <div class="section-inner">
+          <h2>FAQ</h2>
+          <div class="accordion" data-accordion>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Wat doet het MKI Expertisecentrum precies?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  We maken MKI en LCA praktisch: van scope en rekenregels tot toetsing en besluitvorming.
+                  Zo krijg je snel grip op milieukostenindicator, milieuprestatie en onderbouwing voor
+                  projecten, aanbestedingen en productdata.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Wat is het verschil tussen MKI en LCA?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  LCA is de berekeningsmethode die de milieu-impact over de hele levenscyclus bepaalt.
+                  MKI is de monetaire uitkomst die die impact samenvat. LCA is de analyse, MKI de stuurwaarde
+                  waarmee je opties en aanbieders vergelijkt.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Waarom is alleen de MKI-uitkomst niet genoeg voor beleidsdoelen?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  De MKI is de monetaire uitkomst van een LCA, maar er zijn geen beleidsdoelen op die score.
+                  Daarom kijken we altijd naar de onderliggende LCA-indicatoren die wél aansluiten op
+                  beleidsdoelen, zoals CO2-impact, grondstoffenverbruik (primair vs. secundair),
+                  energieverbruik (hoeveel en groen/grijs) en inzet van (emissieloos) materieel.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Wanneer heb je een LCA nodig en wanneer alleen MKI?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Gebruik een LCA als je de drivers wilt begrijpen, scenario’s wilt optimaliseren of nieuwe
+                  productdata opbouwt. Voor aanbestedingen en gunning volstaat vaak de MKI-score, mits de
+                  uitgangspunten en data helder zijn vastgelegd.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Welke data heb ik nodig (EPD’s, productkaarten)?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Denk aan EPD’s, productkaarten, aannames en hoeveelheden, plus bronnen voor milieudata.
+                  Daarmee kun je MKI-berekeningen herhaalbaar en controleerbaar maken en de bepalingsmethode
+                  consistent toepassen.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Wat is een EPD en wanneer is het nodig?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Een EPD is een geverifieerde milieuproductverklaring met LCA-data. Je hebt een EPD nodig
+                  als je productdata wilt aantonen richting opdrachtgevers, of als je product structureel
+                  wordt gebruikt in MKI-berekeningen en aanbestedingseisen.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Hoe vergelijk je varianten eerlijk?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Door de scope, functionele eenheid en rekenregels vooraf vast te leggen. Dan vergelijk je
+                  beton, staal of asfalt op gelijke basis en voorkom je appels-met-peren in de milieuprestatie.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Hoe voorkom je rekenwerk achteraf?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Door vooraf afspraken te maken over data, scope, versiebeheer en validatie. Met herbruikbare
+                  productdata en templates voorkom je correctierondes achteraf in aanbesteding of uitvoering.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Hoe stuur je op verbetering zonder greenwashing?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Door transparant te zijn over data, aannames en grenzen van de methode. We helpen je
+                  verbeterstappen aantoonbaar te maken, zodat claims aansluiten op MKI/LCA-uitkomsten en
+                  controleerbare milieudata.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Kunnen jullie meedenken in een aanbestedingstraject?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Ja. We denken mee over eisen, gunningscriteria en verificatie zodat inschrijvingen
+                  vergelijkbaar zijn en MKI/LCA onderbouwing consistent blijft binnen de GWW-praktijk.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Komt er wetgeving voor MKI in de GWW?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Het kabinet heeft op 31 mei 2024 in een Kamerbrief aangegeven wettelijk te willen sturen
+                  op het verlagen van milieu-impact in de GWW met MKI. IenW bereidt hiervoor een
+                  wetgevingstraject voor; nadere uitwerking volgt.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Wat betekent ‘sturen op MKI’ in aanbestedingen?
+              </button>
+              <div class="accordion-panel" hidden>
+                <p>
+                  Dat MKI zwaarder kan meewegen in eisen en gunning, met mogelijke minimale
+                  milieuprestatie-eisen voor beton, staal en asfalt en MKI als gunningscriterium bij
+                  grotere projecten. De precieze invulling wordt nog uitgewerkt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="consent" role="dialog" aria-live="polite" aria-label="Cookie voorkeuren">
+      <p>We gebruiken minimale analytics om de site te verbeteren.</p>
+      <button class="btn" type="button" data-consent>Akkoord</button>
+    </div>
+
+    <div
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      hidden
+    >
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__panel" role="document">
+        <button class="modal__close" type="button" data-close aria-label="Sluiten">✕</button>
+        <div class="modal__header">
+          <div>
+            <h2 id="modal-title" class="modal__title" data-modal-title></h2>
+            <p class="modal__intro" data-modal-intro></p>
+          </div>
+        </div>
+        <div class="modal__body">
+          <form
+            id="mki-form"
+            action="https://formspree.io/f/xnjbqdrj"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="role" value="" />
+            <input type="hidden" name="source" value="mkiexpertisecentrum_test" />
+            <input type="hidden" name="page_url" value="" />
+            <input type="hidden" name="timestamp" value="" />
+            <input type="hidden" name="_subject" value="" />
+            <input type="hidden" name="_replyto" value="" />
+            <input type="text" name="_gotcha" style="display: none" tabindex="-1" autocomplete="off" />
+
+            <p class="form-error" data-form-error role="alert" hidden>
+              Er ging iets mis bij het versturen. Probeer het opnieuw of mail naar info@infraimpact.nl.
+            </p>
+
+            <div class="form-role" data-role-section="opdrachtgever">
+              <fieldset class="form-section">
+                <legend>Context</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="context_type" required value="Beleidsmatig (kaders, eisen, sturing)" /> Beleidsmatig (kaders, eisen, sturing)</label>
+                  <label><input type="radio" name="context_type" value="Projectgericht" /> Projectgericht</label>
+                  <label><input type="radio" name="context_type" value="Combinatie beleid &amp; projecten" /> Combinatie beleid &amp; projecten</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Doel van je vraag</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="goal_focus" required value="MKI opnemen in beleid of inkoopstrategie" /> MKI opnemen in beleid of inkoopstrategie</label>
+                  <label><input type="radio" name="goal_focus" value="MKI als eis (minimale prestatie)" /> MKI als eis (minimale prestatie)</label>
+                  <label><input type="radio" name="goal_focus" value="MKI als gunningscriterium" /> MKI als gunningscriterium</label>
+                  <label><input type="radio" name="goal_focus" value="Vergelijken van varianten / ontwerpkeuzes" /> Vergelijken van varianten / ontwerpkeuzes</label>
+                  <label><input type="radio" name="goal_focus" value="Controle of validatie van aangeleverde MKI/LCA" /> Controle of validatie van aangeleverde MKI/LCA</label>
+                  <label><input type="radio" name="goal_focus" value="Datavraag (EPD’s / productinformatie)" /> Datavraag (EPD’s / productinformatie)</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section" data-max-checks="2">
+                <legend>Waar zit de uitdaging? (max 2)</legend>
+                <div class="choice-group">
+                  <label><input type="checkbox" name="challenge" value="Onzekerheid over juiste eisen of grenswaarden" /> Onzekerheid over juiste eisen of grenswaarden</label>
+                  <label><input type="checkbox" name="challenge" value="Moeilijk vergelijken van aanbiedingen" /> Moeilijk vergelijken van aanbiedingen</label>
+                  <label><input type="checkbox" name="challenge" value="Onvoldoende grip op aannames en scope" /> Onvoldoende grip op aannames en scope</label>
+                  <label><input type="checkbox" name="challenge" value="Behoefte aan praktisch beoordelingskader" /> Behoefte aan praktisch beoordelingskader</label>
+                  <label><input type="checkbox" name="challenge" value="Behoefte aan onderbouwd en uitlegbaar beleid" /> Behoefte aan onderbouwd en uitlegbaar beleid</label>
+                </div>
+                <p class="form-warning" data-max-warning hidden>Je kunt maximaal 2 opties kiezen.</p>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Open vraag</legend>
+                <label>
+                  Wat wil je helder krijgen of beslissen?
+                  <textarea name="open_question" rows="3" required></textarea>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>Naam <input type="text" name="name" required /></label>
+                <label>Organisatie <input type="text" name="organization" required /></label>
+                <label>Rol/functie <input type="text" name="role_title" /></label>
+                <label>E-mail <input type="email" name="email" required /></label>
+                <label>Telefoon <input type="tel" name="phone" /></label>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" required />
+                  Ik geef toestemming om contact op te nemen over deze aanvraag.
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="updates_opt_in" />
+                  Ik wil op de hoogte gehouden worden van MKI/LCA gerelateerde ontwikkelen (hoogstens paar keer per jaar).
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="form-role" data-role-section="opdrachtnemer">
+              <fieldset class="form-section">
+                <legend>Contextniveau</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="context_level" required value="Projectgericht" /> Projectgericht</label>
+                  <label><input type="radio" name="context_level" value="Bedrijfsbreed" /> Bedrijfsbreed</label>
+                  <label><input type="radio" name="context_level" value="Combinatie van beide" /> Combinatie van beide</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Waarop wil je sturen?</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="steer_focus" required value="MKI verbeteren (lagere score)" /> MKI verbeteren (lagere score)</label>
+                  <label><input type="radio" name="steer_focus" value="Risico en controle (klopt de berekening?)" /> Risico en controle (klopt de berekening?)</label>
+                  <label><input type="radio" name="steer_focus" value="Snelheid en efficiëntie" /> Snelheid en efficiëntie</label>
+                  <label><input type="radio" name="steer_focus" value="Varianten onderbouwen richting opdrachtgever" /> Varianten onderbouwen richting opdrachtgever</label>
+                  <label><input type="radio" name="steer_focus" value="Bedrijfsbrede aanpak voor MKI/LCA" /> Bedrijfsbrede aanpak voor MKI/LCA</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section" data-max-checks="2">
+                <legend>Waar loop je op vast? (max 2)</legend>
+                <div class="choice-group">
+                  <label><input type="checkbox" name="blocking_issue" value="Onduidelijk welke keuzes echt effect hebben" /> Onduidelijk welke keuzes echt effect hebben</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Rekenregels of aannames zijn onduidelijk" /> Rekenregels of aannames zijn onduidelijk</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Data ontbreekt of is versnipperd" /> Data ontbreekt of is versnipperd</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Varianten lastig eerlijk te vergelijken" /> Varianten lastig eerlijk te vergelijken</label>
+                  <label><input type="checkbox" name="blocking_issue" value="MKI/LCA komt te laat in het proces" /> MKI/LCA komt te laat in het proces</label>
+                  <label><input type="checkbox" name="blocking_issue" value="Te afhankelijk van externe berekeningen" /> Te afhankelijk van externe berekeningen</label>
+                </div>
+                <p class="form-warning" data-max-warning hidden>Je kunt maximaal 2 opties kiezen.</p>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Open vraag</legend>
+                <label>
+                  Wat moet er beter, slimmer of sneller?
+                  <textarea name="open_question" rows="3" required></textarea>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>Naam <input type="text" name="name" required /></label>
+                <label>Organisatie <input type="text" name="organization" required /></label>
+                <label>E-mail <input type="email" name="email" required /></label>
+                <label>Telefoon <input type="tel" name="phone" /></label>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" required />
+                  Ik geef toestemming om contact op te nemen over deze aanvraag.
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="updates_opt_in" />
+                  Ik wil op de hoogte gehouden worden van MKI/LCA gerelateerde ontwikkelen (hoogstens paar keer per jaar).
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="form-role" data-role-section="leverancier_producent">
+              <fieldset class="form-section">
+                <legend>Wat wil je opleveren?</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="deliverable" required value="EPD (gecertificeerd)" /> EPD (gecertificeerd)</label>
+                  <label><input type="radio" name="deliverable" value="Productkaart / milieudata voor projecten" /> Productkaart / milieudata voor projecten</label>
+                  <label><input type="radio" name="deliverable" value="Input voor MKI-berekeningen" /> Input voor MKI-berekeningen</label>
+                  <label><input type="radio" name="deliverable" value="Inzicht in verbeterpotentieel (LCA)" /> Inzicht in verbeterpotentieel (LCA)</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Productcategorie</legend>
+                <label>
+                  <span class="sr-only">Productcategorie</span>
+                  <select name="product_category" required>
+                    <option value="" selected disabled>Kies een categorie</option>
+                    <option value="Beton(gerelateerd)">Beton(gerelateerd)</option>
+                    <option value="Staal / metalen">Staal / metalen</option>
+                    <option value="Asfalt / bitumen">Asfalt / bitumen</option>
+                    <option value="Hout / biobased">Hout / biobased</option>
+                    <option value="Kunststoffen / isolatie">Kunststoffen / isolatie</option>
+                    <option value="Overig">Overig</option>
+                  </select>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Status van data</legend>
+                <div class="choice-group">
+                  <label><input type="radio" name="data_status" required value="We hebben al LCA-data" /> We hebben al LCA-data</label>
+                  <label><input type="radio" name="data_status" value="We hebben deels data" /> We hebben deels data</label>
+                  <label><input type="radio" name="data_status" value="We hebben nog niets gestructureerd" /> We hebben nog niets gestructureerd</label>
+                  <label><input type="radio" name="data_status" value="We hebben EPD maar willen verbeteren/actualiseren" /> We hebben EPD maar willen verbeteren/actualiseren</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Open vraag</legend>
+                <label>
+                  Wat is je product en wat wil je bereiken?
+                  <textarea name="open_question" rows="3" required></textarea>
+                </label>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <label>Naam <input type="text" name="name" required /></label>
+                <label>Organisatie <input type="text" name="organization" required /></label>
+                <label>E-mail <input type="email" name="email" required /></label>
+                <label>Telefoon <input type="tel" name="phone" /></label>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" required />
+                  Ik geef toestemming om contact op te nemen over deze aanvraag.
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="updates_opt_in" />
+                  Ik wil op de hoogte gehouden worden van MKI/LCA gerelateerde ontwikkelen (hoogstens paar keer per jaar).
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit" data-submit>Verstuur</button>
+            </div>
+          </form>
+
+          <div class="success" hidden>
+            <h3 data-success-title></h3>
+            <p data-success-message></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="success-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="success-modal-title"
+      hidden
+    >
+      <div class="modal__backdrop" data-success-close></div>
+      <div class="modal__panel" role="document">
+        <button class="modal__close" type="button" data-success-close aria-label="Sluiten">✕</button>
+        <div class="modal__header">
+          <div>
+            <h2 id="success-modal-title" class="modal__title" data-success-modal-title>Verzonden</h2>
+            <p class="modal__intro" data-success-modal-intro>
+              Dank! Je aanvraag is verstuurd. We nemen meestal binnen 1–2 werkdagen contact op.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://mkiexpertisecentrum.nl/#organization",
+        "name": "MKI Expertisecentrum",
+        "url": "https://mkiexpertisecentrum.nl/",
+        "description": "Praktische hulp bij MKI en LCA voor aanbesteding, gunning en productdata in de GWW.",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "InfraImpact B.V.",
+          "url": "https://infraimpact.nl"
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Hoe kan ik starten met MKI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bezoek onze kennisbank en tools-pagina of neem direct contact op. Wij begeleiden je stap voor stap, van berekening tot aanbesteding."
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MKI Expertisecentrum",
+        "@id": "https://mkiexpertisecentrum.nl/#website",
+        "url": "https://mkiexpertisecentrum.nl/",
+        "publisher": {
+          "@id": "https://mkiexpertisecentrum.nl/#organization"
+        }
       }
-    }
-  ]
-}
-</script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNE51N8K74"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SNE51N8K74');
-  </script>
-</head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-
-  <main class="bg-white p-8 rounded-2xl shadow-xl text-center max-w-xl mx-auto">
-    <img src="logo.webp" alt="Logo van MKI Expertisecentrum – MilieuKostenIndicator en duurzaamheid in bouw" class="w-36 mx-auto mb-4" loading="lazy">
-
-    <h1 class="text-2xl md:text-2xl font-bold text-gray-800 mb-4 -mt-[7.5cm]">
-      Binnenkort live: het platform over MKI en duurzaamheid in de bouw
-    </h1>
-
-    <p class="text-gray-600 mb-2">
-      Het <strong>MKI Expertisecentrum</strong> biedt straks kennis, tools en voorbeelden over de <strong>MilieuKostenIndicator (MKI)</strong> in de GWW-sector.
-    </p>
-    <p class="text-gray-600">
-      Blijf op de hoogte en keer binnenkort terug op <strong>mkiexpertisecentrum.nl</strong>
-    </p>
-  </main>
-
-</body>
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://mkiexpertisecentrum.nl/#webpage",
+        "name": "MKI Expertisecentrum",
+        "url": "https://mkiexpertisecentrum.nl/",
+        "isPartOf": {
+          "@id": "https://mkiexpertisecentrum.nl/#website"
+        },
+        "about": {
+          "@id": "https://mkiexpertisecentrum.nl/#organization"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat doet het MKI Expertisecentrum precies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We maken MKI en LCA praktisch: van scope en rekenregels tot toetsing en besluitvorming. Zo krijg je snel grip op milieukostenindicator, milieuprestatie en onderbouwing voor projecten, aanbestedingen en productdata."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat is het verschil tussen MKI en LCA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LCA is de berekeningsmethode die de milieu-impact over de hele levenscyclus bepaalt. MKI is de monetaire uitkomst die die impact samenvat. LCA is de analyse, MKI de stuurwaarde waarmee je opties en aanbieders vergelijkt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Waarom is alleen de MKI-uitkomst niet genoeg voor beleidsdoelen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De MKI is de monetaire uitkomst van een LCA, maar er zijn geen beleidsdoelen op die score. Daarom kijken we altijd naar de onderliggende LCA-indicatoren die wél aansluiten op beleidsdoelen, zoals CO2-impact, grondstoffenverbruik (primair vs. secundair), energieverbruik (hoeveel en groen/grijs) en inzet van (emissieloos) materieel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wanneer heb je een LCA nodig en wanneer alleen MKI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gebruik een LCA als je de drivers wilt begrijpen, scenario’s wilt optimaliseren of nieuwe productdata opbouwt. Voor aanbestedingen en gunning volstaat vaak de MKI-score, mits de uitgangspunten en data helder zijn vastgelegd."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welke data heb ik nodig (EPD’s, productkaarten)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Denk aan EPD’s, productkaarten, aannames en hoeveelheden, plus bronnen voor milieudata. Daarmee kun je MKI-berekeningen herhaalbaar en controleerbaar maken en de bepalingsmethode consistent toepassen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat is een EPD en wanneer is het nodig?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Een EPD is een geverifieerde milieuproductverklaring met LCA-data. Je hebt een EPD nodig als je productdata wilt aantonen richting opdrachtgevers, of als je product structureel wordt gebruikt in MKI-berekeningen en aanbestedingseisen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe vergelijk je varianten eerlijk?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Door de scope, functionele eenheid en rekenregels vooraf vast te leggen. Dan vergelijk je beton, staal of asfalt op gelijke basis en voorkom je appels-met-peren in de milieuprestatie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe voorkom je rekenwerk achteraf?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Door vooraf afspraken te maken over data, scope, versiebeheer en validatie. Met herbruikbare productdata en templates voorkom je correctierondes achteraf in aanbesteding of uitvoering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe stuur je op verbetering zonder greenwashing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Door transparant te zijn over data, aannames en grenzen van de methode. We helpen je verbeterstappen aantoonbaar te maken, zodat claims aansluiten op MKI/LCA-uitkomsten en controleerbare milieudata."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kunnen jullie meedenken in een aanbestedingstraject?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. We denken mee over eisen, gunningscriteria en verificatie zodat inschrijvingen vergelijkbaar zijn en MKI/LCA onderbouwing consistent blijft binnen de GWW-praktijk."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Komt er wetgeving voor MKI in de GWW?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Het kabinet heeft op 31 mei 2024 in een Kamerbrief aangegeven wettelijk te willen sturen op het verlagen van milieu-impact in de GWW met MKI. IenW bereidt hiervoor een wetgevingstraject voor; nadere uitwerking volgt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat betekent ‘sturen op MKI’ in aanbestedingen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dat MKI zwaarder kan meewegen in eisen en gunning, met mogelijke minimale milieuprestatie-eisen voor beton, staal en asfalt en MKI als gunningscriterium bij grotere projecten. De precieze invulling wordt nog uitgewerkt."
+            }
+          }
+        ]
+      }
+    </script>
+    <script src="/assets/js/app.js" defer></script>
+  </body>
 </html>
-
