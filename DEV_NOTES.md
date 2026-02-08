@@ -6,3 +6,5 @@
 
 ## Safety check
 - `node scripts/verify-terms.mjs`
+- `node scripts/verify-binary-safe.mjs`
+  - Confirms `/assets` is the single source of truth and checks for binary-safe rules.
