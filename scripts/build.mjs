@@ -36,6 +36,14 @@ const applyReplacements = (source, replacements) => {
   return output;
 };
 
+const FAQ_PAGE_TYPE_PATTERN = /"@type"\s*:\s*"FAQPage"/g;
+const assertSingleFaqPageSchema = (html, filePath) => {
+  const faqPageMatches = html.match(FAQ_PAGE_TYPE_PATTERN) ?? [];
+  if (faqPageMatches.length > 1) {
+    throw new Error(`Expected at most 1 FAQPage schema in ${filePath}, found ${faqPageMatches.length}.`);
+  }
+};
+
 await fs.mkdir(path.resolve("test"), { recursive: true });
 
 await Promise.all(
@@ -44,6 +52,7 @@ await Promise.all(
       throw new Error(`Output path must be .html: ${filePath}`);
     }
     const output = applyReplacements(template, replacements);
+    assertSingleFaqPageSchema(output, filePath);
     await fs.writeFile(filePath, output, "utf8");
   })
 );
